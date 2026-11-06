@@ -21,7 +21,7 @@ def main():
   for (s,split,direction),values in groups.items():evaluations.append(dict(update=s,split=split,direction=direction,mse=float(np.mean(values)),samples=len(values)))
  assert len(evaluations)==84
  for name,fields,values in [('OVERFIT_400_BATCH_MSE.csv',['update','action_mse','future_mse','weighted_total_loss'],[dict(update=int(s),action_mse=float(av[s-1]),future_mse=float(fv[s-1]),weighted_total_loss=rows[int(s)]['loss']) for s in steps]),('OVERFIT_400_FIXED_EVALUATION.csv',['update','split','direction','mse','samples'],evaluations)]:
-  with (a.output/name).open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(values)
+  with (a.output/name).open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=fields,lineterminator="\n");w.writeheader();w.writerows(values)
  plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,'axes.titleweight':'bold','axes.grid':True,'grid.alpha':.18,'savefig.facecolor':'white'})
  blue='#2874A6';orange='#D97924';red='#B83A3A'
  fig,axes=plt.subplots(2,2,figsize=(15,9.3));fig.subplots_adjust(top=.85,bottom=.18,hspace=.4,wspace=.24)
