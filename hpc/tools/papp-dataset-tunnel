@@ -1,0 +1,345 @@
+#!/usr/bin/python3
+"""Run papp_cloud with a temporary, quiet API relay through the local proxy.
+
+API requests and SSH/SCP/rsync connections use the existing local HTTP proxy.
+No credentials are stored here. The original client manages its own token DB.
+"""
+
+import http.client
+import http.server
+import concurrent.futures
+import ipaddress
+import json
+import os
+from pathlib import Path
+import select
+import shlex
+import socket
+import socketserver
+import ssl
+import subprocess
+import sys
+import tempfile
+import threading
+
+
+GATEWAY = "papp-gateway.cloud.paratera.com"
+def local_proxy():
+    override = os.environ.get("PAPP_CLOUD_PROXY_PORT")
+    ports = [int(override)] if override else [7901, 27904, 18992]
+    for port in ports:
+        try:
+            with socket.create_connection(("127.0.0.1", port), timeout=0.5) as probe:
+                # An open listener can still have a broken upstream route.
+                probe.settimeout(3)
+                probe.sendall(("CONNECT " + GATEWAY + ":443 HTTP/1.1\r\nHost: "
+                               + GATEWAY + ":443\r\n\r\n").encode("ascii"))
+                header = bytearray()
+                while not header.endswith(b"\r\n\r\n") and len(header) < 16384:
+                    part = probe.recv(1)
+                    if not part:
+                        break
+                    header.extend(part)
+                first = header.split(b"\r\n", 1)[0].split()
+                if len(first) >= 2 and first[1] == b"200":
+                    return ("127.0.0.1", port)
+        except OSError:
+            continue
+    return ("127.0.0.1", ports[0])
+
+
+PROXY = local_proxy()
+CLIENT = Path.home() / ".local/bin/papp_cloud"
+MAX_REQUEST = 1024 * 1024
+MAX_RESPONSE = 16 * 1024 * 1024
+HOP_HEADERS = {
+    "connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
+    "te", "trailer", "transfer-encoding", "upgrade", "content-length",
+}
+TLS_CONTEXT = ssl.create_default_context()
+
+
+def connect_tunnel(host, port):
+    """Open a raw CONNECT tunnel; SSH retains its own end-to-end encryption."""
+    remote = socket.create_connection(PROXY, timeout=5)
+    try:
+        authority = ("[" + host + "]" if ":" in host else host) + ":" + str(port)
+        remote.sendall(("CONNECT " + authority + " HTTP/1.1\r\nHost: "
+                        + authority + "\r\n\r\n").encode("ascii"))
+        header = bytearray()
+        while not header.endswith(b"\r\n\r\n"):
+            part = remote.recv(1)
+            if not part or len(header) >= 16384:
+                raise OSError("CONNECT failed")
+            header.extend(part)
+        if header.split(b"\r\n", 1)[0].split()[1] != b"200":
+            raise OSError("CONNECT failed")
+        return remote
+    except BaseException:
+        remote.close()
+        raise
+
+
+class Tunnel(socketserver.BaseRequestHandler):
+    def handle(self):
+        try:
+            with connect_tunnel(*self.server.target) as remote:
+                remote.settimeout(None)
+                peers = {self.request: remote, remote: self.request}
+                while peers:
+                    readable, _, _ = select.select(list(peers), [], [], 60)
+                    for source in readable:
+                        data = source.recv(65536)
+                        if data:
+                            peers[source].sendall(data)
+                        else:
+                            peers[source].shutdown(socket.SHUT_WR)
+                            del peers[source]
+        except OSError:
+            pass
+
+
+class TunnelServer(socketserver.ThreadingTCPServer):
+    daemon_threads = True
+
+    def handle_error(self, *_args):
+        pass
+
+
+class TunnelManager:
+    def __init__(self):
+        self.servers = {}
+        self.lock = threading.Lock()
+
+    def prepare(self, target):
+        host, port = target
+        if not ipaddress.ip_address(host).is_global or not 0 < port < 65536:
+            return None
+        with self.lock:
+            if target in self.servers:
+                server = self.servers[target]
+                return server.server_address[1] if server else None
+        try:
+            # Exclude nodes without a working SSH banner before the client's
+            # latency test, which would otherwise measure only loopback latency.
+            with connect_tunnel(host, port) as check:
+                if not check.recv(256).startswith(b"SSH-"):
+                    raise OSError("No SSH banner")
+            server = TunnelServer(("127.0.0.1", 0), Tunnel)
+            server.target = target
+            threading.Thread(target=server.serve_forever, daemon=True).start()
+        except OSError:
+            server = None
+        with self.lock:
+            self.servers[target] = server
+        return server.server_address[1] if server else None
+
+    def rewrite_routes(self, payload):
+        try:
+            obj = json.loads(payload)
+        except (ValueError, UnicodeError):
+            return payload
+        if not isinstance(obj, dict) or not isinstance(obj.get("routes"), list):
+            return payload
+        targets = set()
+        for route in obj["routes"]:
+            for node in route.get("nodes", []):
+                targets.add((node["ip"], int(node["port"])))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+            ports = dict(zip(targets, pool.map(self.prepare, targets)))
+        routes = []
+        for route in obj["routes"]:
+            nodes = []
+            for node in route.get("nodes", []):
+                port = ports[(node["ip"], int(node["port"]))]
+                if port is not None:
+                    node.update(ip="127.0.0.1", port=port, ping_port=port)
+                    nodes.append(node)
+            if nodes:
+                route["nodes"] = nodes
+                routes.append(route)
+        obj["routes"] = routes
+        return json.dumps(obj).encode("utf-8")
+
+    def close(self):
+        for server in self.servers.values():
+            if server is not None:
+                server.shutdown()
+                server.server_close()
+
+
+class Relay(http.server.BaseHTTPRequestHandler):
+    def log_message(self, *_args):
+        pass
+
+    def reply_error(self, status):
+        self.send_response(status)
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+
+    def forward(self):
+        upstream = None
+        try:
+            self.connection.settimeout(35)
+            if not self.path.startswith("/") or self.path.startswith("//"):
+                self.reply_error(400)
+                return
+            if self.headers.get("Transfer-Encoding"):
+                self.reply_error(400)
+                return
+            try:
+                size = int(self.headers.get("Content-Length", "0"))
+            except ValueError:
+                self.reply_error(400)
+                return
+            if size < 0 or size > MAX_REQUEST:
+                self.reply_error(413)
+                return
+            body = self.rfile.read(size) if size else None
+            if size and len(body) != size:
+                self.reply_error(400)
+                return
+            excluded = HOP_HEADERS | {"host"} | {
+                item.strip().lower()
+                for item in self.headers.get("Connection", "").split(",")
+            }
+            headers = {k: v for k, v in self.headers.items() if k.lower() not in excluded}
+            headers["Host"] = GATEWAY
+            headers["Accept-Encoding"] = "identity"
+            # CONNECT preserves end-to-end TLS verification of the official host.
+            upstream = http.client.HTTPSConnection(*PROXY, timeout=30, context=TLS_CONTEXT)
+            upstream.set_tunnel(GATEWAY, 443)
+            upstream.request(self.command, self.path, body=body, headers=headers)
+            response = upstream.getresponse()
+            payload = response.read(MAX_RESPONSE + 1)
+            if len(payload) > MAX_RESPONSE:
+                self.reply_error(502)
+                return
+            if hasattr(self.server, "tunnels") and response.status == 200:
+                payload = self.server.tunnels.rewrite_routes(payload)
+            self.send_response(response.status)
+            excluded = HOP_HEADERS | {
+                item.strip().lower()
+                for item in (response.getheader("Connection") or "").split(",")
+            }
+            for key, value in response.getheaders():
+                if key.lower() not in excluded:
+                    self.send_header(key, value)
+            self.send_header("Content-Length", str(len(payload)))
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(payload)
+        except (OSError, http.client.HTTPException):
+            # Never log URLs, request/response bodies, headers, or exception text.
+            try:
+                self.reply_error(502)
+            except OSError:
+                pass
+        finally:
+            if upstream is not None:
+                upstream.close()
+
+    do_GET = do_POST = do_PUT = do_PATCH = do_DELETE = do_HEAD = do_OPTIONS = forward
+
+
+class Server(http.server.ThreadingHTTPServer):
+    daemon_threads = True
+
+    def handle_error(self, *_args):
+        pass
+
+
+def ssh_connect(host, port):
+    try:
+        # Route discovery already exposes verified SSH tunnels on loopback.
+        # External ssh used by rsync/scp must reach those local listeners
+        # directly; forwarding loopback through the HTTP proxy reaches the
+        # proxy host's loopback instead of this machine's temporary listener.
+        address = host.strip("[]")
+        try:
+            local_route = ipaddress.ip_address(address).is_loopback
+        except ValueError:
+            local_route = address == "localhost"
+        connection = (socket.create_connection((address, int(port)), timeout=10)
+                      if local_route else connect_tunnel(address, int(port)))
+        with connection as remote:
+            remote.settimeout(None)
+            sources = [sys.stdin.fileno(), remote]
+            while remote in sources:
+                ready, _, _ = select.select(sources, [], [], 60)
+                for source in ready:
+                    if source is remote:
+                        data = remote.recv(65536)
+                        if not data:
+                            return 0
+                        sys.stdout.buffer.write(data)
+                        sys.stdout.buffer.flush()
+                    else:
+                        data = os.read(source, 65536)
+                        if data:
+                            remote.sendall(data)
+                        else:
+                            remote.shutdown(socket.SHUT_WR)
+                            sources.remove(source)
+        return 0
+    except OSError:
+        print("SSH proxy tunnel failed.", file=sys.stderr)
+        return 1
+
+
+def transport_shims(directory):
+    proxy = shlex.join([str(Path(__file__).resolve()), "--ssh-connect", "%h", "%p"])
+    ssh = str(Path(directory) / "ssh")
+    commands = {
+        "ssh": ["/usr/bin/ssh", "-o", "ProxyCommand=" + proxy, "-o", "ControlMaster=auto", "-o", "ControlPersist=72h", "-o", "ControlPath=/tmp/energywam-datasets-%C", "-o", "ServerAliveInterval=30", "-o", "ServerAliveCountMax=10", "-o", "ExitOnForwardFailure=yes", "-R", "127.0.0.1:38741:127.0.0.1:38740"],
+        "scp": ["/usr/bin/scp", "-S", ssh],
+        "sftp": ["/usr/bin/sftp", "-S", ssh],
+    }
+    for name, command in commands.items():
+        script = Path(directory) / name
+        # Preserve the client's multi-hop ProxyCommand/ProxyJump. Its nested
+        # ssh processes still use this shim when another tunnel is needed.
+        existing_proxy = ''
+        if name == 'ssh':
+            existing_proxy = ('for arg do\n'
+                              ' case "$arg" in\n'
+                              '  *ProxyCommand=*|*ProxyJump=*|-J*) exec /usr/bin/ssh "$@" ;;\n'
+                              ' esac\n'
+                              'done\n')
+        script.write_text('#!/bin/sh\n' + existing_proxy + 'exec ' + shlex.join(command) + ' "$@"\n')
+        script.chmod(0o700)
+
+
+def main():
+    if len(sys.argv) == 4 and sys.argv[1] == "--ssh-connect":
+        return ssh_connect(sys.argv[2], sys.argv[3])
+    if any(arg in ("-a", "--api", "-k", "--insecure") or arg.startswith("--api=")
+           for arg in sys.argv[1:]):
+        print("This wrapper supplies the API address and requires TLS verification.", file=sys.stderr)
+        return 2
+    os.umask(0o077)
+    with tempfile.TemporaryDirectory(prefix="papp-proxy-") as shim_dir, \
+            Server(("127.0.0.1", 0), Relay) as server:
+        transport_shims(shim_dir)
+        env = os.environ.copy()
+        env["PATH"] = shim_dir + os.pathsep + env.get("PATH", "")
+        env["RSYNC_RSH"] = str(Path(shim_dir) / "ssh")
+        server.tunnels = TunnelManager()
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        address = "http://127.0.0.1:" + str(server.server_port)
+        try:
+            child = subprocess.Popen([str(CLIENT), "--api", address, *sys.argv[1:]], env=env)
+            try:
+                status = child.wait()
+            except KeyboardInterrupt:
+                status = child.wait()
+            return status if status >= 0 else 128 - status
+        finally:
+            server.shutdown()
+            worker.join()
+            server.tunnels.close()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

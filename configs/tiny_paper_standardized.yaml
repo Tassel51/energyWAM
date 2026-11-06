@@ -1,0 +1,89 @@
+run_id: tiny_paper_standardized
+notes: >
+  Explicit tiny CPU configuration for the paper §4.8 standardized baseline
+  (user-approved 2026-10-29): action/future targets live in the training-split
+  standardized coordinate (x-mean)/(std+eps) and the init prior is N(0, I).
+  The statistics bundle is the SYNTHETIC tiny one at
+  configs/tiny_paper_standardized.synthetic_bundle.json (regenerate with
+  scripts/fit_normalization_stats.py --synthetic-tiny).  Tiny mode never loads
+  Qwen / DINO weights and is NOT evidence about the real 4B path.
+
+backbone:
+  backend: tiny
+  attn_implementation: eager
+  tiny_hidden_dim: 64
+  tiny_num_layers: 2
+  tiny_num_heads: 4
+  tiny_num_cond_tokens: 6
+  tiny_future_patches: 4
+  tiny_future_dim: 8
+  tiny_action_dim: 3
+  tiny_state_dim: 4
+  tiny_num_cameras: 1
+
+data:
+  action_dim: 3
+  state_dim: 4
+  action_horizon: 8
+  num_future_frames: 3
+  num_cameras: 1
+  future_offsets: [3, 5, 8]
+  normalization_profile: paper_standardized_v1
+  action_normalization: zscore
+  standardization_epsilon: 1.0e-6
+  norm_stats_bundle_path: configs/tiny_paper_standardized.synthetic_bundle.json
+  state_normalization: none
+  require_full_horizon: true
+
+solver:
+  unroll_mode: full
+  train_inner_steps: 2
+  eval_inner_steps: 2
+  alpha_action: 0.05
+  alpha_future: 0.05
+  joint_update_mode: simultaneous
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+
+init:
+  initialization_action: normal
+  initialization_future: normal
+  init_action_std: 1.0
+  init_future_std: 1.0
+
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 1.0
+  beta_action: 1.0
+  beta_future: 1.0
+
+stage:
+  stage: bi
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+
+trainer:
+  seed: 42
+  max_train_steps: 200
+  per_device_batch_size: 4
+  learning_rate: 1.0e-3
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 0
+  logging_frequency: 10
+  save_interval: 100
+  output_dir: logs/runs/standardized_tiny
+  device: cpu
+  candidate_dtype: float32
+
+framework:
+  name: QwenEnergyWAM
+  energy_head_hidden: 64
+  num_state_tokens: 1
+  use_learned_future_placeholder: true

@@ -1,0 +1,31 @@
+{
+  "captured_beijing": "2026-11-06T18:24:21.994291+08:00",
+  "status_not_live": true,
+  "no_checkpoints_or_dataset_payloads_in_git": true,
+  "runs": [
+    {
+      "name": "three_task_b16_micro4_seed42",
+      "completed_updates": 163,
+      "latest_saved_update": 155,
+      "note": "running_or_pending_at_capture; inspect source supervisor for live state"
+    },
+    {
+      "name": "three_task_b16_micro4_seed43",
+      "completed_updates": 121,
+      "latest_saved_update": 121,
+      "note": "paused_by_user"
+    },
+    {
+      "name": "tiny16_futureweight1_b16_micro4_seed42",
+      "completed_updates": 40,
+      "latest_saved_update": 10,
+      "note": "running_or_pending_at_capture; inspect source supervisor for live state"
+    },
+    {
+      "name": "tiny16_futureweight9_b16_micro4_seed42",
+      "completed_updates": 0,
+      "latest_saved_update": null,
+      "note": "running_or_pending_at_capture; inspect source supervisor for live state"
+    }
+  ]
+}

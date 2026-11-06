@@ -1,0 +1,165 @@
+backbone:
+  condition_mode: text_dino_state
+  backend: qwen3vl
+  base_vlm: /datasets/models/Qwen3-VL-4B-Instruct
+  attn_implementation: eager
+  dtype: float32
+  freeze_qwen_vision: true
+  tune_language_model: true
+  tune_qwen_vision: false
+  lora_enabled: false
+  lora_r: 16
+  lora_alpha: 32
+  gradient_checkpointing: true
+  dino_path: /datasets/models/dinov3-vits16-pretrain-lvd1689m
+  freeze_dino: true
+  dino_image_size: 224
+  dino_patch_size: 16
+  dino_hidden_dim: 384
+  dino_num_special_tokens: 5
+  dino_num_patches: 196
+  tiny_hidden_dim: 64
+  tiny_num_layers: 2
+  tiny_num_heads: 4
+  tiny_num_cond_tokens: 6
+  tiny_future_patches: 4
+  tiny_future_dim: 8
+  tiny_action_dim: 3
+  tiny_state_dim: 4
+  tiny_num_cameras: 1
+data:
+  action_dim: 12
+  state_dim: 32
+  action_horizon: 16
+  num_future_frames: 3
+  future_offsets:
+  - 5
+  - 11
+  - 16
+  future_offset_rule: uniform_within_action_horizon
+  num_cameras: 1
+  future_camera_index: 0
+  camera_order:
+  - robot0_agentview_left
+  action_normalization: zscore
+  state_normalization: sincos
+  norm_stats_path: null
+  normalization_profile: paper_standardized_v1
+  standardization_epsilon: 1.0e-06
+  norm_stats_bundle_path: stats/trainmix_150k_paper_standardized_v1.json
+  allow_synthetic_stats: false
+  require_full_horizon: true
+  dino_preprocess_version: dino_v3_vits16_224_center_norm_v1
+  data_root_dir: /datasets/robocasa365_trainmix
+  data_mix: robocasa365_target_50tasks
+  dataset_py: lerobot_datasets
+  obs_image_size:
+  - 224
+  - 224
+  include_state: true
+  dataset_identity_note: ''
+solver:
+  candidate_gradient_normalization: none
+  gradient_rms_epsilon: 1.0e-06
+  learnable_step_sizes: true
+  step_size_min_ratio: 0.5
+  step_size_max_ratio: 1.5
+  unroll_mode: full
+  train_inner_steps: 2
+  eval_inner_steps: 2
+  alpha_action: 5.0
+  alpha_future: 2000.0
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+  joint_update_mode: simultaneous
+  truncation_length: 2
+  langevin_noise_std: 0.0
+init:
+  initialization_action: normal
+  initialization_future: current_dino_noise
+  init_action_std: 1.0
+  init_future_std: 1.0
+  init_future_noise_std: 0.0
+  init_action_mean: 0.0
+  init_future_mean: 0.0
+  allow_prior_ablation: true
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 9.0
+  beta_action: 1.0
+  beta_future: 1.0
+  future_cosine_weight: 0.0
+stage:
+  stage: bi
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+  joint_bi_aux_weight: 0.0
+trainer:
+  shared_microbatch_size: 4
+  fixed_candidate_initialization: false
+  checkpoint_interval_seconds: 1800
+  directional_head_diagnostics: true
+  fp32_master_weights: true
+  task_learning_rate: 0.0001
+  energy_head_learning_rate: 0.001
+  execution_mode: standard
+  gradient_sync_bucket_mib: 256
+  seed: 42
+  max_train_steps: 99
+  per_device_batch_size: 32
+  step_size_learning_rate: 0.001
+  learning_rate: 1.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 8
+  logging_frequency: 1
+  save_interval: 80
+  output_dir: /cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/guarded_batch32_resume_audit
+  optimizer: adamw8bit
+  preallocate_optimizer_state: true
+  stage_switch_optimizer_policy: reset
+  stage_switch_scheduler_policy: reset
+  num_workers: 0
+  device: cuda:0
+  candidate_dtype: float32
+  offload_saved_tensors: true
+  saved_tensor_gpu_budget_gib: 3.0
+  saved_tensor_gpu_budgets_gib:
+  - 10
+  - 14
+  saved_tensor_cpu_pin_budget_gib: 64.0
+  saved_tensor_async_offload: true
+  async_offload_max_inflight_gib: 1.0
+  saved_tensor_host_cache_limit_gib: 128.0
+  saved_tensor_deduplicate_cpu: true
+  language_model_devices:
+  - 0
+  - 1
+framework:
+  dino_patch_pack_factor: 2
+  quadratic_candidate_prior: true
+  quadratic_action_weight: 1.0
+  quadratic_future_weight: 1.0
+  energy_head_zero_init: true
+  projector_output_scale: 0.1
+  positional_encoding_scale: 0.02
+  type_embedding_init_std: 0.02
+  iteration_conditioning: true
+  iteration_embedding_dim: 256
+  iteration_mlp_hidden: 256
+  iteration_progress_scale: 1000.0
+  name: QwenEnergyWAM
+  energy_head_hidden: 256
+  energy_head_dropout: 0.0
+  num_state_tokens: 1
+  use_learned_future_placeholder: true
+  token_type_vocab: 8
+run_id: guarded_batch32_resume_audit
+notes: Batch-grid main arm; frozen10tasks800TRAIN100VAL; fullK2; 4096 sample visits;
+  highestFP32; no Stage2

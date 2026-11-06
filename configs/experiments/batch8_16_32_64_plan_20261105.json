@@ -1,0 +1,111 @@
+{
+  "status": "main_round1_running",
+  "training_enabled": true,
+  "created_at_utc": "2026-11-05T13:26:54.627907+00:00",
+  "native_microbatch": 4,
+  "effective_batches": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "rounds": [
+    {
+      "gpu01": 8,
+      "gpu23": 16
+    },
+    {
+      "gpu01": 32,
+      "gpu23": 64
+    }
+  ],
+  "initial_sample_budget_per_arm": 4096,
+  "conditional_common_extension_budget": 16384,
+  "warmup_sample_visits": 256,
+  "quick_validation_sample_interval": 1024,
+  "train_monitor_sample_interval": 256,
+  "training_seed": 42,
+  "replication_seeds": [
+    43
+  ],
+  "tie_break_seed": 44,
+  "train_tasks": [
+    "OpenDrawer",
+    "OpenCabinet",
+    "TurnOnSinkFaucet",
+    "TurnOffStove",
+    "PickPlaceCounterToCabinet",
+    "PickPlaceSinkToCounter",
+    "StackBowlsCabinet",
+    "PrepareCoffee",
+    "LoadDishwasher",
+    "WashFruitColander"
+  ],
+  "train_episodes_per_task": 10,
+  "train_windows_per_episode": 8,
+  "quick_val_episodes_per_task": 5,
+  "quick_val_windows_per_episode": 2,
+  "confirmation_val_episodes_per_task": 10,
+  "confirmation_val_windows_per_episode": 4,
+  "normalization": "Reuse fixed50-task TRAIN-only standardization; no val/test fit",
+  "hyperparameters": {
+    "K": 2,
+    "alpha_action_initial": 5,
+    "alpha_future_initial": 2000,
+    "learnable_steps": true,
+    "loss_action_weight": 1,
+    "loss_future_weight": 9,
+    "head_lr": 0.001,
+    "task_lr": 0.0001,
+    "language_lr": 1e-05,
+    "step_parameter_lr": 0.001,
+    "scheduler": "linear warmup256 sample visits then constant",
+    "candidate_lr_multipliers": [
+      0.3,
+      1,
+      3
+    ],
+    "lr_pilot_sample_budget": 1024
+  },
+  "gates": [
+    "Real4B native4 gate passed with highest FP32; BF16/FP16/TF32 did not pass the declared Future gradient gate.",
+    "Effective batch8/16/32/64 accumulation passed both directions; ten-task longest selected instruction capacity passed.",
+    "Data manifests frozen, trajectory-disjoint and TRAIN-only normalization reused.",
+    "Full latest+best resume tested; actual per-snapshot size about22.88GiB. Recheck every later phase disk budget."
+  ],
+  "not_implemented_or_started": [
+    "Main batch8/16 in progress;32/64 not started.",
+    "Matched-LR probes, hardware-placement profiles and training-seed confirmation pending.",
+    "Final400-window confirmation not used.",
+    "Three-task full-trajectory Stage1 follow-up queued, not started."
+  ],
+  "checkpoint_retention": {
+    "policy": "latest_and_best_full_resume",
+    "filenames": [
+      "ckpt_latest.pt",
+      "ckpt_best.pt"
+    ],
+    "best_metric": "Fixed quick-VAL Action MSE +9*Future MSE; always report components.",
+    "implementation_status": "Full latest+best hooked, tested and real best promotion observed; passed smoke snapshots retired under explicit exception.",
+    "space_note": "Four main runs at worst8 distinct22.88GiB states plus1 serialized pending write:about206GiB, before safety. LR/finalists/three-task follow-up require additional budgets; no main/finalist purge authorized."
+  },
+  "math_resolution": {
+    "selected": "highest_fp32",
+    "native4_gate_passed": true,
+    "cpu_saved_tensor_dedup_gate_passed": true,
+    "saved_gpu_budgets_gib": [
+      10,
+      14
+    ],
+    "full_resume_smoke_passed": true,
+    "accumulation_gate_complete": true
+  },
+  "execution_controller": "scripts/run_batch_grid_main.py",
+  "started_main_at_utc": "2026-11-05T15:03:25Z",
+  "required_followup_target": {
+    "target_id": "three_task_full_stage1_after_batch_selection",
+    "plan_file": "configs/experiments/three_task_full_followup_target_20261105.json",
+    "status": "queued_after_batch_selection",
+    "must_execute_after_current_goal": true
+  }
+}

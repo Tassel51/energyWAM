@@ -1,0 +1,110 @@
+run_id: energywam_joint_standardized_v1
+notes: >
+Stage 2: joint energy optimisation.  Initialise A0,Z0, run K joint
+  simultaneous updates, supervise both endpoints.  Load the stage-1
+  checkpoint and switch stage with an explicit optimiser policy (see
+  scripts/train_joint.sh).
+
+backbone:
+  backend: qwen3vl
+  base_vlm: /data6/zzc/Qwen3-VL-4B-Instruct
+  attn_implementation: eager
+  dtype: float32
+  freeze_qwen_vision: true
+  tune_language_model: true
+  tune_qwen_vision: false
+  lora_enabled: false
+  dino_path: /data6/zzc/dinov3-vits16-pretrain-lvd1689m
+  freeze_dino: true
+  dino_image_size: 224
+  dino_patch_size: 16
+  dino_hidden_dim: 384
+  dino_num_special_tokens: 5
+  dino_num_patches: 196
+
+data:
+  # RoboCasa365 PandaOmron contract (see ../starVLA/examples/simBenchmarks/Robocasa_365)
+  # action 12d, raw state 16d -> sincos 32d, horizon 16, first version: LEFT camera only.
+  action_dim: 12
+  state_dim: 32
+  action_horizon: 16
+  num_future_frames: 3
+  future_offset_rule: uniform_within_action_horizon
+  future_offsets: [5, 11, 16]
+  num_cameras: 1
+  future_camera_index: 0
+  camera_order: ["robot0_agentview_left"]
+  # paper §4.8 standardized coordinate (user-approved 2026-10-29 baseline):
+  # actions and future latents live in the TRAINING-split standardized space
+  # (x-mean)/(std+eps) and the init prior is N(0, I).  The previous
+  # min_max/raw-DINO condition is preserved verbatim in configs/legacy/.
+  normalization_profile: paper_standardized_v1
+  action_normalization: zscore
+  standardization_epsilon: 1.0e-6
+  norm_stats_bundle_path: stats/robocasa365_open_drawer_target_human_paper_standardized_v1.json
+  state_normalization: sincos
+  require_full_horizon: true
+  dino_preprocess_version: dino_v3_vits16_224_center_norm_v1
+  data_root_dir: playground/Datasets/robocasa365
+  data_mix: robocasa365_open_drawer_target_human
+  dataset_py: lerobot_datasets
+  obs_image_size: [224, 224]
+  include_state: true
+
+solver:
+  unroll_mode: full
+  train_inner_steps: 4
+  eval_inner_steps: 4
+  alpha_action: 0.05
+  alpha_future: 0.05
+  joint_update_mode: simultaneous
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+
+init:
+  initialization_action: normal
+  initialization_future: normal
+  init_action_std: 1.0
+  init_future_std: 1.0
+  init_action_mean: 0.0
+  init_future_mean: 0.0
+
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 1.0
+  beta_action: 1.0
+  beta_future: 1.0
+  future_cosine_weight: 0.0
+
+stage:
+  stage: joint
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+  joint_bi_aux_weight: 0.0
+
+trainer:
+  seed: 42
+  max_train_steps: 20000
+  per_device_batch_size: 2
+  learning_rate: 1.0e-5
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 100
+  logging_frequency: 10
+  save_interval: 1000
+  output_dir: logs/runs/energywam_joint_standardized_v1
+  device: cuda
+  candidate_dtype: float32
+
+framework:
+  name: QwenEnergyWAM
+  energy_head_hidden: 256
+  energy_head_dropout: 0.0
+  num_state_tokens: 1
+  use_learned_future_placeholder: true

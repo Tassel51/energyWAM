@@ -1,0 +1,83 @@
+run_id: tiny_action_given_future
+notes: >
+  Explicit tiny CPU configuration.  The backbone is a hand-written causal
+  Transformer over a deterministic mock condition encoder; no Qwen / DINO
+  weights are loaded.  This validates solver, losses, stages and checkpointing
+  only — it is NOT evidence about the real 4B path.
+
+backbone:
+  backend: tiny
+  attn_implementation: eager
+  tiny_hidden_dim: 64
+  tiny_num_layers: 2
+  tiny_num_heads: 4
+  tiny_num_cond_tokens: 6
+  tiny_future_patches: 4
+  tiny_future_dim: 8
+  tiny_action_dim: 3
+  tiny_state_dim: 4
+  tiny_num_cameras: 1
+
+data:
+  action_dim: 3
+  state_dim: 4
+  action_horizon: 8
+  num_future_frames: 3
+  num_cameras: 1
+  future_offsets: [3, 5, 8]
+  action_normalization: min_max
+  state_normalization: none
+  require_full_horizon: true
+
+solver:
+  unroll_mode: full
+  train_inner_steps: 2
+  eval_inner_steps: 2
+  alpha_action: 0.05
+  alpha_future: 0.05
+  joint_update_mode: simultaneous
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+
+init:
+  initialization_action: normal
+  initialization_future: normal
+  init_action_std: 0.1
+  init_future_std: 0.1
+
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 1.0
+  beta_action: 1.0
+  beta_future: 1.0
+
+stage:
+  stage: action_given_future
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+
+trainer:
+  seed: 42
+  max_train_steps: 200
+  per_device_batch_size: 4
+  learning_rate: 1.0e-3
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 0
+  logging_frequency: 10
+  save_interval: 100
+  output_dir: logs/runs/tiny_action_given_future
+  device: cpu
+  candidate_dtype: float32
+
+framework:
+  name: QwenEnergyWAM
+  energy_head_hidden: 64
+  num_state_tokens: 1
+  use_learned_future_placeholder: true

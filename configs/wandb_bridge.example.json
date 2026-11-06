@@ -1,0 +1,17 @@
+{
+  "mode": "online",
+  "entity": "YOUR_ENTITY",
+  "project": "lte-wam",
+  "cache_dir": "local_runs/wandb",
+  "poll_seconds": 15,
+  "sources": [
+    {
+      "config": "/YOUR_OUTPUT/tiny_weight1_seed42/local_config.yaml",
+      "group": "tiny16-future-weight1-vs9",
+      "priority": 100
+    }
+  ],
+  "api_key_file": ".secrets/wandb_api_key",
+  "base_url": "https://api.wandb.ai",
+  "max_source_starts_per_cycle": 1
+}

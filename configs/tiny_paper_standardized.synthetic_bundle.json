@@ -1,0 +1,114 @@
+{
+  "action": {
+    "coordinate": "(x - mean) / (std + epsilon)",
+    "count": [
+      3968.0,
+      3968.0,
+      3968.0
+    ],
+    "epsilon": 1e-06,
+    "mean": [
+      0.6500855566880329,
+      0.6810046633453465,
+      0.682475829483644
+    ],
+    "std": [
+      2.4730197074428246,
+      2.7540152479721143,
+      3.023819126002098
+    ],
+    "std_kind": "population"
+  },
+  "coordinate": "(x - mean) / (std + epsilon)",
+  "epsilon": 1e-06,
+  "fingerprint": "b4f2f5622b03e306743b4de28af4f4e1b7e97d74ff9f6bcf0416129510c58af8",
+  "future": {
+    "coordinate": "(x - mean) / (std + epsilon)",
+    "count": [
+      5888.0,
+      5888.0,
+      5888.0,
+      5888.0,
+      5888.0,
+      5888.0,
+      5888.0,
+      5888.0
+    ],
+    "epsilon": 1e-06,
+    "mean": [
+      -1.3181028578661085,
+      -1.3440927114297252,
+      -1.246865237585297,
+      -1.29295904002362,
+      -1.2656874388056591,
+      -1.2721902140921657,
+      -1.376487924674577,
+      -1.4585926590789242
+    ],
+    "std": [
+      3.0236445761181607,
+      3.2947305719230426,
+      3.586794103216577,
+      3.925450775791704,
+      4.258091944949799,
+      4.469132497522977,
+      4.7997935867272945,
+      5.092060514095716
+    ],
+    "std_kind": "population"
+  },
+  "inverse_coordinate": "x = normalized * (std + epsilon) + mean",
+  "profile": "paper_standardized_v1",
+  "provenance": {
+    "action_horizon": 8,
+    "camera_index": 0,
+    "camera_order": [
+      "robot0_agentview_left"
+    ],
+    "cameras_used": [
+      "robot0_agentview_left"
+    ],
+    "coverage": {
+      "kind": "synthetic_train_split",
+      "note": "synthetic tiny data; NOT a real dataset statistic",
+      "num_windows": 512
+    },
+    "dataset_identity": "synthetic_tiny/train",
+    "dims": {
+      "action_dim": 3,
+      "future_dim": 8
+    },
+    "dino": {
+      "config_hash": "synthetic",
+      "hidden_dim": 8,
+      "model_path": "synthetic_tiny_future_features"
+    },
+    "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+    "element_counting": {
+      "action": "valid elements of every training window (episode-safe plan, action_mask applied first, non-finite excluded); a raw frame in k valid windows contributes k times",
+      "future": "valid (F, V, P) future positions of every training window pooled per DINO channel; future_mask applied first, non-finite excluded"
+    },
+    "fitted_at": "2026-10-29T12:28:15.858411+00:00",
+    "future_offsets": [
+      3,
+      5,
+      8
+    ],
+    "num_cameras": 1,
+    "num_future_frames": 3,
+    "split": "train",
+    "synthetic": true,
+    "train_episodes": {
+      "episode_indices": [
+        0,
+        1
+      ],
+      "manifest_path": "synthetic",
+      "manifest_sha256": "synthetic",
+      "num_episodes": 2,
+      "synthetic": true
+    }
+  },
+  "schema_version": "energywam_norm_bundle_v1",
+  "std_kind": "population"
+}

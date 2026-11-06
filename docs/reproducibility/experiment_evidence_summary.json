@@ -1,0 +1,245 @@
+{
+  "tinyfit_master_prior_tokenscale_r2": {
+    "latest_training_update": 160,
+    "points": [
+      {
+        "update": 0,
+        "metrics": {
+          "train/action": 0.9468945171684027,
+          "val/action": 0.926306776702404,
+          "train/future": 0.10513755161082372,
+          "val/future": 0.14007144555216655
+        }
+      },
+      {
+        "update": 20,
+        "metrics": {
+          "train/action": 0.946522818878293,
+          "val/action": 0.9262375021353364,
+          "train/future": 0.1051295037032105,
+          "val/future": 0.140066695807036
+        }
+      },
+      {
+        "update": 40,
+        "metrics": {
+          "train/action": 0.9363243877887726,
+          "val/action": 0.9210639232769608,
+          "train/future": 0.10544252721592784,
+          "val/future": 0.14050918113207445
+        }
+      },
+      {
+        "update": 60,
+        "metrics": {
+          "train/action": 0.9365244181826711,
+          "val/action": 0.9238527808338404,
+          "train/future": 0.10507781076012179,
+          "val/future": 0.14004907495109364
+        }
+      },
+      {
+        "update": 80,
+        "metrics": {
+          "train/action": 0.8846214953809977,
+          "val/action": 0.9059729594737291,
+          "train/future": 0.10359840578166768,
+          "val/future": 0.14444835123140365
+        }
+      },
+      {
+        "update": 100,
+        "metrics": {
+          "train/action": 0.9009118657559156,
+          "val/action": 0.8992245784029365,
+          "train/future": 0.1003195668454282,
+          "val/future": 0.13755414413753897
+        }
+      },
+      {
+        "update": 120,
+        "metrics": {
+          "train/action": 0.8885240228846669,
+          "val/action": 0.8905216250568628,
+          "train/future": 0.09776780393440276,
+          "val/future": 0.1359837744385004
+        }
+      },
+      {
+        "update": 140,
+        "metrics": {
+          "train/action": 0.8488018489442766,
+          "val/action": 0.9171723844483495,
+          "train/future": 0.08900270261801779,
+          "val/future": 0.1354693790199235
+        }
+      },
+      {
+        "update": 160,
+        "metrics": {
+          "train/action": 0.8274593716487288,
+          "val/action": 0.9426871445029974,
+          "train/future": 0.08729054412106052,
+          "val/future": 0.13624679355416447
+        }
+      }
+    ],
+    "relative_improvement": {
+      "train/action": 0.126133527393139,
+      "val/action": -0.017683523658227562,
+      "train/future": 0.16974912594336922,
+      "val/future": 0.027305008404283737
+    }
+  },
+  "tinyfit_master_prior_tokenscale_headlr_r2": {
+    "latest_training_update": 20,
+    "points": [
+      {
+        "update": 0,
+        "metrics": {
+          "train/action": 0.9468945171684027,
+          "val/action": 0.926306776702404,
+          "train/future": 0.10513755161082372,
+          "val/future": 0.14007144555216655
+        }
+      },
+      {
+        "update": 20,
+        "metrics": {
+          "train/action": 7.118692010641098,
+          "val/action": 5.448240645229816,
+          "train/future": 12792.8369140625,
+          "val/future": 5828.913970947266
+        }
+      }
+    ],
+    "relative_improvement": {
+      "train/action": -6.517935611169093,
+      "val/action": -4.881680650793923,
+      "train/future": -121676.14311453968,
+      "val/future": -41612.86318224591
+    }
+  },
+  "tinyfit_master_prior_tokenscale_headlr0003_r2": {
+    "latest_training_update": 160,
+    "points": [
+      {
+        "update": 0,
+        "metrics": {
+          "train/action": 0.9468945171684027,
+          "val/action": 0.926306776702404,
+          "train/future": 0.10513755161082372,
+          "val/future": 0.14007144555216655
+        }
+      },
+      {
+        "update": 20,
+        "metrics": {
+          "train/action": 0.9471060493960977,
+          "val/action": 0.9265854870900512,
+          "train/future": 0.105152525997255,
+          "val/future": 0.1400976610602811
+        }
+      },
+      {
+        "update": 40,
+        "metrics": {
+          "train/action": 0.9466980677098036,
+          "val/action": 0.9261421710252762,
+          "train/future": 0.10512608324643224,
+          "val/future": 0.14005684363655746
+        }
+      },
+      {
+        "update": 60,
+        "metrics": {
+          "train/action": 0.9465312398970127,
+          "val/action": 0.9264220930635929,
+          "train/future": 0.1051249477895908,
+          "val/future": 0.1400414034142159
+        }
+      },
+      {
+        "update": 80,
+        "metrics": {
+          "train/action": 0.9468717817217112,
+          "val/action": 0.9263065252453089,
+          "train/future": 0.10509023728081957,
+          "val/future": 0.1400070006493479
+        }
+      },
+      {
+        "update": 100,
+        "metrics": {
+          "train/action": 0.946846985258162,
+          "val/action": 0.9262976283207536,
+          "train/future": 0.1050508133484982,
+          "val/future": 0.1399414413026534
+        }
+      },
+      {
+        "update": 120,
+        "metrics": {
+          "train/action": 0.9464525682851672,
+          "val/action": 0.9263315219432116,
+          "train/future": 0.10492432722821832,
+          "val/future": 0.1398474263260141
+        }
+      },
+      {
+        "update": 140,
+        "metrics": {
+          "train/action": 0.9466672856360674,
+          "val/action": 0.9262743517756462,
+          "train/future": 0.10485970042645931,
+          "val/future": 0.13976231461856514
+        }
+      },
+      {
+        "update": 160,
+        "metrics": {
+          "train/action": 0.9405281860381365,
+          "val/action": 0.9258219385519624,
+          "train/future": 0.10411547013791278,
+          "val/future": 0.13932892633602023
+        }
+      }
+    ],
+    "relative_improvement": {
+      "train/action": 0.006723379441782029,
+      "val/action": 0.0005234099141190329,
+      "train/future": 0.009721374116588466,
+      "val/future": 0.00530100345019846
+    }
+  },
+  "historical_current_init_dual_prior400": {
+    "name": "ablation_prior1_currentinit1_seed42",
+    "trajectory": {
+      "0": {
+        "train_action": 0.9468945171684027,
+        "val_action": 0.926306776702404,
+        "train_future": 0.10513755161082372,
+        "val_future": 0.14007144555216655
+      },
+      "160": {
+        "train_action": 0.9428353011608124,
+        "val_action": 0.9286746401339769,
+        "train_future": 0.10433296184055507,
+        "val_future": 0.13990551512688398
+      },
+      "200": {
+        "train_action": 0.8657431174069643,
+        "val_action": 0.9056708794087172,
+        "train_future": 0.09454199997708201,
+        "val_future": 0.15054470812901855
+      },
+      "400": {
+        "train_action": 0.49962150398641825,
+        "val_action": 0.8470058273524046,
+        "train_future": 0.06637332693208009,
+        "val_future": 0.16445183707401156
+      }
+    },
+    "caveat": "16TRAIN repeated windows, not large data; FutureVAL worsens."
+  }
+}

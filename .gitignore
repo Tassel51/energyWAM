@@ -1,0 +1,51 @@
+# Local datasets and training outputs (anchored: keep energywam/data source).
+/datasets/
+/data/
+/data sets/
+/experiments/
+/runs/
+/checkpoints/
+/checkpoint_archive/
+/logs/
+/wandb/
+/local_runs/
+/configs/local/
+# Large binary assets and snapshots.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.hdf5
+*.h5
+*.parquet
+*.mp4
+# Credentials and machine-local account state.
+.env
+.env.*
+!.env.example
+.secrets/
+secrets/
+*.key
+*.pem
+.netrc
+.git-credentials
+/configs/wandb_bridge.json
+/configs/wandb_bridge.local.json
+# Python environments and build/cache outputs.
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store

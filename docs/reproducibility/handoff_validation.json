@@ -1,0 +1,15 @@
+{
+  "checked_unix": 1793960754.9768596,
+  "checks": [
+    "53 CPU tests passed",
+    "Portable tiny and3task manifests/path preparation passed on source machine without GPU training",
+    "Git index contains no symlinks, no files>20MiB, and no matched known token/private-key patterns",
+    "Generic credential literal scan completed"
+  ],
+  "staged_source_files": 463,
+  "source_bytes": 17120794,
+  "generic_review_findings": [],
+  "external_assets_not_included": true,
+  "target_machine_training_tested": false,
+  "dependency_clean_install_tested": false
+}

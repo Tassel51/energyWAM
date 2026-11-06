@@ -1,0 +1,18 @@
+# Current non-PyTorch training dependencies, observed 2026-11-06.
+# Install a compatible torch/torchvision CUDA pair FIRST; see docs/PROJECT_HANDOFF_CN.md.
+# Source torch versions are recorded in docs/reproducibility/source_environment_20261106.json.
+transformers==4.57.0
+tokenizers==0.22.2
+qwen-vl-utils==0.0.14
+numpy==2.3.5
+Pillow==12.0.0
+omegaconf==2.3.0
+pandas==2.2.3
+pyarrow==26.0.0
+av==15.0.0
+imageio==2.37.2
+PyYAML==6.0.3
+safetensors==0.8.0
+accelerate==1.15.0
+bitsandbytes==0.50.2
+psutil==5.9.0

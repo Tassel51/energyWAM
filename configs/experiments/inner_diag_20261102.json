@@ -1,0 +1,13 @@
+{
+  "experiment": "inner_diag_20261102",
+  "base_config": "configs/gpu23_formal_bi_20261101.yaml",
+  "sample_selection_seed": 20261102,
+  "candidate_seeds": [42, 2026],
+  "max_k": 4,
+  "record_k": [0, 1, 2, 4],
+  "alpha_action": 0.05,
+  "alpha_future": 0.05,
+  "time_budget_seconds": 3600,
+  "pilot_windows": 4,
+  "tasks": ["OpenDrawer", "OpenCabinet", "PickPlaceCounterToCabinet", "TurnOnMicrowave", "NavigateKitchen", "PrepareCoffee", "LoadDishwasher", "WashFruitColander", "PackIdenticalLunches", "StirVegetables"]
+}

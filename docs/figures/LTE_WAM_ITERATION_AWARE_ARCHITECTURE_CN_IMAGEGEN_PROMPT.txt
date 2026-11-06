@@ -1,0 +1,38 @@
+Generation method: built-in image_gen tool (imagegen skill).
+Selected output: exec-c9e4587d-d534-46af-adfe-1a172a685925.png
+Final generation prompt:
+
+Create a polished, beautiful Chinese academic architecture infographic, landscape 16:9, high resolution. White background, deep navy panel headings, amber trainable blocks, pale blue frozen block, lavender iteration conditioning, thin orthogonal arrows, generous whitespace. Elegant typography, paper presentation quality. NO tangled long arrows and NO dense paragraphs. All text must be legible.
+
+Title: “LTE-WAM：迭代感知能量模型”.
+Arrange THREE panels across the upper two thirds and one training band across bottom.
+
+Panel 1 “条件编码 C”: three separate rows:
+“指令文本” → “Qwen Text Embedding”
+“当前 RGB” → “DINOv3（冻结）” → “Current Projector”
+“机器人状态” → “State Projector”.
+All THREE outputs converge downward to a single bottom box “C = [T_text, T_current, T_state]”.
+The bottom C box ends in a small circular connector explicitly labelled “C”. Use a MATCHED PORT named C at the input token strip in panel3, NOT a long line across panel2. Absolutely no arrow from C into a candidate variable. No Qwen visual encoder, no visual merger.
+
+Panel 2 “候选与迭代条件”:
+Top small lavender block “s = k / K → 固定 Sin/Cos PE”. Beneath it two separate mini blocks “Future MLP → e_Z(s)” and “Action MLP → e_A(s)”. Use named ports for these two outputs, do NOT draw long crossing arrows.
+Then two rows of candidate processing:
+“候选未来 Z_k” → “Future Projector” → plus circle → “T_Z(k)”.
+Directly above this plus circle a small lavender pill “位置编码 + e_Z(s)” with a short downward arrow to the circle.
+“候选动作 A_k” → “Action Projector” → plus circle → “T_A(k)”.
+Directly above this second plus circle a small lavender pill “位置编码 + e_A(s)” with a short downward arrow to the second circle.
+Caption below: “每轮重建 token，不累加旧编码”.
+Future and action outputs use named ports T_Z(k), T_A(k) to panel3 rather than cluttered long arrows.
+
+Panel 3 “共享能量网络”: top input strip “[C | T_Z(k) | T_A(k) | e_E]”, with matched input port labels clearly seen. This strip points down to large block “Qwen 语言 Transformer” with small “36 层 · hidden 2560”. Down arrow to “Energy Head” small “读取 e_E 的 hidden”. Down arrow to ONE tile “标量能量 E_k”. Small text “一次能量计算，一次主干前向”. Exactly one scalar energy head, no direct action or future prediction head.
+
+Bottom band “内层优化与外层训练”:
+“A_(k+1) = A_k − α_A ∇_A E_k”
+“Z_(k+1) = Z_k − α_Z ∇_Z E_k”
+“α_A、α_Z：独立、正值、可学习”
+“初值 0.05 / 200；支持固定步长对照”
+A short dashed loop symbol labelled “重复 K 次，修改连续候选” inside this band only, no erroneous arrows to token outputs.
+Right half of this band: “给真实 Z，预测 A ｜ 给真实 A，预测 Z” and “完整展开求导 → L_action + L_future → 更新一次共享模型”.
+Small footer legend “橙色：可训练  蓝色：冻结  灰色：固定/输入” and “新版架构 · 待训练验证”.
+
+Keep a refined coordinated aesthetic, ample margins, concise text, well aligned cards, no invented scientific components. Named ports are deliberate to ensure scientifically correct connections with visual clarity.

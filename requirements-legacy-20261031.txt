@@ -1,0 +1,18 @@
+# Reference versions from the source server; not an installed environment.
+# Select a PyTorch CUDA wheel compatible with the destination before installing.
+# Optional StarVLA integration and simulator dependencies are documented separately.
+torch==2.6.0
+torchvision==0.21.0
+transformers==4.57.0
+tokenizers==0.22.1
+qwen-vl-utils==0.0.14
+numpy==1.26.4
+Pillow==12.0.0
+omegaconf==2.3.0
+pandas==2.2.3
+pyarrow==22.0.0
+av==15.0.0
+imageio==2.37.2
+PyYAML==6.0.3
+safetensors==0.7.0
+accelerate==1.5.2

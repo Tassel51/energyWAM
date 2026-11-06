@@ -1,0 +1,151 @@
+# EnergyWAM — REAL GPU smoke configuration for the ARM64/A100 supercomputer.
+#
+# PURPOSE: a bounded engineering smoke run on REAL RoboCasa365 OpenDrawer data
+# with the REAL pretrained Qwen3-VL-4B + REAL frozen DINOv3.  It verifies that
+# the full second-order unroll executes on GPU end to end (bi -> joint ->
+# resume -> offline held-out eval).  It is NOT a scientific result: 10 steps
+# per stage, batch 1, and (for speed) the statistics bundle may be a
+# explicitly-labelled SMOKE SUBSET fit.  Any number produced from this config
+# must be reported with `coverage=subset` / `steps=10`.
+#
+# What this config deliberately does NOT change (no silent scientific edits):
+#   * language backbone is TRAINED            -> tune_language_model: true
+#   * LoRA is OFF                             -> lora_enabled: false
+#   * geometry is the real task geometry      -> action 12, state 32 (sincos),
+#                                                H=16, future offsets [5,11,16]
+#   * full unroll (no truncation)             -> unroll_mode: full
+#   * outer optimizer untouched               -> AdamW, lr 1e-5, wd 0, clip 1.0
+#   * paper §4.8 standardized coordinate      -> paper_standardized_v1, N(0,I)
+#   * candidates / energy / loss stay float32 -> trainer.candidate_dtype: float32
+# The ONLY resource-driven changes vs. configs/real_smoke.yaml are:
+#   * backbone.dtype: float32 -> bfloat16  (A100 memory; candidates stay fp32)
+#   * solver inner steps K: 4 -> 2         (explicitly named "K2" smoke)
+#   * batch size 2 -> 1, train steps -> 10  (bounded allocation)
+# `backbone.dtype=bfloat16` with a second-order backward is a re-test item;
+# see hpc/docs/HPC_DEPLOYMENT.md "known gaps".
+#
+# Paths below are the REMOTE HPC layout.  hpc/scripts/run_hpc_smoke.sh
+# overrides every one of them from environment variables, so this file is also
+# runnable standalone once the storage root exists.
+
+run_id: energywam_hpc_smoke_gpu_v1
+notes: >
+  HPC real-data GPU smoke (ARM64/A100): 10 train steps per stage, batch 1,
+  K=2 full unroll, eager attention, bf16 Qwen backbone, float32 candidates,
+  paper_standardized_v1 coordinate.  Secondary engineering smoke only — not a
+  scientific result.  Do not report its losses as a baseline.
+
+backbone:
+  backend: qwen3vl
+  base_vlm: /home/bingxing2/home/scx8178/energywam_storage/models/Qwen3-VL-4B-Instruct
+  attn_implementation: eager
+  # A100 memory headroom for a 4B backbone + second-order unroll.  Candidates,
+  # energy accumulation, gradients and losses remain float32
+  # (trainer.candidate_dtype), which is the paper contract.
+  dtype: bfloat16
+  freeze_qwen_vision: true
+  # MAIN method trains the language backbone.  Do not set false here.
+  tune_language_model: true
+  tune_qwen_vision: false
+  # LoRA is an explicitly-labelled optional extra, never the main method.
+  lora_enabled: false
+  dino_path: /home/bingxing2/home/scx8178/energywam_storage/models/dinov3-vits16-pretrain-lvd1689m
+  freeze_dino: true
+  dino_image_size: 224
+  dino_patch_size: 16
+  dino_hidden_dim: 384
+  dino_num_special_tokens: 5
+  dino_num_patches: 196
+
+data:
+  # RoboCasa365 PandaOmron contract — unchanged from configs/real_smoke.yaml.
+  action_dim: 12
+  state_dim: 32
+  action_horizon: 16
+  num_future_frames: 3
+  future_offset_rule: uniform_within_action_horizon
+  future_offsets: [5, 11, 16]
+  num_cameras: 1
+  future_camera_index: 0
+  camera_order: ["robot0_agentview_left"]
+  normalization_profile: paper_standardized_v1
+  action_normalization: zscore
+  standardization_epsilon: 1.0e-6
+  # SMOKE SUBSET statistics are fitted by hpc/scripts/run_hpc_smoke.sh and the
+  # bundle is labelled coverage=subset by scripts/fit_normalization_stats.py.
+  # For a real run replace this with a full-train-split fit (see
+  # hpc/docs/HPC_DEPLOYMENT.md).
+  norm_stats_bundle_path: stats/hpc_smoke_subset_paper_standardized_v1.json
+  state_normalization: sincos
+  require_full_horizon: true
+  dino_preprocess_version: dino_v3_vits16_224_center_norm_v1
+  # resolve_dataset_root() joins data_root_dir/data_mix, which yields
+  #   .../OpenDrawer/20250816/lerobot
+  data_root_dir: /home/bingxing2/home/scx8178/energywam_storage/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816
+  data_mix: lerobot
+  dataset_py: lerobot_datasets
+  obs_image_size: [224, 224]
+  include_state: true
+
+solver:
+  # FULL unroll — never truncated for this smoke.  K=2 is the bounded smoke
+  # inner-step count; the geometry and the update rule are untouched.
+  unroll_mode: full
+  train_inner_steps: 2
+  eval_inner_steps: 2
+  alpha_action: 0.05
+  alpha_future: 0.05
+  joint_update_mode: simultaneous
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+
+init:
+  initialization_action: normal
+  initialization_future: normal
+  init_action_std: 1.0
+  init_future_std: 1.0
+  init_action_mean: 0.0
+  init_future_mean: 0.0
+
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 1.0
+  beta_action: 1.0
+  beta_future: 1.0
+  future_cosine_weight: 0.0
+
+stage:
+  stage: bi
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+  joint_bi_aux_weight: 0.0
+
+trainer:
+  seed: 42
+  # BOUNDED: 10 steps per training stage.  Total Slurm allocation is 30 min.
+  max_train_steps: 10
+  per_device_batch_size: 1
+  learning_rate: 1.0e-5
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 100
+  logging_frequency: 1
+  save_interval: 1000
+  output_dir: logs/runs/hpc_smoke_gpu_v1
+  device: cuda
+  # candidates / energy accumulation / loss dtype — the paper contract.
+  candidate_dtype: float32
+  num_workers: 0
+
+framework:
+  name: QwenEnergyWAM
+  energy_head_hidden: 256
+  energy_head_dropout: 0.0
+  num_state_tokens: 1
+  use_learned_future_placeholder: true

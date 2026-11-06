@@ -1,0 +1,133 @@
+{
+  "dataset_identity": "robocasa365_target_50tasks/PandaOmron",
+  "windows": [
+    {
+      "window_id": 0,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 0,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 1,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 38,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 2,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 75,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 3,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 113,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 4,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 151,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 5,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 189,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 6,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 226,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 7,
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3346,
+      "frame_index": 264,
+      "source_dataset": "atomic/OpenDrawer/20250816"
+    },
+    {
+      "window_id": 16,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 0,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 17,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 63,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 18,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 126,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 19,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 189,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 20,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 253,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 21,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 316,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 22,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 379,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    },
+    {
+      "window_id": 23,
+      "split": "train",
+      "task": "OpenCabinet",
+      "episode_index": 2548,
+      "frame_index": 442,
+      "source_dataset": "atomic/OpenCabinet/20250813"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "dataset_identity": "robocasa365_target_50tasks/PandaOmron",
+  "windows": [
+    {
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3024,
+      "frame_index": 104,
+      "source_dataset": "atomic/OpenDrawer/20250816",
+      "window_id": 1000000
+    },
+    {
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3025,
+      "frame_index": 208,
+      "source_dataset": "atomic/OpenDrawer/20250816",
+      "window_id": 1000001
+    },
+    {
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3026,
+      "frame_index": 95,
+      "source_dataset": "atomic/OpenDrawer/20250816",
+      "window_id": 1000002
+    },
+    {
+      "split": "train",
+      "task": "OpenDrawer",
+      "episode_index": 3027,
+      "frame_index": 111,
+      "source_dataset": "atomic/OpenDrawer/20250816",
+      "window_id": 1000003
+    },
+    {
+      "split": "train",
+      "task": "PickPlaceCounterToCabinet",
+      "episode_index": 4040,
+      "frame_index": 82,
+      "source_dataset": "atomic/PickPlaceCounterToCabinet/20250811",
+      "window_id": 1000004
+    },
+    {
+      "split": "train",
+      "task": "PickPlaceCounterToCabinet",
+      "episode_index": 4041,
+      "frame_index": 81,
+      "source_dataset": "atomic/PickPlaceCounterToCabinet/20250811",
+      "window_id": 1000005
+    },
+    {
+      "split": "train",
+      "task": "PickPlaceCounterToCabinet",
+      "episode_index": 4042,
+      "frame_index": 97,
+      "source_dataset": "atomic/PickPlaceCounterToCabinet/20250811",
+      "window_id": 1000006
+    },
+    {
+      "split": "train",
+      "task": "PickPlaceCounterToCabinet",
+      "episode_index": 4043,
+      "frame_index": 82,
+      "source_dataset": "atomic/PickPlaceCounterToCabinet/20250811",
+      "window_id": 1000007
+    },
+    {
+      "split": "train",
+      "task": "WashFruitColander",
+      "episode_index": 23797,
+      "frame_index": 294,
+      "source_dataset": "composite/WashFruitColander/20250811",
+      "window_id": 1000008
+    },
+    {
+      "split": "train",
+      "task": "WashFruitColander",
+      "episode_index": 23798,
+      "frame_index": 305,
+      "source_dataset": "composite/WashFruitColander/20250811",
+      "window_id": 1000009
+    },
+    {
+      "split": "train",
+      "task": "WashFruitColander",
+      "episode_index": 23799,
+      "frame_index": 557,
+      "source_dataset": "composite/WashFruitColander/20250811",
+      "window_id": 1000010
+    },
+    {
+      "split": "train",
+      "task": "WashFruitColander",
+      "episode_index": 23800,
+      "frame_index": 586,
+      "source_dataset": "composite/WashFruitColander/20250811",
+      "window_id": 1000011
+    }
+  ]
+}

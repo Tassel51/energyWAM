@@ -1,0 +1,125 @@
+run_id: iteration_v1_iter_fixed_seed42
+notes: 'PREPARED, NOT RUN: text+DINO+state only; 10 train episodes /80 fixed samples,
+  fit diagnostic; no held-out claim.'
+backbone:
+  backend: qwen3vl
+  base_vlm: /datasets/models/Qwen3-VL-4B-Instruct
+  attn_implementation: eager
+  dtype: bfloat16
+  freeze_qwen_vision: true
+  tune_language_model: true
+  tune_qwen_vision: false
+  lora_enabled: false
+  dino_path: /datasets/models/dinov3-vits16-pretrain-lvd1689m
+  freeze_dino: true
+  dino_image_size: 224
+  dino_patch_size: 16
+  dino_hidden_dim: 384
+  dino_num_special_tokens: 5
+  dino_num_patches: 196
+  gradient_checkpointing: true
+  condition_mode: text_dino_state
+data:
+  action_dim: 12
+  state_dim: 32
+  action_horizon: 16
+  num_future_frames: 3
+  future_offset_rule: uniform_within_action_horizon
+  future_offsets:
+  - 5
+  - 11
+  - 16
+  num_cameras: 1
+  future_camera_index: 0
+  camera_order:
+  - robot0_agentview_left
+  normalization_profile: paper_standardized_v1
+  action_normalization: zscore
+  standardization_epsilon: 1.0e-06
+  norm_stats_bundle_path: stats/trainmix_150k_paper_standardized_v1.json
+  state_normalization: sincos
+  require_full_horizon: true
+  dino_preprocess_version: dino_v3_vits16_224_center_norm_v1
+  data_root_dir: /datasets/robocasa365_trainmix
+  data_mix: robocasa365_target_50tasks
+  dataset_py: lerobot_datasets
+  obs_image_size:
+  - 224
+  - 224
+  include_state: true
+solver:
+  unroll_mode: full
+  train_inner_steps: 2
+  eval_inner_steps: 2
+  alpha_action: 0.05
+  alpha_future: 200.0
+  joint_update_mode: simultaneous
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+  learnable_step_sizes: false
+  step_size_min_ratio: 0.1
+  step_size_max_ratio: 10.0
+init:
+  initialization_action: normal
+  initialization_future: normal
+  init_action_std: 1.0
+  init_future_std: 1.0
+  init_action_mean: 0.0
+  init_future_mean: 0.0
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 1.0
+  beta_action: 1.0
+  beta_future: 1.0
+  future_cosine_weight: 0.0
+stage:
+  stage: bi
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+  joint_bi_aux_weight: 0.0
+trainer:
+  seed: 42
+  max_train_steps: 200
+  per_device_batch_size: 2
+  optimizer: adamw8bit
+  learning_rate: 1.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 0
+  logging_frequency: 1
+  save_interval: 20
+  output_dir: /cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/iter_fixed
+  device: cuda:0
+  candidate_dtype: float32
+  offload_saved_tensors: true
+  language_model_devices:
+  - 0
+  - 1
+  num_workers: 0
+  preallocate_optimizer_state: true
+  saved_tensor_gpu_budget_gib: 3.0
+  saved_tensor_gpu_budgets_gib:
+  - 14.0
+  - 14.0
+  execution_mode: standard
+  saved_tensor_cpu_pin_budget_gib: 96.0
+  saved_tensor_async_offload: true
+  async_offload_max_inflight_gib: 1.0
+  saved_tensor_host_cache_limit_gib: 128.0
+  step_size_learning_rate: 0.001
+framework:
+  name: QwenEnergyWAM
+  energy_head_hidden: 256
+  energy_head_dropout: 0.0
+  num_state_tokens: 1
+  use_learned_future_placeholder: true
+  iteration_conditioning: true
+  iteration_embedding_dim: 256
+  iteration_mlp_hidden: 256
+  iteration_progress_scale: 1000.0

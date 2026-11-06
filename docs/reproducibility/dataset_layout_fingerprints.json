@@ -1,0 +1,9 @@
+{
+  "dataset_identity": "robocasa365_target_50tasks/PandaOmron",
+  "source_meta_sha256": {
+    "info.json": "63b227ebae7d380c2956f7b1430af92d1d6cf6adc259c9d49653b4a5281642eb",
+    "modality.json": "120cfe4d46b4ad0a9a473ff521a40e28f76b6f2dc7897522354f2f1001efc62c",
+    "episodes.jsonl": "f5a7baa795e0cb12b6538f67029c5717e7bb0b7d83a79174f7128e7b9a88c376"
+  },
+  "note": "Metadata fingerprints detect different global episode numbering. No raw trajectories or images are included."
+}

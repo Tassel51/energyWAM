@@ -1,0 +1,112 @@
+{
+  "target_id": "three_task_full_stage1_after_batch_selection",
+  "status": "seed42_continues_seed43_paused_for_tiny_weight_comparison",
+  "user_authorized_on": "2026-11-05",
+  "trigger": "User explicitly selected effective batch16/native microbatch4 on 2026-11-06 and authorized all four GPUs. This follow-up no longer waits for all remaining batch/LR screening. GPU training has not started.",
+  "purpose": "Train on all canonical TRAIN trajectories from three tasks and check generalization/stability beyond the small-sample experiments.",
+  "method": {
+    "stage": "bi_only",
+    "future_initialization": "Current observed image DINO features standardized in the same coordinates as future targets; not ground-truth future and not the preceding predicted future.",
+    "action_initialization": "Keep the selected baseline candidate initialization; current method uses standardized Gaussian action candidates.",
+    "energy": "Shared neural scalar energy plus Action quadratic toward standardized zero and Future quadratic toward current DINO features.",
+    "architecture": "Retain validated text/DINO/state condition, iteration conditioning, shared Action/Future energy, full-unroll solver.",
+    "K": "Keep K=2 from the validated baseline; this batch study does not establish an optimal K.",
+    "native_microbatch": 4,
+    "effective_batch": 16,
+    "learning_rates_and_steps": "Use the selected validated configuration; explicitly record initial versus learned inner steps and schedule."
+  },
+  "tasks": {
+    "selection_status": "tentative_representative_defaults_not_a_user_fixed_task_list",
+    "names": [
+      "OpenDrawer",
+      "PickPlaceCounterToCabinet",
+      "WashFruitColander"
+    ],
+    "metadata_audit": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/next_three_task_metadata_audit.json",
+    "counts": [
+      {
+        "task": "OpenDrawer",
+        "train_episodes": 462,
+        "train_eligible_episodes": 462,
+        "train_possible_full_horizon_windows": 116809,
+        "val_episodes": 26,
+        "val_eligible_episodes": 26,
+        "val_possible_full_horizon_windows": 6184
+      },
+      {
+        "task": "PickPlaceCounterToCabinet",
+        "train_episodes": 450,
+        "train_eligible_episodes": 450,
+        "train_possible_full_horizon_windows": 111123,
+        "val_episodes": 26,
+        "val_eligible_episodes": 26,
+        "val_possible_full_horizon_windows": 6192
+      },
+      {
+        "task": "WashFruitColander",
+        "train_episodes": 455,
+        "train_eligible_episodes": 455,
+        "train_possible_full_horizon_windows": 457641,
+        "val_episodes": 26,
+        "val_eligible_episodes": 26,
+        "val_possible_full_horizon_windows": 27856
+      }
+    ]
+  },
+  "data_rules": [
+    "All canonical TRAIN trajectories of the selected tasks must be eligible; do not cap at the previous2 episodes or16 fixed windows.",
+    "Declare temporal window stride/sampling and actual trajectory/window coverage. Full trajectory pool does not mean every possible overlapping start was visited.",
+    "TRAIN/VAL remain trajectory-disjoint. No TEST used for tuning or best selection.",
+    "Keep normalization TRAIN-only; freeze and report its provenance; never fit on VAL/TEST.",
+    "Use bounded streaming or bounded feature caching, not unbounded in-RAM caching of the full dense window pool."
+  ],
+  "weight_initialization": {
+    "default_proposal": "Fresh pretrained Qwen/DINO plus fresh trainable-module initialization, reusing the selected method and hyperparameters.",
+    "warm_start": "May be evaluated explicitly if justified; do not silently treat reusing the method as resuming the overfit400-step toy checkpoint. Check old checkpoint availability before any reuse."
+  },
+  "prelaunch_requirements": [
+    "Freeze exact task names, trajectory splits and window-sampling protocol.",
+    "Derive updates, coverage/epochs and ETA from audited data size, selected batch and measured throughput; no400-step or5000-step assumption.",
+    "Predeclare fixed validation criterion for best and report Action/Future/per-task MSE separately, with zero-Action/current-visual persistence baselines.",
+    "Budget latest+best full states plus pending writes for this run in addition to retained batch-study artifacts; do not delete main/finalist states without further authorization.",
+    "Validate full-data loader, numerical/resource behavior and exact resume before long training."
+  ],
+  "checkpoint_policy": "Full resumable latest and validation best; preserve metadata/config/source/logs; delete only superseded versions safely and authorized rejected short trials.",
+  "completion": "Execute the three-task training stage, assess both validation directions/per-task behavior and overfitting, preserve latest/best and report evidence/limitations; do not count preparing this JSON as training completed.",
+  "stage2_authorized": false,
+  "raw_data_read_preflight": {
+    "report": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/next_three_task_raw_read_smoke.json",
+    "status": "passed_six_episode_smoke_not_full_audit",
+    "scope": "One existing TRAIN and VAL trajectory per task: full action/state finite and dimension checks, RGB frames0/5/11/16 decode; no GPU/DINO/model validation and no new training."
+  },
+  "execution_plan": {
+    "primary_gpus": [
+      0,
+      1
+    ],
+    "replication_gpus": [
+      2,
+      3
+    ],
+    "model_placement": "One model sharded across each pair; native4 total per model; four accumulated microbatches give effective16, both conditional directions before one weight update.",
+    "seeds": [
+      42,
+      43
+    ],
+    "launch_gate": "Prepare full-trajectory sampling and evaluation, pass loader/resume/resource checks, and provision disk for full latest/best/pending writes. Two seeds only after aggregate space check.",
+    "initialization": "Fresh pretrained backbone and fresh trainable modules, not the overfit400-step weights.",
+    "budget_status": "Not fixed yet: calculate coverage and measured end-to-end throughput before launch."
+  },
+  "latest_storage_check": {
+    "cloud_free_approx_gib": 68,
+    "one_run_safe_budget_approx_gib": 73,
+    "two_runs_safe_budget_approx_gib": 142,
+    "training_launched": false
+  },
+  "actual_plan": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/training_plan.json",
+  "actual_configs": [
+    "configs/experiments/three_task_b16_micro4_seed42.yaml",
+    "configs/experiments/three_task_b16_micro4_seed43.yaml"
+  ],
+  "seed43_pause_record": "/cloud/zzc/energyWAM/experiments/tiny_future_weight_20261106/seed43_pause_record.json"
+}

@@ -1,0 +1,127 @@
+# EnergyWAM — SECONDARY DIAGNOSTIC ONLY.  NOT a scientific configuration.
+#
+# ############################################################################
+# #  THIS IS NOT THE MAIN METHOD.                                          #
+# #  The main method TRAINS the language backbone (configs/hpc_smoke_gpu.yaml).#
+# #  This file exists solely to separate "the pipeline runs and the second-    #
+# #  order unroll backpropagates on A100" from "the 4B backbone fits in        #
+# #  memory while training".  If the main smoke OOMs, this config tells us     #
+# #  which half of the problem we have.  NEVER report a number from this file  #
+# #  as a training result, a baseline, or an ablation of the method.           #
+# ############################################################################
+#
+# The ONLY difference from hpc/configs/hpc_smoke_gpu.yaml is:
+#   backbone.tune_language_model: true -> false   (whole Qwen3-VL frozen)
+# Everything else — geometry, full unroll, K=2, eager, bf16, float32
+# candidates, standardized coordinate, optimizer, data — is identical, so the
+# comparison isolates exactly the memory/compute of the trainable backbone.
+# LoRA is still OFF: this is a freeze diagnostic, not a parameter-efficient
+# variant.
+
+run_id: energywam_hpc_frozen_qwen_diag_v1
+notes: >
+  SECONDARY ENGINEERING DIAGNOSTIC ONLY (frozen Qwen3-VL, only the energy head
+  and token projections train).  NOT the main method, NOT a scientific result,
+  NOT a baseline, NOT an ablation.  Used only to attribute an A100 memory or
+  second-order-backward failure to the trainable 4B backbone.  Main method
+  configuration: hpc/configs/hpc_smoke_gpu.yaml.
+
+backbone:
+  backend: qwen3vl
+  base_vlm: /home/bingxing2/home/scx8178/energywam_storage/models/Qwen3-VL-4B-Instruct
+  attn_implementation: eager
+  dtype: bfloat16
+  freeze_qwen_vision: true
+  # DIAGNOSTIC DEVIATION — the main method trains the language backbone.
+  tune_language_model: false
+  tune_qwen_vision: false
+  lora_enabled: false
+  dino_path: /home/bingxing2/home/scx8178/energywam_storage/models/dinov3-vits16-pretrain-lvd1689m
+  freeze_dino: true
+  dino_image_size: 224
+  dino_patch_size: 16
+  dino_hidden_dim: 384
+  dino_num_special_tokens: 5
+  dino_num_patches: 196
+
+data:
+  action_dim: 12
+  state_dim: 32
+  action_horizon: 16
+  num_future_frames: 3
+  future_offset_rule: uniform_within_action_horizon
+  future_offsets: [5, 11, 16]
+  num_cameras: 1
+  future_camera_index: 0
+  camera_order: ["robot0_agentview_left"]
+  normalization_profile: paper_standardized_v1
+  action_normalization: zscore
+  standardization_epsilon: 1.0e-6
+  norm_stats_bundle_path: stats/hpc_smoke_subset_paper_standardized_v1.json
+  state_normalization: sincos
+  require_full_horizon: true
+  dino_preprocess_version: dino_v3_vits16_224_center_norm_v1
+  data_root_dir: /home/bingxing2/home/scx8178/energywam_storage/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816
+  data_mix: lerobot
+  dataset_py: lerobot_datasets
+  obs_image_size: [224, 224]
+  include_state: true
+
+solver:
+  unroll_mode: full
+  train_inner_steps: 2
+  eval_inner_steps: 2
+  alpha_action: 0.05
+  alpha_future: 0.05
+  joint_update_mode: simultaneous
+  clip_action_grad: null
+  clip_future_grad: null
+  action_clamp_min: null
+  action_clamp_max: null
+  future_clamp_min: null
+  future_clamp_max: null
+
+init:
+  initialization_action: normal
+  initialization_future: normal
+  init_action_std: 1.0
+  init_future_std: 1.0
+  init_action_mean: 0.0
+  init_future_mean: 0.0
+
+loss:
+  action_loss: masked_mse
+  future_loss: masked_mse
+  lambda_action: 1.0
+  lambda_future: 1.0
+  beta_action: 1.0
+  beta_future: 1.0
+  future_cosine_weight: 0.0
+
+stage:
+  stage: bi
+  bi_both_directions_each_batch: true
+  joint_use_bi_aux: false
+  joint_bi_aux_weight: 0.0
+
+trainer:
+  seed: 42
+  max_train_steps: 10
+  per_device_batch_size: 1
+  learning_rate: 1.0e-5
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  warmup_steps: 100
+  logging_frequency: 1
+  save_interval: 1000
+  output_dir: logs/runs/hpc_frozen_qwen_diag_v1
+  device: cuda
+  candidate_dtype: float32
+  num_workers: 0
+
+framework:
+  name: QwenEnergyWAM
+  energy_head_hidden: 256
+  energy_head_dropout: 0.0
+  num_state_tokens: 1
+  use_learned_future_placeholder: true
