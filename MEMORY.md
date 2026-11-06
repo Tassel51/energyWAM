@@ -77,3 +77,7 @@
 ## 2026-11-06 W&B77步卡住修复
 
 三任务本地已到182+但服务端仍crashed/77；根因是SDK file_stream在代理中断和403后永久失败，本地提交计数仍前进。已修复watch_wandb.py：对仍在训练的来源每60秒检查服务端状态/last_uploaded_update，terminal或持续180秒未进展会关闭重建SDK并按服务端进度补传，结束阻塞超过8秒则以75退出，由supervisor重启采集器。只重启了W&B，训练未动；14项bridge测试通过。补传证据为three_task_full_20261106/wandb_stream_recovery_20261106.json；最终确认数字以该报告为准，不以本地last_step冒充服务端ACK。
+
+## 2026-11-06 旧400步过拟合逐步曲线与W&B补传
+
+用户要求截图旧400步MSE逐步图。精确来源iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42；train_log有400个真实batch记录，固定TRAIN/VAL仅每20步评价共21个检查点。已生成docs/figures/OVERFIT_400_MSE_OVERVIEW及EVERY_UPDATE的PNG/PDF、原始CSV和来源指纹；保留全部尖峰，移动平均仅显式辅助，不插值冒充逐步固定评价。旧组之前不在采集器sources中，已通过一次性scripts/upload_historical_overfit400.py补传，无重新训练，run名historical_overfit400_currentinit_dualprior_seed42，ID3639c47999c9；源folder/wandb_historical_backfill.json记录服务端核验。不要与三任务run730001df8bb8混淆。

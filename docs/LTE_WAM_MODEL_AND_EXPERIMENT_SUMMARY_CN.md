@@ -392,3 +392,7 @@ GPU0、1运行seed42，GPU2、3运行seed43；每组一份模型拆两卡。有�
 ### 2026-11-06：腾GPU23运行Future损失权重小样本对照
 
 按用户要求，三任务seed43在第121次更新保存完整latest后暂停，best与全部记录保留，无已完成更新丢失；GPU01的seed42继续。GPU23依次运行Future权重1和9：复用旧OpenDrawer/OpenCabinet的2条训练轨迹、16固定样本，另4条轨迹16VAL；两组同seed42新初始化、相同数据顺序及超参数，batch16/native4/K2、warmup16更新，各50更新=50遍=800样本访问。每10更新分别评价A/F，按同更新位置的未加权误差比较，不比较不同定义总loss；各自best仍按各自预声明验证加权分数选择，不把不同best作为主比较。两组不自动延长；此为小样本拟合诊断，不是三任务泛化结论。权重1组已启动，权重9排队，预计总计2–3小时。根目录`/cloud/zzc/energyWAM/experiments/tiny_future_weight_20261106`；进度命令`watch -n 5 "python /root/zzc/energyWAM/scripts/observe_tiny_future_weight_progress.py"`。
+
+### 旧400更新小样本实验：逐步图与独立W&B
+
+精确来源`ablation_prior1_currentinit1_seed42`，16固定TRAIN窗口、B2/K2、Future当前DINO初始化+双二次项。已找到全部400个原始batchMSE，图见[总览](figures/OVERFIT_400_MSE_OVERVIEW.png)和[每100步放大](figures/OVERFIT_400_MSE_EVERY_UPDATE.png)，同名PDF可导出。浅蓝为全部逐步记录，红线仅为明确标注16步移动均值；固定全集评价仅每20步有真实记录，没有伪造逐步固定评价。逐步原始CSV及来源指纹同目录。该旧组先前未登记W&B，本次补传既有日志，未重训，独立run：[historical_overfit400_currentinit_dualprior_seed42](https://wandb.ai/zhuzc-zhejiang-university/lte-wam/runs/3639c47999c9)。`train/action_mse`与`train/future_mse`为400个batch点；`comparison/train_fixed_*`/`comparison/val_fixed_*`为21个真实固定评估点。训练后期明显改善、Future验证反而恶化，不能只看训练折线宣称泛化成功。

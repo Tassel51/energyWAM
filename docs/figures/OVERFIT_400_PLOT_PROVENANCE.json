@@ -1,0 +1,39 @@
+{
+  "source_run": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42",
+  "train_log_sha256": "ce5f98cacdfb3b7859f8874bc4f0b155871d9e3a09cb180c250f8641f5fb1608",
+  "batch_points": 400,
+  "fixed_evaluation_checkpoints": 21,
+  "missing_updates": [],
+  "smoothing": "Trailing16-update arithmetic mean only in overview top row; all raw400 points retained",
+  "fixed_eval_interpolation": "Lines connect recorded checkpoints every20updates; no artificial per-update metrics",
+  "final_evaluations": [
+    {
+      "update": 400,
+      "split": "train",
+      "direction": "action",
+      "mse": 0.49962150398641825,
+      "samples": 16
+    },
+    {
+      "update": 400,
+      "split": "val",
+      "direction": "action",
+      "mse": 0.8470058273524046,
+      "samples": 16
+    },
+    {
+      "update": 400,
+      "split": "train",
+      "direction": "future",
+      "mse": 0.06637332693208009,
+      "samples": 16
+    },
+    {
+      "update": 400,
+      "split": "val",
+      "direction": "future",
+      "mse": 0.16445183707401156,
+      "samples": 16
+    }
+  ]
+}
