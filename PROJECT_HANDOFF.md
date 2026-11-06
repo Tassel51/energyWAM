@@ -450,7 +450,7 @@ python -u scripts/watch_wandb.py --settings configs/wandb_bridge.local.json
 
 先安装`requirements-wandb.txt`。sources里config指向本机生成的`local_config.yaml`。采集器在有首条训练日志后才创建run，按真实输出目录计算独立run ID；新实验要用新目录。相同输出目录用于恢复，不能把新配置混进旧曲线。
 
-如使用代理，应填自己可访问的地址到进程环境。源机当前转发`127.0.0.1:17901`依赖现有SSH会话，在新机器通常无效。上传断开不等于训练停止，恢复网络可补传。
+如使用代理，应填自己可访问的地址到进程环境。源机当前转发`127.0.0.1:17901`依赖现有SSH会话，在新机器通常无效。上传断开不等于训练停止，恢复网络可补传。 若SDK流在403后永久失败，仅网络恢复可能不足；当前采集器对仍在训练的来源每60秒核验服务端步数/状态，持续180秒无进展或服务端异常结束则重建上传会话，按服务端确认位置重放。SDK关闭阻塞会让采集器以75退出，由supervisor的unexpected策略重启；自行前台运行时需重新启动采集器。
 
 主要看：`comparison/train_fixed_action_mse`、`comparison/train_fixed_future_mse`、`comparison/val_fixed_action_mse`、`comparison/val_fixed_future_mse`，横轴`comparison/sample_visits`。原始每batch指标为`train/action_mse`、`train/future_mse`，未乘权重；`train/total_loss`已加权。总loss定义不同的组不可直接比数值。验证表里的每任务指标可从评估JSON汇总，采集器当前不是所有分任务条件指标都有独立panel。
 

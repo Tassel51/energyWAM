@@ -148,3 +148,26 @@ def test_batch_comparison_axis_counts_samples_not_only_updates():
     assert result['comparison/sample_visits']==256
     assert result['comparison/train_action_mse']==.8
     assert result['comparison/train_future_mse']==.1
+
+
+def test_remote_crashed_stream_reopens_even_with_local_submissions():
+    item={'state':{'last_step':182}}
+    assert bridge.remote_recovery_reason(item,'crashed',77,100)=='remote_stream_terminal_while_training_is_live'
+    assert item['state']['last_step']==182
+    assert item['state']['server_acknowledged_update']==77
+
+
+def test_remote_upload_lag_is_allowed_then_detected_if_stalled():
+    item={'state':{'last_step':182}}
+    assert bridge.remote_recovery_reason(item,'running',77,100) is None
+    assert bridge.remote_recovery_reason(item,'running',77,279) is None
+    assert bridge.remote_recovery_reason(item,'running',77,280)=='remote_progress_stalled_despite_local_submissions'
+
+
+def test_remote_progress_resets_stall_clock_and_ack_catchup_clears_gap():
+    item={'state':{'last_step':182}}
+    assert bridge.remote_recovery_reason(item,'running',77,100) is None
+    assert bridge.remote_recovery_reason(item,'running',100,270) is None
+    assert bridge.remote_recovery_reason(item,'running',100,449) is None
+    assert bridge.remote_recovery_reason(item,'running',182,450) is None
+    assert '_remote_gap_since' not in item

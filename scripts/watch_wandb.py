@@ -142,6 +142,69 @@ def reconcile_submitted_state(state,remote_step):
     return state
 
 
+def remote_recovery_reason(item, remote_state, remote_step, now, stall_seconds=180):
+    """Detect a dead SDK stream; locally submitted metrics are not ACKs."""
+    remote_step=max(0,int(remote_step or 0))
+    local=int(item['state'].get('last_step',0))
+    item['state']['server_acknowledged_update']=remote_step
+    previous=item.get('_remote_observed_update')
+    if previous is None or remote_step>previous:
+        item['_remote_progress_at']=now
+    item['_remote_observed_update']=remote_step
+    if remote_state in ('crashed','failed','finished'):
+        return 'remote_stream_terminal_while_training_is_live'
+    if local<=remote_step:
+        item.pop('_remote_gap_since',None)
+        return None
+    since=item.setdefault('_remote_gap_since',now)
+    progress=item.get('_remote_progress_at',now)
+    if now-max(since,progress)>=stall_seconds:
+        return 'remote_progress_stalled_despite_local_submissions'
+    return None
+
+
+def live_source(item):
+    try:
+        resource=json.loads((item['folder']/'resource_summary.json').read_text())
+        if resource.get('returncode') is not None:return False
+        pid=resource.get('pid')
+        if not isinstance(pid,int):return False
+        os.kill(pid,0)
+        return True
+    except (OSError,ValueError,TypeError):return False
+
+
+def remote_stream_needs_reopen(item,settings,wandb):
+    if settings['mode']!='online' or item.get('finished') or not live_source(item):return False
+    now=time.monotonic()
+    if now<item.get('_next_remote_check',now+60):
+        item.setdefault('_next_remote_check',now+60)
+        return False
+    item['_next_remote_check']=now+60
+    try:
+        run_id=hashlib.sha256(str(item['folder'].resolve()).encode()).hexdigest()[:12]
+        remote=wandb.Api(timeout=10).run(f'{settings["entity"]}/{settings["project"]}/{run_id}')
+        reason=remote_recovery_reason(item,remote.state,remote.summary.get('last_uploaded_update',0),now)
+    except Exception as error:
+        item['state']['remote_health_error']=type(error).__name__
+        return False
+    item['state'].pop('remote_health_error',None)
+    atomic_json(item['state_path'],item['state'])
+    if not reason:return False
+    print(json.dumps({'event':'reopen_stalled_stream','config':item['source_config'],
+                      'reason':reason,'local_submitted_update':item['state'].get('last_step',0),
+                      'server_acknowledged_update':item['state']['server_acknowledged_update']}),flush=True)
+    # A fatal SDK sender may block finish forever. Bound sidecar shutdown;
+    # supervisor restarts the collector and reconciles each source with server ACKs.
+    import threading
+    thread=threading.Thread(target=lambda:item['run'].finish(exit_code=1),daemon=True)
+    thread.start();thread.join(timeout=8)
+    if thread.is_alive():
+        print(json.dumps({'event':'collector_restart_for_blocked_sdk_finish'}),flush=True)
+        os._exit(75)
+    return True
+
+
 def source_training_complete(folder,cfg,state):
     """A sidecar SDK being alive is not proof that training is still running."""
     try:
@@ -370,6 +433,9 @@ def main():
             for item in items:
                 if source_session_changed(item):
                     active.discard(item['source_config'])
+                elif remote_stream_needs_reopen(item,settings,wandb):
+                    active.discard(item['source_config'])
+                    retry_at.pop(item['source_config'],None)
                 else:retained.append(item)
             items=retained
             for item in items:poll(item)

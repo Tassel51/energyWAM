@@ -73,3 +73,7 @@
 ## 2026-11-06 交接文档最终文件名
 
 用户随后要求仍位于根目录，但改英文文件名。主文档现为`PROJECT_HANDOFF.md`，内容保持中文；替代上一条中文文件名偏好。只维护这一份主交接文档，README和requirements引用已同步。
+
+## 2026-11-06 W&B77步卡住修复
+
+三任务本地已到182+但服务端仍crashed/77；根因是SDK file_stream在代理中断和403后永久失败，本地提交计数仍前进。已修复watch_wandb.py：对仍在训练的来源每60秒检查服务端状态/last_uploaded_update，terminal或持续180秒未进展会关闭重建SDK并按服务端进度补传，结束阻塞超过8秒则以75退出，由supervisor重启采集器。只重启了W&B，训练未动；14项bridge测试通过。补传证据为three_task_full_20261106/wandb_stream_recovery_20261106.json；最终确认数字以该报告为准，不以本地last_step冒充服务端ACK。
