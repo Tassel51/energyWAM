@@ -64,4 +64,8 @@
 
 ## 2026-11-06 GitHub交接发布
 
-用户明确要求详细交接并上传https://github.com/Tassel51/energyWAM，已完成main首次推送，首发commit52cb548；远端SHA与本地核对相同。主文档`docs/PROJECT_HANDOFF_CN.md`513行，更新README/requirements，旧README及依赖作为明确历史文件保留；复制固定样本清单和小型复现统计，不传数据/权重/运行日志/个人W&B配置或密钥。53项测试通过，异机准备器在源机验证tiny和3task数据路径/编号，未在对方机器实测训练或干净安装。仓库写入使用项目专用deploy key（私钥在Git目录之外），Git本地SSH设置经现有17901代理，不改变全局Git身份/登录；以后网络失联先检查转发。发布不影响现有训练。
+用户明确要求详细交接并上传https://github.com/Tassel51/energyWAM，已完成main首次推送，首发commit52cb548；远端SHA与本地核对相同。主文档`项目交接文档.md`513行，更新README/requirements，旧README及依赖作为明确历史文件保留；复制固定样本清单和小型复现统计，不传数据/权重/运行日志/个人W&B配置或密钥。53项测试通过，异机准备器在源机验证tiny和3task数据路径/编号，未在对方机器实测训练或干净安装。仓库写入使用项目专用deploy key（私钥在Git目录之外），Git本地SSH设置经现有17901代理，不改变全局Git身份/登录；以后网络失联先检查转发。发布不影响现有训练。
+
+## 2026-11-06 交接文档位置偏好
+
+用户要求主交接文档位于项目根目录、使用中文名。已将旧`docs/PROJECT_HANDOFF_CN.md`移动为根目录`项目交接文档.md`，同步README及依赖说明；今后直接维护这一原件，不另生成多个最新版。
