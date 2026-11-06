@@ -61,3 +61,7 @@
 用户要求腾两卡运行16样本反复50遍的Future权重1/9对照。`energywam-tiny-future-weight`控制器已启动：等待seed43的下一份完整latest写后校验/历史提交，再仅向energywam-three-task-43发送TERM，保留全部latest/best，不影响seed42；随后GPU23依次跑权重1、9，各50次更新（有效batch16/native4/K2），复用旧OpenDrawer/OpenCabinet两轨迹16TRAIN+四轨迹16VAL，seed42相同新初始化和数据顺序。不是三任务完整数据实验；warmup16次等其他当前设置一致。主比较为相同更新次数的未加权A/F误差，各组按自身预声明验证目标保留完整latest/best，不能比较不同权重的总loss。根目录`/cloud/zzc/energyWAM/experiments/tiny_future_weight_20261106`，控制/队列状态分别controller_status.json/queue_status.json，安全暂停证据seed43_pause_record.json，结束自动写comparison_report.json。写入本条时控制器尚等待下一次安全断点，须查实际状态，不能把排队当已训练。预计2–3小时加切换等待；不自动延长50次预算。
 
 三任务seed43实际已在121次更新安全暂停，latest完整121、best0均保留，已完成更新未丢失；训练PID2144185已退出。权重1小样本组已由GPU23实际启动（初始PID2216947），权重9串行排队，seed42三任务长训仍在GPU01运行。见tiny_future_weight_20261106/seed43_pause_record.json及queue_status.json。
+
+## 2026-11-06 GitHub交接发布
+
+用户明确要求详细交接并上传https://github.com/Tassel51/energyWAM，已完成main首次推送，首发commit52cb548；远端SHA与本地核对相同。主文档`docs/PROJECT_HANDOFF_CN.md`513行，更新README/requirements，旧README及依赖作为明确历史文件保留；复制固定样本清单和小型复现统计，不传数据/权重/运行日志/个人W&B配置或密钥。53项测试通过，异机准备器在源机验证tiny和3task数据路径/编号，未在对方机器实测训练或干净安装。仓库写入使用项目专用deploy key（私钥在Git目录之外），Git本地SSH设置经现有17901代理，不改变全局Git身份/登录；以后网络失联先检查转发。发布不影响现有训练。
