@@ -1,0 +1,292 @@
+[
+  {
+    "path": "energywam/__init__.py",
+    "sha256": "c8f63181c0b48b0ee0c312c6a94eb18a5075756752dbfafd792f3518a930d8e6",
+    "bytes": 408
+  },
+  {
+    "path": "energywam/config.py",
+    "sha256": "b7b063b564f67cf0d18afeb7eaed2c42b158f3b1b3b27e63d2a6a58ef94b261b",
+    "bytes": 25199
+  },
+  {
+    "path": "scripts/train_shared_sharded.py",
+    "sha256": "a86febea209d54ffcfec26bf88994b7c48317c8cdc0e530e7cd857acc8df8495",
+    "bytes": 14080
+  },
+  {
+    "path": "scripts/k_training_probe.py",
+    "sha256": "4faf77989dbfdc00c9945b83d71c0fe5719399cfddc6f4a3a9ce484a556dce1b",
+    "bytes": 11160
+  },
+  {
+    "path": "scripts/run_iteration_search.py",
+    "sha256": "615501bf83dfa4731e9b570a0a67162130dc2ffe72aa48031620c7c0da2d4350",
+    "bytes": 14246
+  },
+  {
+    "path": "scripts/run_single_episode_head_lr_study.py",
+    "sha256": "0a1696ad00c326dd3866d8e9e674f2e9592397bdc1da4ab0de0eea0d1572093a",
+    "bytes": 9366
+  },
+  {
+    "path": "scripts/train.py",
+    "sha256": "588151c4cc710228c5fcd5943941f362434463e3647c44ab68ccb1cbdf381a28",
+    "bytes": 7743
+  },
+  {
+    "path": "scripts/run_head_lr_refinement.py",
+    "sha256": "6c587dc40f5188cd0f2b09b68fbad220de2599d1a47536406696bddd70ec4709",
+    "bytes": 5161
+  },
+  {
+    "path": "stats/trainmix_150k_paper_standardized_v1.json",
+    "sha256": "1c0ed7545b34bc6a67fc24b5b9b62a3f8496fcad2b57d692ee87991fcb13be9c",
+    "bytes": 361906
+  },
+  {
+    "path": "configs/execution_gpu_policy.json",
+    "sha256": "044fce9e9f1f4194c8e2657d1c26aa18678ae42cad66be430f554126b174e238",
+    "bytes": 183
+  },
+  {
+    "path": "energywam/backbones/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/backbones/dino_v3.py",
+    "sha256": "1eed0337e5792bb7cf5537f875c38bb12d56eeffdb8ff3f04b49509f46f73f0a",
+    "bytes": 11175
+  },
+  {
+    "path": "energywam/backbones/qwen3vl_adapter.py",
+    "sha256": "ddc9c319b9a26d47e71201b20a213fadafeddb25d38de559725845f6d30819e2",
+    "bytes": 24274
+  },
+  {
+    "path": "energywam/backbones/tiny_adapter.py",
+    "sha256": "8f7a1ff9947b4c7e0192fae33c7d9641ff7e53ca85deda1505052e31cfe0d85c",
+    "bytes": 2834
+  },
+  {
+    "path": "energywam/backbones/tiny_transformer.py",
+    "sha256": "e48c56e4fabc3c35bedf1f94e916c43653569cf32723cae8a610b7d854f1ae14",
+    "bytes": 4883
+  },
+  {
+    "path": "energywam/data/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/data/cache.py",
+    "sha256": "c3c7790ddeac29f93255419afce1a79aa67510c4cb36592d18d76f9507804354",
+    "bytes": 3288
+  },
+  {
+    "path": "energywam/data/energy_dataset.py",
+    "sha256": "37af5bcdb1ab392044027255352f72ab8f1976dfee87b2e367669a0ce9d4559c",
+    "bytes": 29715
+  },
+  {
+    "path": "energywam/data/episode_dataset.py",
+    "sha256": "208c53935cedf2520d0a77273f151549cb1c3eb961b57561715fad9015e38329",
+    "bytes": 16004
+  },
+  {
+    "path": "energywam/data/future_offsets.py",
+    "sha256": "10ce9b2c5a5c3e8be703f67dc233d5b1a5cbe0aca42795c90f20576e6cb66b61",
+    "bytes": 4219
+  },
+  {
+    "path": "energywam/data/normalization.py",
+    "sha256": "4dcc24d544cf737a7369d48ac378889a6b805386dda7c8a09b4afdb7b94a12c7",
+    "bytes": 7488
+  },
+  {
+    "path": "energywam/data/standardization.py",
+    "sha256": "5158dbb90a175a67594f113e604da8afadf249e0ae9d2bd1c8da505aea608c22",
+    "bytes": 29798
+  },
+  {
+    "path": "energywam/data/stats_fit.py",
+    "sha256": "25b0e70af8fef7b94c404c70bd9a38c18ed2a2373dddcb3a6d21636735171aea",
+    "bytes": 16048
+  },
+  {
+    "path": "energywam/data/tiny_data.py",
+    "sha256": "407914e11dcb59e5429bab6aad9d9b26703d9128151db63fe0591d4335be448f",
+    "bytes": 10072
+  },
+  {
+    "path": "energywam/energy/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/energy/diagnostics.py",
+    "sha256": "8ebf85afa446a6c889cad00a77855b5e3a728bcae3fd217a6d2a130dbbddb91d",
+    "bytes": 15033
+  },
+  {
+    "path": "energywam/energy/encodings.py",
+    "sha256": "f7afbc6935a182c991fcd83ba67ccfc1e414512e80145eb62284f5665272afc0",
+    "bytes": 7176
+  },
+  {
+    "path": "energywam/energy/init.py",
+    "sha256": "4eb712b61c5f960de6eb391c5d095417033c749175f4b301256f8269a84645a8",
+    "bytes": 6004
+  },
+  {
+    "path": "energywam/energy/losses.py",
+    "sha256": "59012f615616e0e7943a3fc6a25293374ea9730d62e5065703b8a6120ba1db6e",
+    "bytes": 6400
+  },
+  {
+    "path": "energywam/energy/solver.py",
+    "sha256": "e31b0345c553ebebaf1ff7cb3d3c78f4a09c6820fb666b36c884a59a8ea90762",
+    "bytes": 16176
+  },
+  {
+    "path": "energywam/energy/solver_utils.py",
+    "sha256": "1705a5cd6351445ce4b4df6e5a8912c2568fc905d0bc180303b3a72960f1d731",
+    "bytes": 3196
+  },
+  {
+    "path": "energywam/energy/types.py",
+    "sha256": "6b3613c82c66a6b9bc366d077a1f2bcf42e9cfccee7c8c42f19af54e50049c13",
+    "bytes": 3169
+  },
+  {
+    "path": "energywam/energy/inner_diagnostic.py",
+    "sha256": "050912d46c69a73911e751b684e50d3168bc38de78e7bc3a91ae5f63d9172506",
+    "bytes": 1961
+  },
+  {
+    "path": "energywam/energy/iteration.py",
+    "sha256": "fd4221ea0b82319045fb3d86d8d2593705a4ceb00c788d319fe267255a10a6f9",
+    "bytes": 2628
+  },
+  {
+    "path": "energywam/energy/patch_packing.py",
+    "sha256": "c317633f65b3e4934594089764d010d008ccba2034b2a9a74130a6cf4a7ae16d",
+    "bytes": 944
+  },
+  {
+    "path": "energywam/inference/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/inference/predictor.py",
+    "sha256": "fc1837a918a6e9d2d3b44436191343414c739086ae536abdc194bc62e07fc823",
+    "bytes": 12232
+  },
+  {
+    "path": "energywam/integration/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/integration/starvla.py",
+    "sha256": "071847df7c83e6aba1edc8132c631024b36d56ac5d7c8a92505f4f58918f6cd7",
+    "bytes": 5937
+  },
+  {
+    "path": "energywam/models/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/models/energy_core.py",
+    "sha256": "6a0b919331613ffd0ac73f613c9033868543bf20248f8c1ab7ac06c888656b65",
+    "bytes": 22631
+  },
+  {
+    "path": "energywam/models/energy_wam.py",
+    "sha256": "8f6840353823b6a99ebde377fdc5ed0e80993c492c68f502cdec7da3f2d1f17e",
+    "bytes": 34375
+  },
+  {
+    "path": "energywam/training/__init__.py",
+    "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9",
+    "bytes": 28
+  },
+  {
+    "path": "energywam/training/checkpoint.py",
+    "sha256": "788073929e2c2d78154ce6e34569796dec4ffccb9ff4cd45b6427b2bb03e7fff",
+    "bytes": 22354
+  },
+  {
+    "path": "energywam/training/offload.py",
+    "sha256": "741b204eef4f142b4dc74d37789c5bb02b0ae658418a928bfe523ac293640a63",
+    "bytes": 6538
+  },
+  {
+    "path": "energywam/training/stages.py",
+    "sha256": "f67df4a6586654bebb3d82e4e11a31838305204cf96cdb771c4f5882ee219429",
+    "bytes": 19418
+  },
+  {
+    "path": "energywam/training/trainer.py",
+    "sha256": "6b242b3903c3fb14aef525a08d0b99685f5c5543511d909a837d9420d5b29eee",
+    "bytes": 21469
+  },
+  {
+    "path": "energywam/training/parallel.py",
+    "sha256": "85c831aff8b2582d1761af0204b70ec007f7d9990d777cbf7e9c69e758f68c45",
+    "bytes": 1129
+  },
+  {
+    "path": "energywam/training/replicated.py",
+    "sha256": "1b33195cb5ce94dbcd0e8e3daa66881374d372be1ffeca41c1a905f4195f97c1",
+    "bytes": 9095
+  },
+  {
+    "path": "energywam/training/run_state.py",
+    "sha256": "9ec93c57deb81570c6f1b04f4aee085d84ff70206883748c3527bdeb62905633",
+    "bytes": 9412
+  },
+  {
+    "path": "energywam/training/replicated_batch_benchmark.py",
+    "sha256": "a84ab899a92370635c2459b4196ed868afe21ed469e3f38b2dc7c65b508049f5",
+    "bytes": 8076
+  },
+  {
+    "path": "energywam/training/shared_microbatch.py",
+    "sha256": "09d7fd9362d9f7a66657c379d3f5d8bc0a6d0146f0c42727e28a247a5a91249a",
+    "bytes": 6523
+  },
+  {
+    "path": "energywam/training/master_weights.py",
+    "sha256": "c049a5e09f128e706092a0cac1ad5f443139da207f3c19c002cdc319fa86e5b0",
+    "bytes": 3384
+  },
+  {
+    "path": "energywam/training/candidate_seeds.py",
+    "sha256": "30d20d12806dd350464fe93e02057035679da41781dacb0537fe4dba303c6928",
+    "bytes": 336
+  },
+  {
+    "path": "energywam/training/resource_monitor.py",
+    "sha256": "25dc46cec91bfe1371f4577005614da33aeeaa91dba0928687990d3b71cf19a0",
+    "bytes": 6692
+  },
+  {
+    "path": "energywam/training/best_checkpoint.py",
+    "sha256": "a185b9ead95c90e81ad6ae22af9f8a872a0fe5b869e6bcc876456cf49fda48c0",
+    "bytes": 6605
+  },
+  {
+    "path": "energywam/training/resume_lr.py",
+    "sha256": "f2368c71930653108c3cc5c72ba8542e2425c3af7038620efaa8a9efd3f45ec0",
+    "bytes": 1206
+  },
+  {
+    "path": "energywam/training/gpu_policy.py",
+    "sha256": "5ee8fa993568c243f4712d66e368e1ff09d3dea6530670602087fbbca31201af",
+    "bytes": 1648
+  }
+]

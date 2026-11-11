@@ -1,0 +1,4 @@
+{
+  "allowed_physical_pairs": ["2,3"],
+  "reason": "Explicit user instruction2026-11-08: GPU0/1 belong to others; only physical GPU2/3 may be used. Four LR arms must run serially."
+}

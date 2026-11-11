@@ -4,8 +4,9 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'scripts')]
 def main():
  p=argparse.ArgumentParser();p.add_argument('--config',required=True);p.add_argument('--manifest',required=True);p.add_argument('--output',required=True)
- p.add_argument('--physical-gpus',choices=['0,1','2,3'],default='2,3');p.add_argument('--precision',choices=['configured','float32','float16'],default='configured');p.add_argument('--directions',default='action,future');p.add_argument('--native-microbatch',type=int,choices=[2,4],default=2);p.add_argument('--sample-indices');p.add_argument('--math-mode',choices=['default','strict','tf32'],default='default');p.add_argument('--repeat-reference',action='store_true');p.add_argument('--record-all',action='store_true');p.add_argument('--saved-gpu-budget',type=float);p.add_argument('--no-async-offload',action='store_true');p.add_argument('--dedup-cpu',action='store_true');a=p.parse_args()
- assert os.environ.get('CUDA_VISIBLE_DEVICES')==a.physical_gpus
+ p.add_argument('--physical-gpus',default='2,3');p.add_argument('--precision',choices=['configured','float32','float16'],default='configured');p.add_argument('--directions',default='action,future');p.add_argument('--native-microbatch',type=int,choices=[2,4],default=2);p.add_argument('--sample-indices');p.add_argument('--math-mode',choices=['default','strict','tf32'],default='default');p.add_argument('--repeat-reference',action='store_true');p.add_argument('--record-all',action='store_true');p.add_argument('--saved-gpu-budget',type=float);p.add_argument('--no-async-offload',action='store_true');p.add_argument('--dedup-cpu',action='store_true');p.add_argument('--execution-gpu-policy',type=Path,default=ROOT/'configs/execution_gpu_policy.json');p.add_argument('--reference-gpu-budgets',type=float,nargs=2);a=p.parse_args()
+ from energywam.training.gpu_policy import authorized_visibility
+ os.environ['CUDA_VISIBLE_DEVICES']=authorized_visibility(a.physical_gpus,a.execution_gpu_policy,visible=a.physical_gpus)
  os.environ['ENERGYWAM_SAMPLE_ALIGNED_RNG']='1'
  import torch
  if a.math_mode=='strict':
@@ -48,6 +49,8 @@ def main():
  initial_hash=weight_sample_hash()
  report=dict(weight_changes=0,optimizer='SGD lr0 created after final placement; no master/Adam state for correctness only; capacity tested separately',legacy_preplacement_missing_parameter_count=missing,language_dtype=str(next(model.backbone._mm.language_model.parameters()).dtype),physical_gpus=a.physical_gpus,K=2,effective_batch=len(indices),native_microbatch=a.native_microbatch,math_mode=a.math_mode,reference_math=('highest_fp32' if a.math_mode=='tf32' else a.math_mode),sample_indices=indices,saved_gpu_budgets=cfg.trainer.saved_tensor_gpu_budgets_gib,async_offload=cfg.trainer.saved_tensor_async_offload,head_override_std=.001,initial_sampled_hash=initial_hash,comparisons=[],passed=False)
  path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True)
+ candidate_gpu_budgets=cfg.trainer.saved_tensor_gpu_budgets_gib
+ report['reference_gpu_budgets']=a.reference_gpu_budgets
  directions=a.directions.split(',');assert all(d in ['action','future'] for d in directions)
  for direction in directions:
   os.environ['ENERGYWAM_ONLY_DIRECTION']=direction;reference={};reference_loss=None
@@ -56,6 +59,7 @@ def main():
     if a.precision!='float32':raise ValueError('TF32 probe requires FP32 model')
     torch.set_float32_matmul_precision('highest' if micro==1 else 'high')
     torch.backends.cuda.matmul.allow_tf32=(micro!=1)
+   cfg.trainer.saved_tensor_gpu_budgets_gib=list(a.reference_gpu_budgets) if pass_index==0 and a.reference_gpu_budgets else candidate_gpu_budgets
    cfg.trainer.shared_microbatch_size=micro;trainer.global_step=0;model.zero_grad(set_to_none=True);gc.collect();torch.cuda.empty_cache()
    row=trainer.train_step(batch);value=row['loss'];gradients={n:p.grad for n,p in model.named_parameters() if p.grad is not None}
    assert all(torch.isfinite(g).all() for g in gradients.values()),'nonfinite gradient in native microbatch check'

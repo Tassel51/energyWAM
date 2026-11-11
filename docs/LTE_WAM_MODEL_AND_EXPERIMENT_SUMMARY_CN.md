@@ -396,3 +396,62 @@ GPU0、1运行seed42，GPU2、3运行seed43；每组一份模型拆两卡。有�
 ### 旧400更新小样本实验：逐步图与独立W&B
 
 精确来源`ablation_prior1_currentinit1_seed42`，16固定TRAIN窗口、B2/K2、Future当前DINO初始化+双二次项。已找到全部400个原始batchMSE，图见[总览](figures/OVERFIT_400_MSE_OVERVIEW.png)和[每100步放大](figures/OVERFIT_400_MSE_EVERY_UPDATE.png)，同名PDF可导出。浅蓝为全部逐步记录，红线仅为明确标注16步移动均值；固定全集评价仅每20步有真实记录，没有伪造逐步固定评价。逐步原始CSV及来源指纹同目录。该旧组先前未登记W&B，本次补传既有日志，未重训，独立run：[historical_overfit400_currentinit_dualprior_seed42](https://wandb.ai/zhuzc-zhejiang-university/lte-wam/runs/3639c47999c9)。`train/action_mse`与`train/future_mse`为400个batch点；`comparison/train_fixed_*`/`comparison/val_fixed_*`为21个真实固定评估点。训练后期明显改善、Future验证反而恶化，不能只看训练折线宣称泛化成功。
+
+### 2026-11-06：能量头学习率小样本对照（已启动）
+
+GPU23比较 **1e-4、3e-4、1e-3、3e-3**；GPU01三任务seed42继续。沿用16固定TRAIN/16VAL窗口，同初始化seed42、K2、有效batch16/native4、FP32、Future权重9、双二次项及当前DINO初始化；Action/Future内层步长仍可学习，其他参数组学习率不变。先各到50更新，数值和资源未失败的组再到200更新（3200次样本访问，200遍）；每10更新固定评价两方向。1e-3组从自身已有完整50断点续训，不把其训练权重给其他学习率组。
+
+组内best仍按固定VAL的Action+9Future选择；跨组比较同200更新的分开MSE及完整曲线。筛选要求两方向固定TRAIN均改善超过1%、任一VAL相对自身初始恶化不超过5%，再比较平均相对VAL误差，并明确报告权衡与无合格候选的情况。这些是本次预声明的筛选规则，不是普适定律。若新学习率比1e-3有明确验证优势，再从共同初始权重运行三任务4096次样本访问/256更新确认，不继承小样本过拟合权重；空间不足等待，不覆盖其他训练。
+
+每组仅保留完整latest/best和对应元数据，另有临时写入与主训练写入预算；监测CPU USS、GPU显存、梯度、非有限值、吞吐及固定误差暴涨。旧batch16、batch8学习率×0.3、暂停seed43和小样本权重1权重已按用户新授权清理约137GiB，全部实验记录保留；这些旧组无法再从权重恢复。当前小样本权重9参考仍保留。清单：云盘`experiments/user_authorized_retired_runs_cleanup_20261106.json`。
+
+预计初筛额外3–4小时，小样本主对照合计约14–18小时；如进入三任务确认另约5–7小时，实测后调整。入口`scripts/run_head_lr_study.py`，supervisor `energywam-head-lr-study`，结果根目录`/cloud/zzc/energyWAM/experiments/head_lr_tiny16_20261106`。进度：`watch -n 10 "python /root/zzc/energyWAM/scripts/observe_head_lr_progress.py"`。已登记原W&B项目独立run；本条写入时首组在初始评价/保存阶段，尚无最佳学习率结论。
+
+### 2026-11-07：失稳排查与短重放
+
+三任务seed42在704次因固定TRAIN Action MSE超过初始10倍停止，完整latest680/best256保留；非OOM。学习率小样本对照中1e-4、1e-3完成200次，训练两项下降但终点VAL退化；3e-4在50次、3e-3在20次触发Future误差保护，没有确认最佳学习率。两组明确失败短试验的权重按既有授权清理约68.64GiB，72个非权重文件哈希核对保留；清单`head_lr_tiny16_20261106/retired_rejected_lr_weights_20261107.json`。
+
+已完成：32项CPU求解器/梯度/二次项/迭代编码/累积/恢复检查通过；真实4B native4与逐个累积的两方向loss相同，梯度相对差异约0.003%/0.132%，通过预声明容差；从完整680恢复至681的两方向loss与步长精确复现原记录，模型/优化器张量结构及首尾样本、调度器和RNG检查通过。测试不能证明所有模型状态都无bug。
+
+发现并修复固定评价脚本未应用可选内层梯度裁剪/候选约束的问题，新增3项与正式求解器对照测试通过。旧实验这些选项均关闭，所以此遗漏不能解释旧训练暴涨；它会使新裁剪对照训练与评价不一致。固定评价现额外记录每次内层修改前后MSE、原始梯度RMS、裁剪比例与修改RMS。
+
+已启动第一轮：GPU01原配置重放，GPU23仅加内层逐元素梯度裁剪（Action1.0/Future0.00025）；同一680模型、Adam状态、样本顺序和候选初始化，均再跑12更新至692，共192次TRAIN窗口访问。保留原44768训练池以精确恢复样本顺序，不遍历全池；固定监测12TRAIN、24VAL（每任务8条独立验证轨迹）。验证比较680与692，训练监测每4更新；best按同24VAL的A+9F选，完整latest/best。裁剪后初始680误差改善只能算推理规则改变，不算训练成果；此轮只能检验晚期失稳重现/抑制，不能证明长期收敛。预计20–35分钟，先看这轮结果再决定外层LR缩小或组合对照。原三任务未恢复长训。
+
+目录`/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107`；进度及汇总命令`python scripts/report_stability_replay.py`，两个supervisor为`energywam-replay-baseline`和`energywam-replay-candidate_clip`。原W&B项目分别登记`replay680_baseline`和`replay680_candidate_clip`；横轴延续680起，新增更新仅12次。
+
+
+## 2026-11-07 第680至692次短重放结果
+
+两组均完成12次更新，退出码0，无OOM事件。原配置12步的Action/Future loss及可学习步长与历史记录全部复现；第690次batch Future MSE再次167.83865，说明并非W&B绘图假象。裁剪组对应第690次Future为0.15408，抑制了本段尖峰，但没有恢复学习下降：固定TRAIN12从A0.72335/F0.10216升到1.17143/0.14618，固定VAL24从1.26274/0.16719升到2.18582/0.21883。原配置终点固定TRAIN1.39828/2.17153、VAL2.75800/2.75218，中间688固定TRAIN Action达22.981。两组初始评价不同是裁剪即时改变推理，不能算训练收益。CPU进程USS峰值约71.01/75.22GiB；容器总内存含文件缓存，不能说全是激活。结论：候选大梯度/大修改是可干预的失稳环节，但裁剪本身不是已验证解决方案；尚未确定最初根因或排除所有代码问题。下一候选为同断点降低外层学习率的短重放，需正确处理恢复后的optimizer/scheduler学习率，不仅改YAML。此记录时未启动下一组。证据：stability_diagnosis_20261107/replay_comparison.json。
+
+
+## 2026-11-07 任务与样本排查及权重9来源
+
+只读重建681..692实际192个训练窗口访问，加12固定TRAIN/24固定VAL，共228个窗口/210条轨迹，动作与当前状态均有限，16动作步与未来第16帧均在轨迹内。标准化动作绝对值最大8.24，不能仅凭此判坏数据；本次未全面重算RGB/DINO目标。固定TRAIN各任务Action在680->688均恶化：OpenDrawer0.3394->45.3590、PickPlaceCounterToCabinet1.4554->15.6021、WashFruitColander0.4631->7.9819。尤其OpenDrawer episode3026/frame95，标准化真实动作绝对值最大1.309，Action在第256次误差0.2043，而688次同窗口内层初始化1.2920->第一步0.9162->第二步176.9939；Future同窗口初始化0.049689->23.4951->30.9464（256次0.04702）。说明普通固定样本也被晚期能量梯度改坏，排除“只是抽到难batch”作为充分解释，支持跨任务模型/求解器失稳；尚未定位最初触发样本或完全排除数据因素。诊断脚本scripts/audit_stability_task_samples.py，完整报告stability_diagnosis_20261107/task_sample_audit.json。
+
+PROJECT_HANDOFF.md已明确记载权重9由旧16样本未训练K2基线Action0.9468945/Future0.1051376比值9.006近似取9，属人工损失数值尺度补偿，不是维度数、不是理论推导或梯度均衡保证。1/9的50次配对无充分证据选优，不能把9称最佳；当前三任务初始TRAIN0.625978/0.123577比值约5.07，旧比例不能自动迁移。
+
+### 2026-11-07：从 best256 统一降低外层学习率对照
+
+用户已授权启动，两卡一组；目录 `experiments/lr256_comparison_20261107`。
+
+| GPU | 主干 LR | 任务模块 LR | 能量头 LR | 步长参数 LR |
+|---|---:|---:|---:|---:|
+| 0、1（原值×0.3） | 3e-6 | 3e-5 | 3e-4 | 3e-4 |
+| 2、3（原值×0.1） | 1e-6 | 1e-5 | 1e-4 | 1e-4 |
+
+共同恢复第256次完整best，包括Adam状态和随机状态；首轮到512次，每组新增256次更新、4096样本访问。K=2、有效batch16、同时4样本、原三任务TRAIN池、Future当前特征初始化、双二次项、损失权重9均不变。固定TRAIN12每64次、原VAL312每128次评价。best按VAL Action+9Future，两个MSE分报，保留完整latest/best。先判断是否改善且稳定，再决定是否延长到768；目前不能称已有效。
+
+恢复时显式应用配置绝对LR并校验调度器，避免旧优化器LR覆盖新配置或再次恢复重复缩小。进度：`python scripts/observe_lr256_progress.py`。
+
+2026-11-07用户追加：两组统一延长到**总2048次更新**，现有进程到512并保存后，自动在同目录完整续训到2048；从256算每组新增1792次更新、28672样本访问。仍按相同固定评价选best，保留latest/best；数值和资源保护触发时停止并报告。学习率保持各自×0.3/×0.1，不重复缩小。
+
+### 2026-11-08：单轨迹学习率四组研究（用户已授权切换）
+
+- 数据：OpenDrawer episode3346，281帧，stride4得到67个固定TRAIN窗口；另2条轨迹共16个辅助VAL窗口。
+- 每组从相同官方Qwen3-VL-4B-Instruct和新模块seed42开始；K2、B16、同时4样本、FP32、当前特征初始化Future+双二次项、权重9、可学习内层步长不变。
+- 第一轮GPU01原四组外层LR×0.3，GPU23×1；每组210更新≈50.15epoch。每20次评价全TRAIN/VAL，最后换候选seed复查。若0.3胜，第二轮×0.1/×0.6；若1胜，×0.6/×2；两组都失败则×0.1/×0.03。
+- 主目标为快速稳定拟合单轨迹，两方向分报；不能证明泛化或全局最佳。辅助VAL A+9F选保存best，保留完整latest/best；全部超参数和结果写入各arm_definition.json及comparison_report.json。
+- 控制器先等原两组下一份完整断点安全停机，再自动开始；以实际controller_status为准。预计四组两轮约8–12小时，待缓存后测速修正。进度命令：`python scripts/observe_single_episode_lr.py`。
+
+2026-11-08 GPU权限更新：用户确认物理GPU0/1归他人，**仅使用2/3**。四档单episode LR实验改为串行，预计约16–24小时。当前×1组已启动，×0.3排队，后两档依前两档证据选择。旧三任务两组已分别安全保存到1337/1172并停止，best1280/1152保留。

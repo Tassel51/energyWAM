@@ -14,6 +14,14 @@ ROOT=Path(__file__).resolve().parents[1]
 STOP=False
 
 
+def apply_proxy_settings(settings):
+    """Apply an explicit per-collector route without changing proxy exclusions."""
+    proxy=settings.get('proxy_url')
+    if proxy:
+        for name in ['HTTP_PROXY','HTTPS_PROXY','http_proxy','https_proxy']:
+            os.environ[name]=proxy
+
+
 def configured_proxy_reachable():
     """Only check an explicitly configured proxy; never alter shared networking."""
     import socket,urllib.parse
@@ -44,7 +52,7 @@ def wait_for_proxy(settings):
     while settings['mode']=='online':
         ready,reason=upload_route_ready(settings)
         if ready:break
-        status_path=ROOT/'logs/wandb_bridge_status.json'
+        status_path=ROOT/settings.get('status_file','logs/wandb_bridge_status.json')
         try:status=json.loads(status_path.read_text())
         except (OSError,ValueError):status={}
         status.update(mode='online',connectivity=reason,
@@ -379,6 +387,13 @@ def poll(item):
         if not meta_path.exists():meta_path=folder/'retired_full_checkpoint.meta.json'
         meta=json.loads(meta_path.read_text());step=meta['meta']['global_step']
         recoverable=(folder/'ckpt_latest.pt').exists()
+        # Read-only remote mirrors never copy large checkpoint files.
+        inventory_path=folder/'remote_checkpoint_inventory.json'
+        if inventory_path.exists():
+            inventory=json.loads(inventory_path.read_text())
+            recoverable=bool(inventory.get('latest_exists',False))
+            run.summary['checkpoint_storage_host']=inventory.get('hostname')
+            run.summary['checkpoint_storage_folder']=inventory.get('folder')
         if step!=state.get('saved_step') or recoverable!=state.get('checkpoint_recoverable'):
             run.log({'checkpoint/update':step,'checkpoint/latest_saved_update':step,
                      'checkpoint/exact_resume_available':int(recoverable)})
@@ -404,6 +419,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--settings',default='configs/wandb_bridge.json')
     parser.add_argument('--once',action='store_true');args=parser.parse_args()
     settings=json.loads((ROOT/args.settings).read_text())
+    apply_proxy_settings(settings)
     while settings['cache_dir'].startswith('/cloud/') and not os.path.ismount('/cloud'):
         if STOP:return
         time.sleep(5)
@@ -453,7 +469,7 @@ def main():
                         print(json.dumps({'event':'source_retry','config':source['config'],
                                           'error_type':type(error).__name__}),flush=True)
             for item in items:poll(item)
-            atomic_json(ROOT/'logs/wandb_bridge_status.json',{
+            atomic_json(ROOT/settings.get('status_file','logs/wandb_bridge_status.json'),{
                 'mode':settings['mode'],'updated_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),
                 'runs':[{'name':i['cfg']['run_id'],'url':i['url'],**i['state']} for i in items]})
             if args.once:break

@@ -1,0 +1,198 @@
+{
+  "started_at": "2026-11-11T18:15:00.441775+08:00",
+  "command": [
+    "/usr/local/miniconda3/envs/py312/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests",
+    "--disable-warnings",
+    "--maxfail=10",
+    "--junitxml=logs/lab_remote_setup/github_backup_pytest_20261111.xml"
+  ],
+  "environment_overrides": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "log": "logs/lab_remote_setup/github_backup_pytest_20261111.log",
+  "scope": "CPU-only pytest; real DINO CPU fixtures may read existing pretrained weights; tiny test models/temp outputs only. No real experiments or GPU training.",
+  "ended_at": "2026-11-11T18:17:03.076880+08:00",
+  "returncode": 1,
+  "log_tail": [
+    "        cfg.solver.eval_inner_steps = 2",
+    "        cfg.solver.alpha_action = 0.1",
+    "        cfg.solver.alpha_future = 0.1",
+    "        for k, v in cfg_overrides.items():",
+    "            node = cfg",
+    "            parts = k.split(\".\")",
+    "            for p in parts[:-1]:",
+    "                node = getattr(node, p)",
+    "            setattr(node, parts[-1], v)",
+    "    ",
+    "        if with_real_dino:",
+    "            if not os.path.exists(DINO_PATH):",
+    ">               raise FileNotFoundError(f\"real DINO checkpoint missing: {DINO_PATH}\")",
+    "E               FileNotFoundError: real DINO checkpoint missing: /data6/zzc/dinov3-vits16-pretrain-lvd1689m",
+    "",
+    "tests/real_fixtures.py:246: FileNotFoundError",
+    "----------------------------- Captured stderr call -----------------------------",
+    "Missing validation function mapping in `ROPE_VALIDATION_FUNCTIONS` for 'rope_type'='mrope'",
+    "Missing validation function mapping in `ROPE_VALIDATION_FUNCTIONS` for 'rope_type'='mrope'",
+    "------------------------------ Captured log call -------------------------------",
+    "WARNING  transformers.modeling_rope_utils:modeling_rope_utils.py:771 Missing validation function mapping in `ROPE_VALIDATION_FUNCTIONS` for 'rope_type'='mrope'",
+    "WARNING  transformers.modeling_rope_utils:modeling_rope_utils.py:771 Missing validation function mapping in `ROPE_VALIDATION_FUNCTIONS` for 'rope_type'='mrope'",
+    "=========================== short test summary info ============================",
+    "FAILED tests/test_compat.py::test_starvla_frameworks_still_import - tests.har...",
+    "FAILED tests/test_k_comparison_report.py::test_probe_restores_rng_and_parameter_flags_on_failure",
+    "FAILED tests/test_paper_regressions.py::test_current_dino_noise_works_in_real_forward_and_predict",
+    "FAILED tests/test_paper_regressions.py::test_explicit_current_dino_still_wins",
+    "FAILED tests/test_qwen_structure.py::test_qwen_native_path_and_second_order",
+    "FAILED tests/test_qwen_structure.py::test_qwen_appended_positions_strictly_after_native",
+    "FAILED tests/test_qwen_structure.py::test_qwen_padding_masks_keys_only - File...",
+    "FAILED tests/test_real_integration.py::test_state_dict_keys_stable_across_forward",
+    "FAILED tests/test_real_integration.py::test_state_dict_roundtrip_strict_load_and_forward",
+    "FAILED tests/test_real_integration.py::test_real_predict_all_contexts_and_mode_restore",
+    "!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 10 failures !!!!!!!!!!!!!!!!!!!!!!!!!!",
+    "10 failed, 190 passed, 1 skipped, 23 warnings in 121.29s (0:02:01)"
+  ],
+  "targeted_run": {
+    "started_at": "2026-11-11T18:17:52.285525+08:00",
+    "command": [
+      "/usr/local/miniconda3/envs/py312/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_checkpoint_metadata.py",
+      "tests/test_diagnostic_replay_observer.py",
+      "tests/test_gpu_policy.py",
+      "tests/test_head_lr_study.py",
+      "tests/test_iteration_search_guard.py",
+      "tests/test_k_study_protocol.py",
+      "tests/test_lab_after_study.py",
+      "tests/test_lab_dashboard.py",
+      "tests/test_layer_placement.py",
+      "tests/test_offload_host_stats_compat.py",
+      "tests/test_optimizer_offload.py",
+      "tests/test_probe_solver_constraints.py",
+      "tests/test_quadratic_candidate_prior.py",
+      "tests/test_repair_wandb_source.py",
+      "tests/test_resume_lr.py",
+      "tests/test_single_episode_lr_study.py",
+      "tests/test_wandb_bridge.py",
+      "--disable-warnings",
+      "--junitxml=logs/lab_remote_setup/github_backup_targeted_20261111.xml"
+    ],
+    "test_files": [
+      "tests/test_checkpoint_metadata.py",
+      "tests/test_diagnostic_replay_observer.py",
+      "tests/test_gpu_policy.py",
+      "tests/test_head_lr_study.py",
+      "tests/test_iteration_search_guard.py",
+      "tests/test_k_study_protocol.py",
+      "tests/test_lab_after_study.py",
+      "tests/test_lab_dashboard.py",
+      "tests/test_layer_placement.py",
+      "tests/test_offload_host_stats_compat.py",
+      "tests/test_optimizer_offload.py",
+      "tests/test_probe_solver_constraints.py",
+      "tests/test_quadratic_candidate_prior.py",
+      "tests/test_repair_wandb_source.py",
+      "tests/test_resume_lr.py",
+      "tests/test_single_episode_lr_study.py",
+      "tests/test_wandb_bridge.py"
+    ],
+    "log": "logs/lab_remote_setup/github_backup_targeted_20261111.log",
+    "scope": "Only modified/new test modules, CPU, existing code unchanged",
+    "ended_at": "2026-11-11T18:17:59.405543+08:00",
+    "returncode": 0,
+    "log_tail": [
+      "........................................................................ [ 81%]",
+      "................                                                         [100%]",
+      "88 passed, 1 warning in 5.87s"
+    ]
+  },
+  "full_suite_summary": {
+    "attributes": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "10",
+      "skipped": "1",
+      "tests": "201",
+      "time": "121.289",
+      "timestamp": "2026-11-11T10:15:00.719820+00:00",
+      "hostname": "cpod-1x51qyjx1lqg"
+    },
+    "failures": [
+      {
+        "test": "tests.test_compat::test_starvla_frameworks_still_import",
+        "message": "tests.harness.TestFailure: starVLA not found at /root/zzc/starVLA"
+      },
+      {
+        "test": "tests.test_k_comparison_report::test_probe_restores_rng_and_parameter_flags_on_failure",
+        "message": "AttributeError: 'NoneType' object has no attribute 'solver'"
+      },
+      {
+        "test": "tests.test_paper_regressions::test_current_dino_noise_works_in_real_forward_and_predict",
+        "message": "FileNotFoundError: real DINO checkpoint missing: /data6/zzc/dinov3-vits16-pretrain-lvd1689m"
+      },
+      {
+        "test": "tests.test_paper_regressions::test_explicit_current_dino_still_wins",
+        "message": "FileNotFoundError: real DINO checkpoint missing: /data6/zzc/dinov3-vits16-pretrain-lvd1689m"
+      },
+      {
+        "test": "tests.test_qwen_structure::test_qwen_native_path_and_second_order",
+        "message": "FileNotFoundError: DINO checkpoint not found: '/data6/zzc/dinov3-vits16-pretrain-lvd1689m'. Real mode requires the frozen DINOv3 weights; refusing to silently substitute another model."
+      },
+      {
+        "test": "tests.test_qwen_structure::test_qwen_appended_positions_strictly_after_native",
+        "message": "FileNotFoundError: DINO checkpoint not found: '/data6/zzc/dinov3-vits16-pretrain-lvd1689m'. Real mode requires the frozen DINOv3 weights; refusing to silently substitute another model."
+      },
+      {
+        "test": "tests.test_qwen_structure::test_qwen_padding_masks_keys_only",
+        "message": "FileNotFoundError: DINO checkpoint not found: '/data6/zzc/dinov3-vits16-pretrain-lvd1689m'. Real mode requires the frozen DINOv3 weights; refusing to silently substitute another model."
+      },
+      {
+        "test": "tests.test_real_integration::test_state_dict_keys_stable_across_forward",
+        "message": "FileNotFoundError: real DINO checkpoint missing: /data6/zzc/dinov3-vits16-pretrain-lvd1689m"
+      },
+      {
+        "test": "tests.test_real_integration::test_state_dict_roundtrip_strict_load_and_forward",
+        "message": "FileNotFoundError: real DINO checkpoint missing: /data6/zzc/dinov3-vits16-pretrain-lvd1689m"
+      },
+      {
+        "test": "tests.test_real_integration::test_real_predict_all_contexts_and_mode_restore",
+        "message": "FileNotFoundError: real DINO checkpoint missing: /data6/zzc/dinov3-vits16-pretrain-lvd1689m"
+      }
+    ]
+  },
+  "targeted_suite_summary": {
+    "attributes": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "88",
+      "time": "5.872",
+      "timestamp": "2026-11-11T10:17:52.573425+00:00",
+      "hostname": "cpod-1x51qyjx1lqg"
+    },
+    "failures": []
+  },
+  "readme_findings": [
+    "Current-experiment paragraph still describes old three-task and16-window weight study; current progress is single-episode67-window seed/LR/step studies.",
+    "prepare_remote_run.py supports only three-task/tiny-weight1/tiny-weight9, not a one-click current67-window protocol.",
+    "Source py312 dependencies still match docs/reproducibility/source_environment_20261106.json; lab environment separately records Python3.10/torch2.6/numpy1.26.4.",
+    "Restore checkpoints together with exact manifests, statistics fingerprints and frozen code; do not treat Git code backup as weights/data backup."
+  ],
+  "failure_classification": {
+    "missing_external_sibling_starvla": 1,
+    "old_fixture_cfg_none": 1,
+    "old_hardcoded_dino_path_data6": 8,
+    "full_suite_stopped_after_ten_failures": true,
+    "gpu_tests": "hidden CUDA devices; dedicated two-GPU test skipped"
+  }
+}

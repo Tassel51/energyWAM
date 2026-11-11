@@ -226,6 +226,7 @@ class TrainConfig:
     fixed_candidate_initialization: bool = False
     #: Optional wall-time checkpoint cadence; zero retains save_interval steps.
     checkpoint_interval_seconds: float = 0.0
+    minimum_resume_step: int = 0
     #: Read-only per-direction energy-head gradient diagnostics before clipping.
     directional_head_diagnostics: bool = False
     fp32_master_weights: bool = False
@@ -248,6 +249,8 @@ class TrainConfig:
     optimizer: str = "AdamW"
     #: Allocate zero AdamW8bit moments before the first forward for predictable peaks.
     preallocate_optimizer_state: bool = False
+    #: Store existing AdamW8bit moments on CPU between optimizer steps.
+    optimizer_state_cpu_offload: bool = False
     #: explicit policy when switching bi -> joint
     #: ``reset`` (fresh optimiser/scheduler) | ``continue`` (keep both)
     stage_switch_optimizer_policy: str = "reset"
@@ -272,6 +275,7 @@ class TrainConfig:
     #: Split language Transformer layers across these visible CUDA indices.
     #: One model / optimizer; full autograd across device copies (no DDP).
     language_model_devices: List[int] = field(default_factory=list)
+    language_model_layer_counts: List[int] = field(default_factory=list)
 
 
 @dataclass

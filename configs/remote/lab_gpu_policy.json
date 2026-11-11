@@ -1,0 +1,12 @@
+{
+  "hostname": "user-SYS-420GP-TNR",
+  "allowed_physical_pairs": [
+    "6,7"
+  ],
+  "use_uuid_visibility": true,
+  "expected_gpu_uuids": {
+    "6": "GPU-9a1246f3-2243-0b77-9411-7de2c9e1ea9f",
+    "7": "GPU-4de65a87-f820-da66-782e-0aab5d22e243"
+  },
+  "reason": "User authorized idle lab GPUs; dedicated bounded validation only, not source-host policy"
+}

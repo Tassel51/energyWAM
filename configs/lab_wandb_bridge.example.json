@@ -1,0 +1,13 @@
+{
+  "mode": "online",
+  "entity": "YOUR_WANDB_ENTITY",
+  "project": "lte-wam",
+  "cache_dir": "/ABSOLUTE/PERSISTENT/PATH/wandb",
+  "poll_seconds": 15,
+  "sources": [],
+  "api_key_file": "/ABSOLUTE/PRIVATE/PATH/wandb_api_key",
+  "base_url": "https://api.wandb.ai",
+  "max_source_starts_per_cycle": 1,
+  "proxy_url": "http://127.0.0.1:17902",
+  "status_file": "logs/lab_wandb_bridge_status.json"
+}

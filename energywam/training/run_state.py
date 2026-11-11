@@ -172,7 +172,8 @@ def _save_latest_locked(trainer, output):
             required={'model','optimizer','scheduler','meta','config','rng','format_version'}
             if not required.issubset(payload):raise ValueError('incomplete full-resume checkpoint')
             import json
-            sidecar=json.loads(Path(str(temporary)+'.meta.json').read_text())
+            from .checkpoint_metadata import read_checkpoint_metadata
+            sidecar=read_checkpoint_metadata(Path(str(temporary)+'.meta.json'),expected_meta=payload['meta'])
             if payload['meta']!=sidecar['meta']:raise ValueError('checkpoint/sidecar metadata mismatch')
         del payload
         with temporary.open('rb') as stream:os.fsync(stream.fileno())

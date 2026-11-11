@@ -133,6 +133,40 @@ def test_closed_configured_proxy_is_reported_without_using_shared_credentials(mo
     assert bridge.configured_proxy_reachable() is True
 
 
+def test_explicit_proxy_applied_before_first_route_check(tmp_path,monkeypatch):
+    import os,sys
+    names=['HTTP_PROXY','HTTPS_PROXY','http_proxy','https_proxy']
+    for name in names:monkeypatch.setenv(name,'http://127.0.0.1:17901')
+    monkeypatch.setenv('NO_PROXY','localhost,127.0.0.1')
+    monkeypatch.setenv('no_proxy','::1')
+    monkeypatch.setenv('WANDB_BASE_URL','https://api.wandb.ai')
+    settings={'mode':'online','cache_dir':str(tmp_path/'cache'),
+              'proxy_url':'http://127.0.0.1:17902'}
+    config=tmp_path/'settings.json';config.write_text(json.dumps(settings))
+    monkeypatch.setattr(sys,'argv',['watch_wandb.py','--settings',str(config)])
+    checks=[]
+    def check_route(received):
+        assert received==settings
+        assert all(os.environ[name]==settings['proxy_url'] for name in names)
+        assert os.environ['NO_PROXY']=='localhost,127.0.0.1'
+        assert os.environ['no_proxy']=='::1'
+        checks.append(True)
+        return False  # Stop before SDK import or any network access.
+    monkeypatch.setattr(bridge,'wait_for_proxy',check_route)
+    bridge.main()
+    assert checks==[True]
+
+
+def test_unspecified_proxy_preserves_existing_environment(monkeypatch):
+    import os
+    monkeypatch.setenv('HTTPS_PROXY','http://existing-route:17901')
+    monkeypatch.delenv('http_proxy',raising=False)
+    monkeypatch.setenv('NO_PROXY','localhost,127.0.0.1')
+    before=dict(os.environ)
+    bridge.apply_proxy_settings({})
+    assert dict(os.environ)==before
+
+
 def test_open_proxy_with_broken_upstream_does_not_start_sdk(monkeypatch):
     import requests
     monkeypatch.setattr(bridge,'configured_proxy_reachable',lambda:True)
@@ -171,3 +205,22 @@ def test_remote_progress_resets_stall_clock_and_ack_catchup_clears_gap():
     assert bridge.remote_recovery_reason(item,'running',100,449) is None
     assert bridge.remote_recovery_reason(item,'running',182,450) is None
     assert '_remote_gap_since' not in item
+
+
+def test_remote_mirror_checkpoint_is_reported_at_source_without_copying_weights(tmp_path):
+    class Run:
+        def __init__(self): self.summary={};self.rows=[]
+        def log(self,row):self.rows.append(row)
+    run=Run()
+    (tmp_path/'ckpt_latest.pt.meta.json').write_text(json.dumps({'meta':{'global_step':95}}))
+    inventory=tmp_path/'remote_checkpoint_inventory.json'
+    inventory.write_text(json.dumps(dict(latest_exists=True,hostname='lab-test',folder='/remote/run')))
+    item=dict(run=run,cfg={'trainer':{'max_train_steps':210}},folder=tmp_path,state={},state_path=tmp_path/'state.json')
+    bridge.poll(item)
+    assert not (tmp_path/'ckpt_latest.pt').exists()
+    assert item['state']['saved_step']==95
+    assert item['state']['checkpoint_recoverable'] is True
+    assert run.summary['checkpoint_storage_host']=='lab-test'
+    inventory.write_text(json.dumps(dict(latest_exists=False,hostname='lab-test',folder='/remote/run')))
+    bridge.poll(item)
+    assert item['state']['checkpoint_recoverable'] is False

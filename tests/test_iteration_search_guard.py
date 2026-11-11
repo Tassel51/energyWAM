@@ -1,4 +1,22 @@
 from scripts.run_iteration_search import fixed_mse_failure
+from scripts.run_iteration_search import fixed_mse_guard_decision
+import pytest
+
+def test_explicit_warning_preserves_default_stop():
+    points=[point(0,.1),point(80,1.7)]
+    rejection,warning=fixed_mse_guard_decision(points,{})
+    assert rejection and warning is None
+    rejection,warning=fixed_mse_guard_decision(points,{'fixed_mse_guard_mode':'warn'})
+    assert rejection is None and 'update 80' in warning
+    assert fixed_mse_guard_decision([point(0,.1),point(80,.2)],{'fixed_mse_guard_mode':'warn'})==(None,None)
+
+@pytest.mark.parametrize('value',[float('nan'),float('inf')])
+def test_warning_mode_still_stops_nonfinite(value):
+    rejection,warning=fixed_mse_guard_decision([point(0,.1),point(80,value)],{'fixed_mse_guard_mode':'warn'})
+    assert 'Nonfinite' in rejection and warning is None
+
+def test_invalid_guard_mode_rejected():
+    with pytest.raises(ValueError):fixed_mse_guard_decision([],{'fixed_mse_guard_mode':'typo'})
 
 def point(update,mse,split='train',k=2):
     return dict(update=update,mse=mse,split=split,k=k,direction='future')

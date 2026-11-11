@@ -15,6 +15,12 @@ import torch
 import weakref
 
 
+def host_allocator_bytes():
+    """Return allocator residency when supported; old torch has no host API."""
+    stats=getattr(torch.cuda.memory,'host_memory_stats',None)
+    return stats().get('allocated_bytes.current',0) if callable(stats) else None
+
+
 @contextmanager
 def parameter_aware_cpu_offload(model, gpu_budget_gib=0.0, *, pin_budget_gib=0.0, asynchronous=False, max_inflight_gib=1.0, host_cache_limit_gib=0.0, deduplicate_cpu=False):
     storages = {(p.device, p.untyped_storage().data_ptr()) for p in model.parameters()}
@@ -78,8 +84,10 @@ def parameter_aware_cpu_offload(model, gpu_budget_gib=0.0, *, pin_budget_gib=0.0
         if tensor.is_cuda and pin_limit and pinned_bytes + rounded <= pin_limit:
             pin_requests += 1
             if host_cache_limit and (pin_requests == 1 or pin_requests % 64 == 0):
-                allocated = torch.cuda.memory.host_memory_stats().get('allocated_bytes.current', 0)
-                if allocated > host_cache_limit and hasattr(torch._C, '_host_emptyCache'):
+                allocated = host_allocator_bytes()
+                if allocated is None:
+                    stats['host_cache_stats_unavailable']=1
+                if allocated is not None and allocated > host_cache_limit and hasattr(torch._C, '_host_emptyCache'):
                     # Release only inactive blocks; live saved tensors and
                     # stream-dependent copies remain owned by the allocator.
                     torch._C._host_emptyCache()

@@ -1,0 +1,2797 @@
+{
+  "checked_at": "2026-11-11T18:19:20.264153+08:00",
+  "scope": "Read-only inventory; no ModelScope upload performed; no checkpoint removed or loaded",
+  "unit": "GiB = 2^30 bytes",
+  "unique_large_weight_files": [
+    {
+      "physical_identity": "139:8090346383633887888",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/.best_snapshots/step00000000_4a1229f107224104b86f9b38843b9055/checkpoint.pt",
+      "bytes": 24568518993,
+      "gib": 22.881216,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/ckpt_best.pt",
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/.best_snapshots/step00000000_4a1229f107224104b86f9b38843b9055/checkpoint.pt",
+        "/cloud/zzc/energyWAM/experiments/single_episode_seed43_warn_continue_20261110T102649Z/episode3346_headscale1_seed43_warn_resume61/ckpt_best.pt",
+        "/cloud/zzc/energyWAM/experiments/single_episode_seed43_warn_continue_20261110T102649Z/episode3346_headscale1_seed43_warn_resume61/.best_snapshots/inherited_step00000000/checkpoint.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/ckpt_best.pt.meta.json",
+          "step": 0,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "c8ec97828a9b74055b7bbe437ebf078360bda6316fb473ee2b3e5b873b2f558a"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/.best_snapshots/step00000000_4a1229f107224104b86f9b38843b9055/checkpoint.pt.meta.json",
+          "step": 0,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "c8ec97828a9b74055b7bbe437ebf078360bda6316fb473ee2b3e5b873b2f558a"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_seed43_warn_continue_20261110T102649Z/episode3346_headscale1_seed43_warn_resume61/ckpt_best.pt.meta.json",
+          "step": 0,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "c8ec97828a9b74055b7bbe437ebf078360bda6316fb473ee2b3e5b873b2f558a"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_seed43_warn_continue_20261110T102649Z/episode3346_headscale1_seed43_warn_resume61/.best_snapshots/inherited_step00000000/checkpoint.pt.meta.json",
+          "step": 0,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "c8ec97828a9b74055b7bbe437ebf078360bda6316fb473ee2b3e5b873b2f558a"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        0
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P1",
+      "reason": "seed43诊断起点latest61和初始best0；latest61已被历史短重放精确复现"
+    },
+    {
+      "physical_identity": "139:5784503378488707696",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/ckpt_latest.pt",
+      "bytes": 24568518993,
+      "gib": 22.881216,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/ckpt_latest.pt.meta.json",
+          "step": 61,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "6bb41ba9776d0d23006f140457b710c76f2696dc35edabef17b186527fd92949"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        61
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P1",
+      "reason": "seed43诊断起点latest61和初始best0；latest61已被历史短重放精确复现"
+    },
+    {
+      "physical_identity": "139:1159306390032997584",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/.best_snapshots/step00000060_c680de57226944f7a562bd24793162a2/checkpoint.pt",
+      "bytes": 24568519185,
+      "gib": 22.881217,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/ckpt_best.pt",
+        "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/.best_snapshots/step00000060_c680de57226944f7a562bd24793162a2/checkpoint.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/ckpt_best.pt.meta.json",
+          "step": 60,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "d9da697c9370c462fec2d913717d81a86ae328ea511ea63a3b3fc448f3c0f4d1"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/.best_snapshots/step00000060_c680de57226944f7a562bd24793162a2/checkpoint.pt.meta.json",
+          "step": 60,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "d9da697c9370c462fec2d913717d81a86ae328ea511ea63a3b3fc448f3c0f4d1"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        60
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P1",
+      "reason": "当前云端seed42完整210步的强拟合基线，latest210与VAL-best60均应保留"
+    },
+    {
+      "physical_identity": "139:582845647462587632",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/ckpt_latest.pt",
+      "bytes": 24568519185,
+      "gib": 22.881217,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/ckpt_latest.pt.meta.json",
+          "step": 210,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "f26d233158d1553f1909ea2cabc7b1c64a7951886b236d8f8d26ecb4f41ea099"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        210
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P1",
+      "reason": "当前云端seed42完整210步的强拟合基线，latest210与VAL-best60均应保留"
+    },
+    {
+      "physical_identity": "189:579296123",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42/model_reference.pt",
+      "bytes": 8277258203,
+      "gib": 7.708797,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42/model_reference.pt.meta.json",
+          "step": 400,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "9fb63cf8ab5a36cf5d2aac309f9a2bec32afc9e7722c56ca1220a8f3c5a4a972",
+          "metadata_sha256": "0732cf9f1e84a26fd397227e87ef51c819a451e0e105f8a72c59245d3b3a0d8e"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42/model_reference.pt.meta.json",
+          "step": 400,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "9fb63cf8ab5a36cf5d2aac309f9a2bec32afc9e7722c56ca1220a8f3c5a4a972",
+          "metadata_sha256": "0732cf9f1e84a26fd397227e87ef51c819a451e0e105f8a72c59245d3b3a0d8e"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        400
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P1",
+      "reason": "历史400步过拟合模型；仅模型参考权重，优化器已退休，不支持完整续训"
+    },
+    {
+      "physical_identity": "139:2893192363942261776",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/.best_snapshots/step00000200_ae520c0959ed4cf3939cf89b69935b13/checkpoint.pt",
+      "bytes": 24568519057,
+      "gib": 22.881216,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/ckpt_best.pt",
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/.best_snapshots/step00000200_ae520c0959ed4cf3939cf89b69935b13/checkpoint.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/ckpt_best.pt.meta.json",
+          "step": 200,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "975581c8497349037f3927a75dcae3625f75a797d81c06cbe08d11f1c79f855c"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/.best_snapshots/step00000200_ae520c0959ed4cf3939cf89b69935b13/checkpoint.pt.meta.json",
+          "step": 200,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "975581c8497349037f3927a75dcae3625f75a797d81c06cbe08d11f1c79f855c"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        200
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P2",
+      "reason": "保留跨seed/学习率/全量失稳对照及后续恢复诊断价值"
+    },
+    {
+      "physical_identity": "139:3469653116907314672",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/ckpt_latest.pt",
+      "bytes": 24568519057,
+      "gib": 22.881216,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/ckpt_latest.pt.meta.json",
+          "step": 210,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "d73d19c3aa1255ac7e1d9db7c9062732ad33fad993a3627213b482b29506b7f3"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        210
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P2",
+      "reason": "保留跨seed/学习率/全量失稳对照及后续恢复诊断价值"
+    },
+    {
+      "physical_identity": "139:3474156844872523840",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/.best_snapshots/step00000000_38991350a3ae42c781a22c0cd905bfdb/checkpoint.pt",
+      "bytes": 24568519057,
+      "gib": 22.881216,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/ckpt_best.pt",
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/.best_snapshots/step00000000_38991350a3ae42c781a22c0cd905bfdb/checkpoint.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/ckpt_best.pt.meta.json",
+          "step": 0,
+          "stage": "bi",
+          "seed": 45,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "dac2698ef503309c5108c8b065fecc15a72c64332c0448ab5191cb2ce8fbe0e7"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/.best_snapshots/step00000000_38991350a3ae42c781a22c0cd905bfdb/checkpoint.pt.meta.json",
+          "step": 0,
+          "stage": "bi",
+          "seed": 45,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "dac2698ef503309c5108c8b065fecc15a72c64332c0448ab5191cb2ce8fbe0e7"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        0
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P2",
+      "reason": "保留跨seed/学习率/全量失稳对照及后续恢复诊断价值"
+    },
+    {
+      "physical_identity": "139:8085842877575340832",
+      "realpath": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/ckpt_latest.pt",
+      "bytes": 24568519057,
+      "gib": 22.881216,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/ckpt_latest.pt.meta.json",
+          "step": 210,
+          "stage": "bi",
+          "seed": 45,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "ff2d1bd41fca77d9540300ed7a8632f3bff2b023367aa0ae7edd13d94180af0b"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        210
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P2",
+      "reason": "保留跨seed/学习率/全量失稳对照及后续恢复诊断价值"
+    },
+    {
+      "physical_identity": "139:8085842443224596448",
+      "realpath": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/.best_snapshots/step00000256_9b759372383a4f0c95e54211eea2b93e/checkpoint.pt",
+      "bytes": 24568519377,
+      "gib": 22.881217,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/ckpt_best.pt",
+        "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/.best_snapshots/step00000256_9b759372383a4f0c95e54211eea2b93e/checkpoint.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/ckpt_best.pt.meta.json",
+          "step": 256,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "4de7c914345593e5db8929a167511b2e7cb6f936c4a8d1ebd12394c86a7d5a74"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/.best_snapshots/step00000256_9b759372383a4f0c95e54211eea2b93e/checkpoint.pt.meta.json",
+          "step": 256,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "4de7c914345593e5db8929a167511b2e7cb6f936c4a8d1ebd12394c86a7d5a74"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        256
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P2",
+      "reason": "保留跨seed/学习率/全量失稳对照及后续恢复诊断价值"
+    },
+    {
+      "physical_identity": "139:4627077963692055968",
+      "realpath": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/ckpt_latest.pt",
+      "bytes": 24568519377,
+      "gib": 22.881217,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/ckpt_latest.pt.meta.json",
+          "step": 680,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "5d97a118836560f7eeb885be07e66c6ebcb5fd21861a85e86351027fb2ef7a3d"
+        }
+      ],
+      "storage": "compshare_cloud",
+      "steps": [
+        680
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P2",
+      "reason": "保留跨seed/学习率/全量失稳对照及后续恢复诊断价值"
+    },
+    {
+      "physical_identity": "189:829926297",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/future_step_sweep_20261103/alpha200_seed42/ckpt_latest.pt",
+      "bytes": 17310805241,
+      "gib": 16.121944,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/future_step_sweep_20261103/alpha200_seed42/ckpt_latest.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/future_step_sweep_20261103/alpha200_seed42/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/future_step_sweep_20261103/alpha200_seed42/ckpt_latest.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "8f93f2e211c33ec03538dd76d088ed766dc3efed3f305d7610fe0e7c9cd32a1f"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/future_step_sweep_20261103/alpha200_seed42/ckpt_latest.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "8f93f2e211c33ec03538dd76d088ed766dc3efed3f305d7610fe0e7c9cd32a1f"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:20631110",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/future_step_sweep_20261103/alpha500_seed42/ckpt_latest.pt",
+      "bytes": 17310120761,
+      "gib": 16.121306,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/future_step_sweep_20261103/alpha500_seed42/ckpt_latest.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/future_step_sweep_20261103/alpha500_seed42/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/future_step_sweep_20261103/alpha500_seed42/ckpt_latest.pt.meta.json",
+          "step": 20,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "fa6bcdf99a340ed4657022422dd2c3dfdedf61c84421b777d94aba3f1090a043"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/future_step_sweep_20261103/alpha500_seed42/ckpt_latest.pt.meta.json",
+          "step": 20,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "fa6bcdf99a340ed4657022422dd2c3dfdedf61c84421b777d94aba3f1090a043"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        20
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:829914087",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/ablation_prior1_currentinit0_seed42/model_reference.pt",
+      "bytes": 8277258203,
+      "gib": 7.708797,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit0_seed42/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/ablation_prior1_currentinit0_seed42/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit0_seed42/model_reference.pt.meta.json",
+          "step": 400,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "27f7245a6380130347a05de9f0176b7b227aaa046201a627099e424b53e7fb1f",
+          "metadata_sha256": "e35b709be9197eb8f170a3d405d98edd0be07de04e8ee4aca9f004a9d3538db4"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit0_seed42/model_reference.pt.meta.json",
+          "step": 400,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "27f7245a6380130347a05de9f0176b7b227aaa046201a627099e424b53e7fb1f",
+          "metadata_sha256": "e35b709be9197eb8f170a3d405d98edd0be07de04e8ee4aca9f004a9d3538db4"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        400
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:824264857",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/batch2_tiny16_headlr0003_samples320_seed42/model_reference.pt",
+      "bytes": 8277258267,
+      "gib": 7.708797,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch2_tiny16_headlr0003_samples320_seed42/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/batch2_tiny16_headlr0003_samples320_seed42/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch2_tiny16_headlr0003_samples320_seed42/model_reference.pt.meta.json",
+          "step": 160,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "3c9718460ff53ca30397a4556b576871d2c724134bd7f89822cb0f2fd51a7383",
+          "metadata_sha256": "dba79a70059244b4bb5b95b47e34b6aa6840b245cf2b27f0bed78ca573a258e0"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch2_tiny16_headlr0003_samples320_seed42/model_reference.pt.meta.json",
+          "step": 160,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "3c9718460ff53ca30397a4556b576871d2c724134bd7f89822cb0f2fd51a7383",
+          "metadata_sha256": "dba79a70059244b4bb5b95b47e34b6aa6840b245cf2b27f0bed78ca573a258e0"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        160
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:824260551",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed42/ckpt_latest.pt",
+      "bytes": 32578000477,
+      "gib": 30.340627,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed42/ckpt_latest.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed42/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed42/ckpt_latest.pt.meta.json",
+          "step": 200,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "5a0dd7cf0a3dbf559723e0a8212d0ee335a5c41b6e06a7f9fcd2e5ab28afffbe"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed42/ckpt_latest.pt.meta.json",
+          "step": 200,
+          "stage": "bi",
+          "seed": 42,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "5a0dd7cf0a3dbf559723e0a8212d0ee335a5c41b6e06a7f9fcd2e5ab28afffbe"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        200
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:17683573",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed43/ckpt_latest.pt",
+      "bytes": 32578000605,
+      "gib": 30.340627,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed43/ckpt_latest.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed43/ckpt_latest.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed43/ckpt_latest.pt.meta.json",
+          "step": 200,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "0e1a2b0bd93bcf87f4a3b2bb5bfef6498ca9dc98c02a21890c57ce9ef316a41f"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed43/ckpt_latest.pt.meta.json",
+          "step": 200,
+          "stage": "bi",
+          "seed": 43,
+          "reference_only": false,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": null,
+          "metadata_sha256": "0e1a2b0bd93bcf87f4a3b2bb5bfef6498ca9dc98c02a21890c57ce9ef316a41f"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        200
+      ],
+      "model_only": false,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:18482836",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/no_prior_currentinit_fixed_headlr0001_diag_seed42/model_reference.pt",
+      "bytes": 8277256665,
+      "gib": 7.708796,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_fixed_headlr0001_diag_seed42/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/no_prior_currentinit_fixed_headlr0001_diag_seed42/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_fixed_headlr0001_diag_seed42/model_reference.pt.meta.json",
+          "step": 80,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "503b338b3f7d203c2151be179bbcc4e58b88ef0c188a6068b5e6df5df95d5401",
+          "metadata_sha256": "d8fe60eab871fbced9f180701e8af928839907c81acfbc0846d1656f05177bf3"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_fixed_headlr0001_diag_seed42/model_reference.pt.meta.json",
+          "step": 80,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "503b338b3f7d203c2151be179bbcc4e58b88ef0c188a6068b5e6df5df95d5401",
+          "metadata_sha256": "d8fe60eab871fbced9f180701e8af928839907c81acfbc0846d1656f05177bf3"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        80
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:302878889",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/no_prior_currentinit_learned_headlr0001_diag_seed42/model_reference.pt",
+      "bytes": 8277257767,
+      "gib": 7.708797,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_learned_headlr0001_diag_seed42/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/no_prior_currentinit_learned_headlr0001_diag_seed42/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_learned_headlr0001_diag_seed42/model_reference.pt.meta.json",
+          "step": 80,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "5c6f288076cb2af44d6dc19cbba57c72407a2225763172fbdda56a5cb3b7e8d2",
+          "metadata_sha256": "7801313ef8e1c64e82e8e541e75bcb0133f62f0f4f9270718152300bf1f3fde3"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_learned_headlr0001_diag_seed42/model_reference.pt.meta.json",
+          "step": 80,
+          "stage": null,
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "5c6f288076cb2af44d6dc19cbba57c72407a2225763172fbdda56a5cb3b7e8d2",
+          "metadata_sha256": "7801313ef8e1c64e82e8e541e75bcb0133f62f0f4f9270718152300bf1f3fde3"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        80
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:581447583",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_bf16_r2/model_reference.pt",
+      "bytes": 8253663911,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_bf16_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_bf16_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_bf16_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "db279bcf9fe9e3b5a043e84ebde087f77e668fd1a9ac249c72b0042044def99f",
+          "metadata_sha256": "47ac148c1d8a290c951414b9dd5fbfdff1f4713b5acc5ebf1716a40b11e6aae9"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_bf16_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "db279bcf9fe9e3b5a043e84ebde087f77e668fd1a9ac249c72b0042044def99f",
+          "metadata_sha256": "47ac148c1d8a290c951414b9dd5fbfdff1f4713b5acc5ebf1716a40b11e6aae9"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:20631111",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_calibrated_r2/model_reference.pt",
+      "bytes": 8253664167,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_calibrated_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_calibrated_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_calibrated_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "99d5495dbb5b00548dd0a2bc5487c788a1d7257f1f2f1b7ca2904d809a8125a5",
+          "metadata_sha256": "5addf16c48a257d8c20b51fa83e68b86ae7a5efff2c1066f8af458a60024629d"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_calibrated_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "99d5495dbb5b00548dd0a2bc5487c788a1d7257f1f2f1b7ca2904d809a8125a5",
+          "metadata_sha256": "5addf16c48a257d8c20b51fa83e68b86ae7a5efff2c1066f8af458a60024629d"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:829926313",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_prior_residual_r2/model_reference.pt",
+      "bytes": 8253665435,
+      "gib": 7.686825,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_residual_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_prior_residual_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_residual_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "76f247b159983057df28d9d0445db7152c83bdbf4140c86812d921c654c5649d",
+          "metadata_sha256": "76a93da64c567dadfa0701911b4ec257408209c5186a80d95e5169b1ed44daec"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_residual_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "76f247b159983057df28d9d0445db7152c83bdbf4140c86812d921c654c5649d",
+          "metadata_sha256": "76a93da64c567dadfa0701911b4ec257408209c5186a80d95e5169b1ed44daec"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:581447601",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr0003_r2/model_reference.pt",
+      "bytes": 8253665627,
+      "gib": 7.686825,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr0003_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr0003_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr0003_r2/model_reference.pt.meta.json",
+          "step": 160,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "122845067d0acc13d76d514aa9b9ba3c358533f995ac936c56f984940d594afd",
+          "metadata_sha256": "57724599a4266e06ce8a0df34ef88f155365bdb45eac7cc601c72b1d11209256"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr0003_r2/model_reference.pt.meta.json",
+          "step": 160,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "122845067d0acc13d76d514aa9b9ba3c358533f995ac936c56f984940d594afd",
+          "metadata_sha256": "57724599a4266e06ce8a0df34ef88f155365bdb45eac7cc601c72b1d11209256"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        160
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:35614141",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_r2/model_reference.pt",
+      "bytes": 8253665627,
+      "gib": 7.686825,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_r2/model_reference.pt.meta.json",
+          "step": 160,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "a10ebeb98881f5feaf4885f0262d63732275f42fbdcae7f88b736fbc6be5ef1b",
+          "metadata_sha256": "0f12510e960180b6305e1e3aebabe272db832e653328aea5232a4842363ad4d5"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_r2/model_reference.pt.meta.json",
+          "step": 160,
+          "stage": null,
+          "seed": null,
+          "reference_only": false,
+          "optimizer_states_retired": true,
+          "model_values_sha256_from_existing_metadata": "a10ebeb98881f5feaf4885f0262d63732275f42fbdcae7f88b736fbc6be5ef1b",
+          "metadata_sha256": "0f12510e960180b6305e1e3aebabe272db832e653328aea5232a4842363ad4d5"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        160
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:829926299",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_r2/model_reference.pt",
+      "bytes": 8253663911,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "1913727cf2046b9ee0ee1919a3ad1bccf8e72045419256da9a145789f7d5ff72",
+          "metadata_sha256": "55ef97cefd6898eed7e05d4247fc56ce6ea81478fc333a00530ddcdbdcd5fba1"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "1913727cf2046b9ee0ee1919a3ad1bccf8e72045419256da9a145789f7d5ff72",
+          "metadata_sha256": "55ef97cefd6898eed7e05d4247fc56ce6ea81478fc333a00530ddcdbdcd5fba1"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:824260556",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_rms05_r2/model_reference.pt",
+      "bytes": 8253664231,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_rms05_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "b43938ad57820872aef1197235382f06de8391de28e1bdf590c9e9e4c96fd39d",
+          "metadata_sha256": "0a1f2eecef54b476ad439a86574c804501986d7ffde63371da79f9b95d64a234"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "b43938ad57820872aef1197235382f06de8391de28e1bdf590c9e9e4c96fd39d",
+          "metadata_sha256": "0a1f2eecef54b476ad439a86574c804501986d7ffde63371da79f9b95d64a234"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:20340197",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_rms05_tokenscale_r2/model_reference.pt",
+      "bytes": 8253664423,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_tokenscale_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_rms05_tokenscale_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_tokenscale_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "4fb13cf62eb0a73d7709eb933b050b95dadd050cf63edddf995fd2037e8ac9ee",
+          "metadata_sha256": "ba21e0627ef49ef853fc3fcf9f38c41a8efcb92c99a209a9946310140fa594a0"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_tokenscale_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "4fb13cf62eb0a73d7709eb933b050b95dadd050cf63edddf995fd2037e8ac9ee",
+          "metadata_sha256": "ba21e0627ef49ef853fc3fcf9f38c41a8efcb92c99a209a9946310140fa594a0"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:302887627",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_tasklr_f2000_r2/model_reference.pt",
+      "bytes": 8253664231,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_f2000_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_tasklr_f2000_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_f2000_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "d587c34a4871e7b75de6e3959a9c33672122ddce2c8d9a94760554d11ee6a21f",
+          "metadata_sha256": "cc65409a31fe9312171bbc53fe3670f7598456fc061494fad91fe2bdee9eff2c"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_f2000_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "d587c34a4871e7b75de6e3959a9c33672122ddce2c8d9a94760554d11ee6a21f",
+          "metadata_sha256": "cc65409a31fe9312171bbc53fe3670f7598456fc061494fad91fe2bdee9eff2c"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    },
+    {
+      "physical_identity": "189:20340203",
+      "realpath": "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_tasklr_r2/model_reference.pt",
+      "bytes": 8253664103,
+      "gib": 7.686824,
+      "aliases": [
+        "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_r2/model_reference.pt",
+        "/root/zzc/energyWAM/checkpoint_archive/iteration_aware_v1_20261104/tinyfit_master_tasklr_r2/model_reference.pt"
+      ],
+      "metadata": [
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "5d5adec08fab485643cb2aec99684397c497e94cc8c4121154a7168d4997af49",
+          "metadata_sha256": "d8dcefaffa8e720eee54c3e045f1bc299aba11683586a550f43d6ce50c41ae17"
+        },
+        {
+          "path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_r2/model_reference.pt.meta.json",
+          "step": 40,
+          "stage": "bi",
+          "seed": null,
+          "reference_only": true,
+          "optimizer_states_retired": false,
+          "model_values_sha256_from_existing_metadata": "5d5adec08fab485643cb2aec99684397c497e94cc8c4121154a7168d4997af49",
+          "metadata_sha256": "d8dcefaffa8e720eee54c3e045f1bc299aba11683586a550f43d6ce50c41ae17"
+        }
+      ],
+      "storage": "compshare_local_root",
+      "steps": [
+        40
+      ],
+      "model_only": true,
+      "verification": "Existence, stat size, symlink resolution and sidecar metadata only; not loaded or resume-tested in this audit; whole weight SHA256 not recomputed",
+      "priority": "P3",
+      "reason": "历史实验权重，日志须保留；存储允许时备份，未授权本次删除"
+    }
+  ],
+  "large_weight_summary": {
+    "compshare_cloud": {
+      "unique_files": 10,
+      "bytes": 245685191338,
+      "gib": 228.812165
+    },
+    "compshare_local_root": {
+      "unique_files": 19,
+      "bytes": 223699861855,
+      "gib": 208.336731
+    }
+  },
+  "large_weight_threshold_bytes": 100000000,
+  "broken_weight_symlinks": [],
+  "pretrained_models": [
+    {
+      "path": "/datasets/models/Qwen3-VL-4B-Instruct",
+      "realpath": "/model/ModelScope/Qwen/Qwen3-VL-4B-Instruct",
+      "upstream_model_id": "Qwen/Qwen3-VL-4B-Instruct",
+      "bytes": 8887292387,
+      "files": [
+        {
+          "relative": ".msc",
+          "bytes": 1065
+        },
+        {
+          "relative": ".mv",
+          "bytes": 36
+        },
+        {
+          "relative": "README.md",
+          "bytes": 7133
+        },
+        {
+          "relative": "chat_template.json",
+          "bytes": 5502
+        },
+        {
+          "relative": "config.json",
+          "bytes": 1505
+        },
+        {
+          "relative": "configuration.json",
+          "bytes": 73
+        },
+        {
+          "relative": "generation_config.json",
+          "bytes": 269
+        },
+        {
+          "relative": "merges.txt",
+          "bytes": 1671839
+        },
+        {
+          "relative": "model-00001-of-00002.safetensors",
+          "bytes": 4967229296
+        },
+        {
+          "relative": "model-00002-of-00002.safetensors",
+          "bytes": 3908490048
+        },
+        {
+          "relative": "model.safetensors.index.json",
+          "bytes": 64742
+        },
+        {
+          "relative": "preprocessor_config.json",
+          "bytes": 390
+        },
+        {
+          "relative": "tokenizer.json",
+          "bytes": 7032403
+        },
+        {
+          "relative": "tokenizer_config.json",
+          "bytes": 10868
+        },
+        {
+          "relative": "video_preprocessor_config.json",
+          "bytes": 385
+        },
+        {
+          "relative": "vocab.json",
+          "bytes": 2776833
+        }
+      ],
+      "priority": "P3",
+      "reason": "公开预训练资产，可按原来源重新下载；优先保存精确版本/配置/文件指纹"
+    },
+    {
+      "path": "/datasets/models/dinov3-vits16-pretrain-lvd1689m",
+      "realpath": "/cloud/zzc/energyWAM/datasets/models/dinov3-vits16-pretrain-lvd1689m",
+      "upstream_model_id": "facebook/dinov3-vits16-pretrain-lvd1689m",
+      "bytes": 86432275,
+      "files": [
+        {
+          "relative": ".gitattributes",
+          "bytes": 2075
+        },
+        {
+          "relative": "LICENSE.md",
+          "bytes": 7503
+        },
+        {
+          "relative": "README.md",
+          "bytes": 14519
+        },
+        {
+          "relative": "config.json",
+          "bytes": 743
+        },
+        {
+          "relative": "configuration.json",
+          "bytes": 74
+        },
+        {
+          "relative": "model.safetensors",
+          "bytes": 86406384
+        },
+        {
+          "relative": "preprocessor_config.json",
+          "bytes": 585
+        },
+        {
+          "relative": ".cache/huggingface/.gitignore",
+          "bytes": 1
+        },
+        {
+          "relative": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191
+        },
+        {
+          "relative": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0
+        },
+        {
+          "relative": ".cache/huggingface/download/LICENSE.md.lock",
+          "bytes": 0
+        },
+        {
+          "relative": ".cache/huggingface/download/LICENSE.md.metadata",
+          "bytes": 100
+        },
+        {
+          "relative": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0
+        },
+        {
+          "relative": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 100
+        },
+        {
+          "relative": ".cache/huggingface/download/config.json.lock",
+          "bytes": 0
+        },
+        {
+          "relative": ".cache/huggingface/download/model.safetensors.lock",
+          "bytes": 0
+        },
+        {
+          "relative": ".cache/huggingface/download/preprocessor_config.json.lock",
+          "bytes": 0
+        }
+      ],
+      "priority": "P3",
+      "reason": "公开预训练资产，可按原来源重新下载；优先保存精确版本/配置/文件指纹"
+    }
+  ],
+  "custom_reproduction_metadata": [
+    {
+      "path": "/root/zzc/energyWAM/manifests",
+      "bytes": 9889627,
+      "file_count": 7,
+      "sha256": {
+        "train_episodes.json": "d6beb3917d8000c6686c0d076520746d16bb1f9e1375a91647a2fc95bbebfc2a",
+        "val_episodes.json": "6268f4aa5757f96725a4a13ed02b058e5055b29ed1da4d9593f642e3e85f8210",
+        "test_episodes.json": "93612c64898cb2f665e321956867d76db56c8b6f7726d8cb330445aa41441b7a",
+        "experiments/three_task_full_20261106/train_val_manifest.json": "1158bf153dc7638da0e5e2d01a110b2b7e15f20627144130fc409181727e82bb",
+        "experiments/three_task_full_20261106/train_monitor_manifest.json": "c91cd5fe005d9413acdabc3bb7a3d61af432f4a25bd407610f9056da2e2564eb",
+        "experiments/tiny_future_weight_20261106/train_val_manifest.json": "68fce0a469486718fc7b149b5ae3a99b1deae0cfcd9e85f533d1ec94acba85b0",
+        "experiments/tiny_future_weight_20261106/train_monitor_manifest.json": "3d1ce823bcbf3ace3d683bc1401c49ec3616c5b2ee7b97fa1ccbe9fa80fc91c6"
+      }
+    },
+    {
+      "path": "/root/zzc/energyWAM/stats",
+      "bytes": 722966,
+      "file_count": 2,
+      "sha256": {
+        "trainmix_smoke256_paper_standardized_v1.json": "8717d779f007d8512d43b11923880aab3ca0048b7b88c3bde33ed58ad20994e4",
+        "trainmix_150k_paper_standardized_v1.json": "1c0ed7545b34bc6a67fc24b5b9b62a3f8496fcad2b57d692ee87991fcb13be9c"
+      }
+    },
+    {
+      "path": "/datasets/robocasa365_trainmix/robocasa365_target_50tasks/meta",
+      "bytes": 5786539,
+      "file_count": 4,
+      "sha256": {
+        "episodes.jsonl": "f5a7baa795e0cb12b6538f67029c5717e7bb0b7d83a79174f7128e7b9a88c376",
+        "info.json": "63b227ebae7d380c2956f7b1430af92d1d6cf6adc259c9d49653b4a5281642eb",
+        "modality.json": "120cfe4d46b4ad0a9a473ff521a40e28f76b6f2dc7897522354f2f1001efc62c",
+        "stats.json": "4170a422adc604b5c88f89c5100cef3cbbaf315b1a921fae345449240985ecf1"
+      }
+    }
+  ],
+  "laboratory": {
+    "hostname": "user-SYS-420GP-TNR",
+    "checked_unix": 1794392088.3665035,
+    "roots": {
+      "/data7/zzc/energyWAM/lab_execution_20261109": {
+        "exists": true,
+        "children": [
+          "setup",
+          "environments",
+          "studies",
+          "outputs",
+          "assets",
+          "conda_pkgs"
+        ]
+      },
+      "/data6/zzc/energywam_lab_studies": {
+        "exists": true,
+        "children": [
+          "inner_steps_20261109"
+        ]
+      },
+      "/data8/xyx_zhuzicheng/energyWAM_studies": {
+        "exists": true,
+        "children": [
+          "future_half_gpu07_20261110T034637Z",
+          "both_half_gpu67_20261111T041907Z",
+          "future_half_original_gpu67_20261110T063335Z",
+          "k234_gpu67_20261109T151717Z",
+          "k234_20261109T095549Z"
+        ]
+      },
+      "/data3/xyx_zhuzicheng/projects/energyWAM_remote": {
+        "exists": true,
+        "children": [
+          "releases",
+          "tools",
+          "current"
+        ]
+      }
+    },
+    "checkpoints": [
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_steps_control_seed42/ckpt_latest.pt",
+        "realpath": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_steps_control_seed42/ckpt_latest.pt",
+        "size": 24568514334,
+        "dev": 2112,
+        "inode": 14429016,
+        "step": 210
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_steps_control_seed42/ckpt_best.pt",
+        "realpath": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_steps_control_seed42/.best_snapshots/step00000140_a9e680ef345843d0bf53fbcf84509de1/checkpoint.pt",
+        "size": 24568514334,
+        "dev": 2112,
+        "inode": 14429013,
+        "step": 140
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_future_half_seed42/ckpt_latest.pt",
+        "realpath": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_future_half_seed42/ckpt_latest.pt",
+        "size": 24568514334,
+        "dev": 2112,
+        "inode": 14429125,
+        "step": 0
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_future_half_seed42/ckpt_best.pt",
+        "realpath": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_future_half_seed42/.best_snapshots/step00000000_87d8de5d7329445a8c91504c242c4206/checkpoint.pt",
+        "size": 24568514334,
+        "dev": 2112,
+        "inode": 14429125,
+        "step": 0
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_action_half_seed42/ckpt_latest.pt",
+        "realpath": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_action_half_seed42/ckpt_latest.pt",
+        "size": 24568514398,
+        "dev": 2112,
+        "inode": 14429094,
+        "step": 210
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_action_half_seed42/ckpt_best.pt",
+        "realpath": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_action_half_seed42/.best_snapshots/step00000060_4f60273822e849f98dc00ba119537c2e/checkpoint.pt",
+        "size": 24568514398,
+        "dev": 2112,
+        "inode": 14429072,
+        "step": 60
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/both_half_gpu67_20261111T041907Z/episode3346_both_half_gpu67_seed42/ckpt_latest.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/both_half_gpu67_20261111T041907Z/episode3346_both_half_gpu67_seed42/ckpt_latest.pt",
+        "size": 24568514334,
+        "dev": 2144,
+        "inode": 177996138,
+        "step": 0
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/both_half_gpu67_20261111T041907Z/episode3346_both_half_gpu67_seed42/ckpt_best.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/both_half_gpu67_20261111T041907Z/episode3346_both_half_gpu67_seed42/.best_snapshots/step00000000_4310794c61774090a202d3033a518bb8/checkpoint.pt",
+        "size": 24568514334,
+        "dev": 2144,
+        "inode": 177996138,
+        "step": 0
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_original_gpu67_20261110T063335Z/episode3346_future_half_gpu67_original_seed42/ckpt_latest.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_original_gpu67_20261110T063335Z/episode3346_future_half_gpu67_original_seed42/ckpt_latest.pt",
+        "size": 24568514398,
+        "dev": 2144,
+        "inode": 177996061,
+        "step": 210
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_original_gpu67_20261110T063335Z/episode3346_future_half_gpu67_original_seed42/ckpt_best.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_original_gpu67_20261110T063335Z/episode3346_future_half_gpu67_original_seed42/.best_snapshots/step00000100_a9f9d21fab8e44b3a88aabf51ae2137c/checkpoint.pt",
+        "size": 24568514398,
+        "dev": 2144,
+        "inode": 177996041,
+        "step": 100
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/resume_validation_k3/ckpt_latest.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/resume_validation_k3/ckpt_latest.pt",
+        "size": 24569187110,
+        "dev": 2144,
+        "inode": 176685176,
+        "step": 2
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/resume_validation_k3/ckpt_best.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/resume_validation_k3/.best_snapshots/step00000000_f0fdace135aa4ea381cd3300d04a53e8/checkpoint.pt",
+        "size": 24568498910,
+        "dev": 2144,
+        "inode": 176685156,
+        "step": 0
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/episode3346_k2_seed42/ckpt_latest.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/episode3346_k2_seed42/ckpt_latest.pt",
+        "size": 24568498974,
+        "dev": 2144,
+        "inode": 176685217,
+        "step": 80
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/episode3346_k2_seed42/ckpt_best.pt",
+        "realpath": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/episode3346_k2_seed42/.best_snapshots/step00000000_213194c56e764ff6bbf201f3f9e102f4/checkpoint.pt",
+        "size": 24568498974,
+        "dev": 2144,
+        "inode": 176685201,
+        "step": 0
+      }
+    ],
+    "configs": [
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_steps_control_seed42/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_future_half_seed42/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data6/zzc/energywam_lab_studies/inner_steps_20261109/episode3346_action_half_seed42/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_gpu07_20261110T034637Z/failed_setup_attempts/primary7_18x18_oom_1794283452/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_gpu07_20261110T034637Z/failed_setup_attempts/primary7_20x16_oom_1794284296/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_gpu07_20261110T034637Z/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/both_half_gpu67_20261111T041907Z/episode3346_both_half_gpu67_seed42/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/both_half_gpu67_20261111T041907Z/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_original_gpu67_20261110T063335Z/episode3346_future_half_gpu67_original_seed42/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/future_half_original_gpu67_20261110T063335Z/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_gpu67_20261109T151717Z/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/resume_validation_k3/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/failed_setup_attempts/shared8_oom_20261109T100522Z/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/episode3346_k2_seed42/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      },
+      {
+        "path": "/data8/xyx_zhuzicheng/energyWAM_studies/k234_20261109T095549Z/capacity_profile/resolved_config.json",
+        "data": {
+          "action_dim": 12,
+          "state_dim": 32,
+          "action_horizon": 16,
+          "num_future_frames": 3,
+          "future_offsets": [
+            5,
+            11,
+            16
+          ],
+          "future_offset_rule": "uniform_within_action_horizon",
+          "num_cameras": 1,
+          "future_camera_index": 0,
+          "camera_order": [
+            "robot0_agentview_left"
+          ],
+          "action_normalization": "zscore",
+          "state_normalization": "sincos",
+          "norm_stats_path": null,
+          "normalization_profile": "paper_standardized_v1",
+          "standardization_epsilon": 1e-06,
+          "norm_stats_bundle_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "allow_synthetic_stats": false,
+          "require_full_horizon": true,
+          "dino_preprocess_version": "dino_v3_vits16_224_center_norm_v1",
+          "data_root_dir": "/data7/zzc/energyWAM/lab_execution_20261109/assets",
+          "data_mix": "robocasa365_target_50tasks",
+          "dataset_py": "lerobot_datasets",
+          "obs_image_size": [
+            224,
+            224
+          ],
+          "include_state": true,
+          "dataset_identity_note": ""
+        },
+        "model": null,
+        "pretrained": null
+      }
+    ],
+    "successful_experiment_weights_note": "These are independent laboratory experiments, not verified copies of cloud seed42/43/45 checkpoints.",
+    "asset_details": {
+      "checked_unix": 1794392103.7885435,
+      "assets": [
+        {
+          "path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/stats_relocation_receipt.json",
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/stats_relocation_receipt.json",
+          "bytes": 297,
+          "children": null
+        },
+        {
+          "path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/subset_asset_receipt.json",
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/subset_asset_receipt.json",
+          "bytes": 2343,
+          "children": null
+        },
+        {
+          "path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/subset_metadata.tar.gz",
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/subset_metadata.tar.gz",
+          "bytes": 251101,
+          "children": null
+        },
+        {
+          "path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks",
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks",
+          "bytes": 6262788,
+          "children": [
+            "videos",
+            "meta",
+            "data"
+          ]
+        },
+        {
+          "path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/dino_source_config",
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/dino_source_config",
+          "bytes": 86407712,
+          "children": [
+            "model.safetensors",
+            "preprocessor_config.json",
+            "config.json"
+          ]
+        },
+        {
+          "path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/relocated_stats.json",
+          "bytes": 362481,
+          "children": null
+        }
+      ],
+      "model_config_keys": {
+        "backbone": {
+          "condition_mode": "text_dino_state",
+          "backend": "qwen3vl",
+          "base_vlm": "/data6/zzc/Qwen3-VL-4B-Instruct",
+          "attn_implementation": "eager",
+          "dtype": "float32",
+          "freeze_qwen_vision": true,
+          "tune_language_model": true,
+          "tune_qwen_vision": false,
+          "lora_enabled": false,
+          "lora_r": 16,
+          "lora_alpha": 32,
+          "gradient_checkpointing": true,
+          "dino_path": "/data7/zzc/energyWAM/lab_execution_20261109/assets/dino_source_config",
+          "freeze_dino": true,
+          "dino_image_size": 224,
+          "dino_patch_size": 16,
+          "dino_hidden_dim": 384,
+          "dino_num_special_tokens": 5,
+          "dino_num_patches": 196,
+          "tiny_hidden_dim": 64,
+          "tiny_num_layers": 2,
+          "tiny_num_heads": 4,
+          "tiny_num_cond_tokens": 6,
+          "tiny_future_patches": 4,
+          "tiny_future_dim": 8,
+          "tiny_action_dim": 3,
+          "tiny_state_dim": 4,
+          "tiny_num_cameras": 1
+        },
+        "framework": {
+          "dino_patch_pack_factor": 2,
+          "quadratic_candidate_prior": true,
+          "quadratic_action_weight": 1.0,
+          "quadratic_future_weight": 0.5,
+          "energy_head_zero_init": true,
+          "projector_output_scale": 0.1,
+          "positional_encoding_scale": 0.02,
+          "type_embedding_init_std": 0.02,
+          "iteration_conditioning": true,
+          "iteration_embedding_dim": 256,
+          "iteration_mlp_hidden": 256,
+          "iteration_progress_scale": 1000.0,
+          "name": "QwenEnergyWAM",
+          "energy_head_hidden": 256,
+          "energy_head_dropout": 0.0,
+          "num_state_tokens": 1,
+          "use_learned_future_placeholder": true,
+          "token_type_vocab": 8
+        }
+      }
+    },
+    "asset_file_details": {
+      "checked_unix": 1794392191.963991,
+      "subset_asset_receipt.json": {
+        "root": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks",
+        "available_episodes": [
+          3346,
+          3423,
+          3483
+        ],
+        "full_metadata_preserved": true,
+        "full_dataset_available": false,
+        "source_files_reused": [
+          {
+            "view_relative_path": "data/chunk-000/episode_003346.parquet",
+            "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000324.parquet",
+            "sha256": "692361497ce5c38998f49eb2247d8c9f9f49f81164639f63884061e5ebb052ff"
+          },
+          {
+            "view_relative_path": "videos/chunk-000/observation.images.robot0_agentview_left/episode_003346.mp4",
+            "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000324.mp4",
+            "sha256": "ec2bfaa627e4af634c51e8507c205050c9f9f818443065d958d76cc03bfd124f"
+          },
+          {
+            "view_relative_path": "data/chunk-000/episode_003423.parquet",
+            "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000401.parquet",
+            "sha256": "c3b0ce5d6a181a8d8b5a93fb9a1f6fba9417844fdb85cdc92dc436a09e001997"
+          },
+          {
+            "view_relative_path": "videos/chunk-000/observation.images.robot0_agentview_left/episode_003423.mp4",
+            "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000401.mp4",
+            "sha256": "4c896a7395466822e71c96d227adf41d837e234f35f0f5cf48e7e9071cc3c92a"
+          },
+          {
+            "view_relative_path": "data/chunk-000/episode_003483.parquet",
+            "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000461.parquet",
+            "sha256": "870e73653287a47913f39d978fb4c9f4bba17dd66612cca118db9b44b56cdbb6"
+          },
+          {
+            "view_relative_path": "videos/chunk-000/observation.images.robot0_agentview_left/episode_003483.mp4",
+            "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000461.mp4",
+            "sha256": "9acf48bffeee714889c1493543eec71e01597c1bb44d48e8e31a3757da962b5f"
+          }
+        ]
+      },
+      "stats_relocation_receipt.json": {
+        "original_fingerprint": "ad89d0de59bb62bf374612844a09e9687ef4b1e2cd9cca4c4342f870ef37f25a",
+        "relocated_fingerprint": "62547f20a082137e2e53d6473963fa4bd9db9921bb37605f19983429300a6f0d",
+        "action_future_payloads_identical": true,
+        "no_refit": true,
+        "dino_weight_identity_verified": true
+      },
+      "qwen": {
+        "exists": true,
+        "realpath": "/data6/zzc/Qwen3-VL-4B-Instruct",
+        "files": [
+          {
+            "name": "generation_config.json",
+            "bytes": 269
+          },
+          {
+            "name": "README.md",
+            "bytes": 7133
+          },
+          {
+            "name": "vocab.json",
+            "bytes": 2776833
+          },
+          {
+            "name": "model-00002-of-00002.safetensors",
+            "bytes": 3908490048
+          },
+          {
+            "name": "model.safetensors.index.json",
+            "bytes": 64742
+          },
+          {
+            "name": ".gitattributes",
+            "bytes": 1519
+          },
+          {
+            "name": "chat_template.json",
+            "bytes": 5502
+          },
+          {
+            "name": "tokenizer.json",
+            "bytes": 7032403
+          },
+          {
+            "name": "model-00001-of-00002.safetensors",
+            "bytes": 4967229296
+          },
+          {
+            "name": "video_preprocessor_config.json",
+            "bytes": 385
+          },
+          {
+            "name": "tokenizer_config.json",
+            "bytes": 10868
+          },
+          {
+            "name": "preprocessor_config.json",
+            "bytes": 390
+          },
+          {
+            "name": "config.json",
+            "bytes": 1505
+          },
+          {
+            "name": "merges.txt",
+            "bytes": 1671839
+          },
+          {
+            "name": ".cache/huggingface/CACHEDIR.TAG",
+            "bytes": 191
+          },
+          {
+            "name": ".cache/huggingface/.gitignore",
+            "bytes": 1
+          },
+          {
+            "name": ".cache/huggingface/download/preprocessor_config.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/README.md.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/config.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/merges.txt.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/tokenizer.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/preprocessor_config.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/.gitattributes.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/tokenizer.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/video_preprocessor_config.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/README.md.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/generation_config.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/model.safetensors.index.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/chat_template.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/vocab.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/chat_template.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/model-00002-of-00002.safetensors.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/.gitattributes.metadata",
+            "bytes": 100
+          },
+          {
+            "name": ".cache/huggingface/download/config.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/model-00001-of-00002.safetensors.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/generation_config.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/video_preprocessor_config.json.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/tokenizer_config.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/vocab.json.metadata",
+            "bytes": 100
+          },
+          {
+            "name": ".cache/huggingface/download/merges.txt.metadata",
+            "bytes": 101
+          },
+          {
+            "name": ".cache/huggingface/download/model.safetensors.index.json.lock",
+            "bytes": 0
+          },
+          {
+            "name": ".cache/huggingface/download/tokenizer_config.json.metadata",
+            "bytes": 100
+          },
+          {
+            "name": ".cache/huggingface/trees/ebb281ec70b05090aa6165b016eac8ec08e71b17.json",
+            "bytes": 1942
+          }
+        ]
+      },
+      "data_files": [
+        {
+          "relative": "meta/info.json",
+          "bytes": 2424,
+          "symlink": false,
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks/meta/info.json"
+        },
+        {
+          "relative": "meta/modality.json",
+          "bytes": 1167,
+          "symlink": false,
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks/meta/modality.json"
+        },
+        {
+          "relative": "meta/episodes.jsonl",
+          "bytes": 5778876,
+          "symlink": false,
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks/meta/episodes.jsonl"
+        },
+        {
+          "relative": "meta/stats.json",
+          "bytes": 4072,
+          "symlink": false,
+          "realpath": "/data7/zzc/energyWAM/lab_execution_20261109/assets/robocasa365_target_50tasks/meta/stats.json"
+        },
+        {
+          "relative": "videos/chunk-000/observation.images.robot0_agentview_left/episode_003423.mp4",
+          "bytes": 105224,
+          "symlink": true,
+          "realpath": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000401.mp4"
+        },
+        {
+          "relative": "videos/chunk-000/observation.images.robot0_agentview_left/episode_003483.mp4",
+          "bytes": 103592,
+          "symlink": true,
+          "realpath": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000461.mp4"
+        },
+        {
+          "relative": "videos/chunk-000/observation.images.robot0_agentview_left/episode_003346.mp4",
+          "bytes": 146719,
+          "symlink": true,
+          "realpath": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000324.mp4"
+        },
+        {
+          "relative": "data/chunk-000/episode_003483.parquet",
+          "bytes": 36373,
+          "symlink": true,
+          "realpath": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000461.parquet"
+        },
+        {
+          "relative": "data/chunk-000/episode_003423.parquet",
+          "bytes": 37821,
+          "symlink": true,
+          "realpath": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000401.parquet"
+        },
+        {
+          "relative": "data/chunk-000/episode_003346.parquet",
+          "bytes": 46520,
+          "symlink": true,
+          "realpath": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000324.parquet"
+        }
+      ]
+    },
+    "dataset_actual_check": {
+      "checked_unix": 1794392236.3665404,
+      "raw_dataset_root": "/data7/zzc/energyWAM/datasets/robocasa365",
+      "exists": true,
+      "files": 10776,
+      "bytes": 1091193924,
+      "suffix_counts": {
+        ".mp4": 4608,
+        ".jsonl": 9,
+        ".json": 1551,
+        ".parquet": 1536,
+        ".npz": 1536,
+        ".gz": 1536
+      },
+      "task_names": [
+        "OpenDrawer",
+        "OpenStandMixerHead",
+        "TurnOnElectricKettle"
+      ],
+      "subset_actual_hash_checks": [
+        {
+          "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000324.parquet",
+          "sha256": "692361497ce5c38998f49eb2247d8c9f9f49f81164639f63884061e5ebb052ff",
+          "matches_receipt": true
+        },
+        {
+          "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000324.mp4",
+          "sha256": "ec2bfaa627e4af634c51e8507c205050c9f9f818443065d958d76cc03bfd124f",
+          "matches_receipt": true
+        },
+        {
+          "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000401.parquet",
+          "sha256": "c3b0ce5d6a181a8d8b5a93fb9a1f6fba9417844fdb85cdc92dc436a09e001997",
+          "matches_receipt": true
+        },
+        {
+          "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000401.mp4",
+          "sha256": "4c896a7395466822e71c96d227adf41d837e234f35f0f5cf48e7e9071cc3c92a",
+          "matches_receipt": true
+        },
+        {
+          "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/data/chunk-000/episode_000461.parquet",
+          "sha256": "870e73653287a47913f39d978fb4c9f4bba17dd66612cca118db9b44b56cdbb6",
+          "matches_receipt": true
+        },
+        {
+          "path": "/data7/zzc/energyWAM/datasets/robocasa365/v1.0/target/atomic/OpenDrawer/20250816/lerobot/videos/chunk-000/observation.images.robot0_agentview_left/episode_000461.mp4",
+          "sha256": "9acf48bffeee714889c1493543eec71e01597c1bb44d48e8e31a3757da962b5f",
+          "matches_receipt": true
+        }
+      ],
+      "dino_weight_sha256": "4610ad75edef83e75afdebf162d148dc628045ea6cbb83d67d4708c709c4f91d"
+    },
+    "dino_local_vs_lab_weight_sha256_equal": true,
+    "qwen_main_file_names_sizes_equal": false,
+    "qwen_main_file_names_sizes_note": "All common main files have equal byte sizes; local-only ModelScope configuration.json is73bytes. Whole Qwen weight hash not recomputed in this audit.",
+    "not_verified_as_copies_of_compshare_checkpoints": [
+      "single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42",
+      "single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43",
+      "single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45",
+      "three_task_full_20261106/three_task_b16_micro4_seed42",
+      "single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42"
+    ]
+  },
+  "dataset": {
+    "trainmix_root": "/datasets/robocasa365_trainmix/robocasa365_target_50tasks",
+    "actual_original_root": "/cloud/zzc/energyWAM/datasets/robocasa365/v1.0/target",
+    "info": {
+      "codebase_version": "v2.1",
+      "robot_type": "PandaOmron",
+      "total_episodes": 25307,
+      "total_frames": 14957899,
+      "total_tasks": 50,
+      "total_videos": 75921,
+      "total_chunks": 1,
+      "chunks_size": 1000,
+      "fps": 20,
+      "splits": {
+        "train": "0:502"
+      },
+      "data_path": "data/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.parquet",
+      "video_path": "videos/chunk-{episode_chunk:03d}/{video_key}/episode_{episode_index:06d}.mp4",
+      "features": {
+        "observation.images.robot0_eye_in_hand": {
+          "dtype": "video",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "names": [
+            "height",
+            "width",
+            "channel"
+          ],
+          "video_info": {
+            "video.fps": 20,
+            "video.codec": "h264",
+            "video.pix_fmt": "yuv420p",
+            "video.is_depth_map": false,
+            "has_audio": false
+          },
+          "info": {
+            "video.height": 256,
+            "video.width": 256,
+            "video.codec": "h264",
+            "video.pix_fmt": "yuv420p",
+            "video.is_depth_map": false,
+            "video.fps": 20,
+            "video.channels": 3,
+            "has_audio": false
+          }
+        },
+        "observation.images.robot0_agentview_left": {
+          "dtype": "video",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "names": [
+            "height",
+            "width",
+            "channel"
+          ],
+          "video_info": {
+            "video.fps": 20,
+            "video.codec": "h264",
+            "video.pix_fmt": "yuv420p",
+            "video.is_depth_map": false,
+            "has_audio": false
+          },
+          "info": {
+            "video.height": 256,
+            "video.width": 256,
+            "video.codec": "h264",
+            "video.pix_fmt": "yuv420p",
+            "video.is_depth_map": false,
+            "video.fps": 20,
+            "video.channels": 3,
+            "has_audio": false
+          }
+        },
+        "observation.images.robot0_agentview_right": {
+          "dtype": "video",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "names": [
+            "height",
+            "width",
+            "channel"
+          ],
+          "video_info": {
+            "video.fps": 20,
+            "video.codec": "h264",
+            "video.pix_fmt": "yuv420p",
+            "video.is_depth_map": false,
+            "has_audio": false
+          },
+          "info": {
+            "video.height": 256,
+            "video.width": 256,
+            "video.codec": "h264",
+            "video.pix_fmt": "yuv420p",
+            "video.is_depth_map": false,
+            "video.fps": 20,
+            "video.channels": 3,
+            "has_audio": false
+          }
+        },
+        "annotation.human.task_description": {
+          "dtype": "int64",
+          "shape": [
+            1
+          ]
+        },
+        "annotation.human.task_name": {
+          "dtype": "int64",
+          "shape": [
+            1
+          ]
+        },
+        "observation.state": {
+          "dtype": "float64",
+          "shape": [
+            16
+          ]
+        },
+        "action": {
+          "dtype": "float64",
+          "shape": [
+            12
+          ]
+        },
+        "next.reward": {
+          "dtype": "float32",
+          "shape": [
+            1
+          ]
+        },
+        "next.done": {
+          "dtype": "bool",
+          "shape": [
+            1
+          ]
+        },
+        "timestamp": {
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "names": null
+        },
+        "frame_index": {
+          "dtype": "int64",
+          "shape": [
+            1
+          ],
+          "names": null
+        },
+        "episode_index": {
+          "dtype": "int64",
+          "shape": [
+            1
+          ],
+          "names": null
+        },
+        "index": {
+          "dtype": "int64",
+          "shape": [
+            1
+          ],
+          "names": null
+        },
+        "task_index": {
+          "dtype": "int64",
+          "shape": [
+            1
+          ],
+          "names": null
+        }
+      }
+    },
+    "raw_source_mirror": "ryanhoangt/robocasa365_datasets_split_target_source_human",
+    "local_dataset_size_audit": "Standalone du -sb on original tree=61,494,471,178 bytes (includes directory entries); trainmix payload du -shL≈41GiB rounded, overlapping original tree, do not add both",
+    "symlink_warning": "trainmix parquet/video paths are symlinks to original task tree; copying only symlinks does not back up payloads",
+    "full_dataset_copy_on_lab": "No: actual checked lab raw tree contains three named tasks and1536parquet episodes; this is not all50tasks",
+    "original_tree_bytes": 61494471178,
+    "original_tree_gib": 57.2711892221123,
+    "simulation_assets_root": "/cloud/zzc/energyWAM/datasets/sim",
+    "simulation_assets_bytes": 24112774844,
+    "source_archives_root": "/cloud/zzc/energyWAM/datasets/sources",
+    "source_archives_bytes": 302637221
+  },
+  "recommendations": [
+    "优先备份自有训练checkpoint及完整小型复现实验记录；GitHub代码备份不包含大权重/完整原始日志。",
+    "seed42 baseline latest210/best60，seed43 latest61/best0，历史400步模型参考优先；其余按priority保留。",
+    "学校完成的步长实验权重已独立存在，仍值得单独异地备份，但不是云端断点副本。",
+    "公开Qwen/DINO及原始RoboCasa先保存来源/精确版本与校验记录，原始数据完整迁移需求另行安排；自定义trainmix映射、划分、stats不能只靠下载公开数据恢复。",
+    "传输checkpoint时保存真实文件及alias映射，保留latest/best元数据和完整optimizer/RNG；本次未改变保留政策。"
+  ],
+  "experiment_records_without_large_weights": {
+    "unique_files": 3818,
+    "bytes": 556930649,
+    "gib": 0.5186820859089494
+  }
+}

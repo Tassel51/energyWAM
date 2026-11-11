@@ -13,18 +13,27 @@ sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'scripts'))
 def main():
     p=argparse.ArgumentParser();p.add_argument('--config',required=True);p.add_argument('--steps',type=int,required=True)
     p.add_argument('--resume');p.add_argument('--fixed-window-manifest',required=True);p.add_argument('--probe-eval-interval',type=int,default=20)
-    p.add_argument('--physical-gpus',default='2,3',choices=['2,3','0,1'],help='Explicit authorized physical GPU pair')
+    p.add_argument('--resume-config-lrs',action='store_true',help='Explicitly override restored LR groups with absolute config values; retain moments and schedule progress')
+    p.add_argument('--physical-gpus',default='2,3',help='Explicit host-authorized NVML physical GPU pair')
+    p.add_argument('--execution-gpu-policy',type=Path,default=ROOT/'configs/execution_gpu_policy.json',help='Host-scoped authorization; local default policy is unchanged')
     p.add_argument('--profile',action='store_true',help='Skip evaluation/checkpoint writes for bounded throughput probes')
     p.add_argument('--evaluate-only',action='store_true',help='Read-only fixed-window evaluation, no checkpoint rewrite')
     p.add_argument('--keep-best',action='store_true',help='Keep full latest and best by predeclared weighted conditional validation MSE')
     p.add_argument('--sample-eval-interval',type=int,help='Validation cadence in sample visits, independent of effective batch')
     p.add_argument('--train-monitor-manifest',help='Small fixed TRAIN monitor, evaluated separately from VAL')
     p.add_argument('--train-monitor-sample-interval',type=int,default=256)
+    p.add_argument('--alternate-final-eval-seed',type=int,help='Additional fixed TRAIN candidate-seed check at final weights')
     args=p.parse_args()
+    from energywam.training.gpu_policy import authorized_visibility
+    if args.execution_gpu_policy.exists():
+        os.environ['CUDA_VISIBLE_DEVICES']=authorized_visibility(args.physical_gpus,args.execution_gpu_policy,visible=os.environ.get('CUDA_VISIBLE_DEVICES'))
+    elif os.environ.get('CUDA_VISIBLE_DEVICES')!=args.physical_gpus:
+        raise RuntimeError('visible GPUs must match explicitly selected physical pair')
     if args.keep_best and (args.profile or args.evaluate_only):raise ValueError('keep-best is only for real training, never read-only/profile mode')
-    if os.environ.get('CUDA_VISIBLE_DEVICES')!=args.physical_gpus:raise RuntimeError('visible GPUs must match explicitly selected physical pair')
     physical_gpus=[int(x) for x in args.physical_gpus.split(',')]
     import torch
+    from energywam.training.gpu_policy import apply_allocator_limits
+    apply_allocator_limits(args.physical_gpus,args.execution_gpu_policy)
     from torch.utils.data import DataLoader
     from energywam.config import load_config
     from energywam.models.energy_wam import QwenEnergyWAM
@@ -42,7 +51,7 @@ def main():
     output=Path(cfg.trainer.output_dir);output.mkdir(parents=True,exist_ok=True)
     if args.sample_eval_interval and (args.sample_eval_interval<=0 or args.sample_eval_interval%cfg.trainer.per_device_batch_size):raise ValueError('validation sample cadence must be a positive multiple of batch')
     if args.train_monitor_manifest and (args.train_monitor_sample_interval<=0 or args.train_monitor_sample_interval%cfg.trainer.per_device_batch_size):raise ValueError('train monitor cadence must be a positive multiple of batch')
-    (output/'execution_options.json').write_text(json.dumps(vars(args),indent=2))
+    (output/'execution_options.json').write_text(json.dumps(vars(args),indent=2,default=str))
     if not args.resume:
         import zipfile
         with zipfile.ZipFile(output/'source_initial.zip','w',compression=zipfile.ZIP_DEFLATED) as archive:
@@ -55,8 +64,17 @@ def main():
     bundle=T.resolve_training_stats(cfg,checkpoint_path=args.resume)
     model=QwenEnergyWAM(cfg,stats_bundle=bundle)
     trainer=SharedMicrobatchTrainer(cfg,model)
+    configured_base_lrs=list(trainer.scheduler.base_lrs)
     if args.resume:
         trainer.load(args.resume)
+        if trainer.global_step < cfg.trainer.minimum_resume_step:
+            raise ValueError(f'Restored step {trainer.global_step} is below required continuation step {cfg.trainer.minimum_resume_step}')
+        if args.resume_config_lrs:
+            from energywam.training.resume_lr import override_resumed_lrs
+            lr_audit=override_resumed_lrs(trainer.optimizer,trainer.scheduler,configured_base_lrs)
+            lr_audit.update(source_checkpoint=str(args.resume),global_step=trainer.global_step)
+            (output/f'resume_lr_override_step{trainer.global_step}.json').write_text(json.dumps(lr_audit,indent=2))
+            print('[resume-config-lrs] '+json.dumps(lr_audit),flush=True)
         if not args.evaluate_only:
             from energywam.training.run_state import reconcile_resume_outputs
             reconciled=reconcile_resume_outputs(output,trainer.global_step)
@@ -95,13 +113,13 @@ def main():
         event=dict(global_step=trainer.global_step,save_seconds=time.monotonic()-started,bytes=path.stat().st_size)
         with (output/'checkpoint_history.jsonl').open('a') as stream:stream.write(json.dumps(event)+'\n')
         last_saved=trainer.global_step;last_checkpoint_time=time.monotonic()
-    def fixed_assessment(manifest,target,splits):
+    def fixed_assessment(manifest,target,splits,evaluation_seed=2026):
         target=Path(target);target.mkdir(parents=True,exist_ok=True)
         old=os.environ.get('ENERGYWAM_PROBE_SPLITS')
         os.environ['ENERGYWAM_PROBE_SPLITS']=splits
         try:
             for rank,direction in enumerate(['action','future']):
-                if not (target/f'eval_{trainer.global_step:04d}_{direction}.json').exists():evaluate(trainer,manifest,target,rank)
+                if not (target/f'eval_{trainer.global_step:04d}_{direction}.json').exists():evaluate(trainer,manifest,target,rank,evaluation_seed=evaluation_seed)
         finally:
             if old is None:os.environ.pop('ENERGYWAM_PROBE_SPLITS',None)
             else:os.environ['ENERGYWAM_PROBE_SPLITS']=old
@@ -150,6 +168,9 @@ def main():
         eval_due=(visits%args.sample_eval_interval==0) if args.sample_eval_interval else (trainer.global_step%args.probe_eval_interval==0)
         if not args.profile and (eval_due or trainer.global_step==args.steps):assess()
     if not args.profile and last_saved!=trainer.global_step:checkpoint()
+    if args.alternate_final_eval_seed is not None and not args.profile:
+        fixed_assessment(args.train_monitor_manifest or args.fixed_window_manifest,
+                         output/'alternate_candidate_seed','train',args.alternate_final_eval_seed)
     if args.profile:
         torch.save({n:p.detach().reshape(-1)[:64].float().cpu().clone() for n,p in model.named_parameters()},output/'final_parameter_samples.pt')
     (output/'final_report.json').write_text(json.dumps({'global_step':trainer.global_step,'model_instances':1,'global_batch':cfg.trainer.per_device_batch_size,'profile_only':args.profile,'checkpoint_policy':'none' if args.profile else ('latest_and_best' if args.keep_best else 'rolling_latest'),'last_loss':records[-1] if records else None},indent=2))

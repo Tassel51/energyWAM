@@ -18,8 +18,10 @@
 *.bin
 *.onnx
 *.zip
+!/docs/reproducibility/source_archives/bundles/*.zip
 *.tar
 *.tar.gz
+!/docs/reproducibility/experiment_records/*.tar.gz
 *.tgz
 *.hdf5
 *.h5
@@ -37,6 +39,7 @@ secrets/
 .git-credentials
 /configs/wandb_bridge.json
 /configs/wandb_bridge.local.json
+/configs/lab_wandb_bridge.json
 # Python environments and build/cache outputs.
 .venv*/
 venv/

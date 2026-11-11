@@ -1,0 +1,29 @@
+{
+  "purpose": "Preserve exact custom episode mapping and dataset metadata; raw video/parquet payloads are external",
+  "entries": [
+    {
+      "original_path": "/datasets/robocasa365_trainmix/robocasa365_target_50tasks/meta/episodes.jsonl",
+      "file": "episodes.jsonl",
+      "bytes": 5778876,
+      "sha256": "f5a7baa795e0cb12b6538f67029c5717e7bb0b7d83a79174f7128e7b9a88c376"
+    },
+    {
+      "original_path": "/datasets/robocasa365_trainmix/robocasa365_target_50tasks/meta/info.json",
+      "file": "info.json",
+      "bytes": 2424,
+      "sha256": "63b227ebae7d380c2956f7b1430af92d1d6cf6adc259c9d49653b4a5281642eb"
+    },
+    {
+      "original_path": "/datasets/robocasa365_trainmix/robocasa365_target_50tasks/meta/modality.json",
+      "file": "modality.json",
+      "bytes": 1167,
+      "sha256": "120cfe4d46b4ad0a9a473ff521a40e28f76b6f2dc7897522354f2f1001efc62c"
+    },
+    {
+      "original_path": "/datasets/robocasa365_trainmix/robocasa365_target_50tasks/meta/stats.json",
+      "file": "stats.json",
+      "bytes": 4072,
+      "sha256": "4170a422adc604b5c88f89c5100cef3cbbaf315b1a921fae345449240985ecf1"
+    }
+  ]
+}

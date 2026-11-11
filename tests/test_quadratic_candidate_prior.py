@@ -7,6 +7,26 @@ from energywam.energy.types import ConditionBundle
 from energywam.energy.solver import refine
 
 
+@pytest.mark.parametrize('direction',['action','future'])
+def test_half_step_with_compensated_prior_preserves_energy_and_candidate_gradients(direction):
+    import copy
+    cfg=EnergyWAMConfig();cfg.framework.quadratic_candidate_prior=True
+    cfg.solver.alpha_action=5.;cfg.solver.alpha_future=2000.
+    class Backbone(nn.Module):hidden_size=16
+    geometry=dict(action_dim=2,state_dim=4,future_dim=3,future_patches=1,num_cameras=1,action_horizon=8,num_future_frames=3,dino_dim=3)
+    baseline=EnergyWAMCore(cfg,Backbone(),geometry)
+    changed=copy.deepcopy(cfg)
+    setattr(changed.solver,'alpha_'+direction,getattr(changed.solver,'alpha_'+direction)*.5)
+    setattr(changed.framework,'quadratic_'+direction+'_weight',.5)
+    candidate=EnergyWAMCore(changed,Backbone(),geometry)
+    cond=ConditionBundle(group=None,native={'extra_raw':{'future_prior_center':torch.randn(2,1,1,3)}})
+    a=torch.randn(2,8,2,requires_grad=True);z=torch.randn(2,3,1,1,3,requires_grad=True)
+    first=baseline.quadratic_prior_energy(cond,z,a);second=candidate.quadratic_prior_energy(cond,z,a)
+    torch.testing.assert_close(first,second,rtol=0,atol=0)
+    g1=torch.autograd.grad(first.sum(),(a,z));g2=torch.autograd.grad(second.sum(),(a,z))
+    for x,y in zip(g1,g2):torch.testing.assert_close(x,y,rtol=0,atol=0)
+
+
 def test_pure_prior_one_step_reproduces_zero_and_current_only_baselines():
     cfg=EnergyWAMConfig();cfg.framework.quadratic_candidate_prior=True
     cfg.solver.alpha_action=5.;cfg.solver.alpha_future=2000.

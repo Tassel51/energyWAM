@@ -1,0 +1,2096 @@
+{
+  "purpose": "Preserve all discovered historical project source versions before server retirement",
+  "excludes": [
+    "datasets",
+    "model weights",
+    "checkpoints",
+    "credentials",
+    "virtual environments"
+  ],
+  "file_references": 347,
+  "unique_archive_files": 345,
+  "entries": [
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/SOURCE_MANIFEST.json",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/SOURCE_MANIFEST.json",
+      "bytes": 9068,
+      "sha256": "f865b6c795d85ca287cd181a8e9376a7f254fc20cc52984dafc0f49dacaa92b6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/configs/execution_gpu_policy.json",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/configs/execution_gpu_policy.json",
+      "bytes": 183,
+      "sha256": "044fce9e9f1f4194c8e2657d1c26aa18678ae42cad66be430f554126b174e238"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/__init__.py",
+      "bytes": 408,
+      "sha256": "c8f63181c0b48b0ee0c312c6a94eb18a5075756752dbfafd792f3518a930d8e6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/dino_v3.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/dino_v3.py",
+      "bytes": 11175,
+      "sha256": "1eed0337e5792bb7cf5537f875c38bb12d56eeffdb8ff3f04b49509f46f73f0a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "bytes": 24274,
+      "sha256": "ddc9c319b9a26d47e71201b20a213fadafeddb25d38de559725845f6d30819e2"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/tiny_adapter.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/tiny_adapter.py",
+      "bytes": 2834,
+      "sha256": "8f7a1ff9947b4c7e0192fae33c7d9641ff7e53ca85deda1505052e31cfe0d85c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/tiny_transformer.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/backbones/tiny_transformer.py",
+      "bytes": 4883,
+      "sha256": "e48c56e4fabc3c35bedf1f94e916c43653569cf32723cae8a610b7d854f1ae14"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/config.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/config.py",
+      "bytes": 25199,
+      "sha256": "b7b063b564f67cf0d18afeb7eaed2c42b158f3b1b3b27e63d2a6a58ef94b261b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/cache.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/cache.py",
+      "bytes": 3288,
+      "sha256": "c3c7790ddeac29f93255419afce1a79aa67510c4cb36592d18d76f9507804354"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/energy_dataset.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/energy_dataset.py",
+      "bytes": 29715,
+      "sha256": "37af5bcdb1ab392044027255352f72ab8f1976dfee87b2e367669a0ce9d4559c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/episode_dataset.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/episode_dataset.py",
+      "bytes": 16004,
+      "sha256": "208c53935cedf2520d0a77273f151549cb1c3eb961b57561715fad9015e38329"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/future_offsets.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/future_offsets.py",
+      "bytes": 4219,
+      "sha256": "10ce9b2c5a5c3e8be703f67dc233d5b1a5cbe0aca42795c90f20576e6cb66b61"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/normalization.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/normalization.py",
+      "bytes": 7488,
+      "sha256": "4dcc24d544cf737a7369d48ac378889a6b805386dda7c8a09b4afdb7b94a12c7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/standardization.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/standardization.py",
+      "bytes": 29798,
+      "sha256": "5158dbb90a175a67594f113e604da8afadf249e0ae9d2bd1c8da505aea608c22"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/stats_fit.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/stats_fit.py",
+      "bytes": 16048,
+      "sha256": "25b0e70af8fef7b94c404c70bd9a38c18ed2a2373dddcb3a6d21636735171aea"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/data/tiny_data.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/data/tiny_data.py",
+      "bytes": 10072,
+      "sha256": "407914e11dcb59e5429bab6aad9d9b26703d9128151db63fe0591d4335be448f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/diagnostics.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/diagnostics.py",
+      "bytes": 15033,
+      "sha256": "8ebf85afa446a6c889cad00a77855b5e3a728bcae3fd217a6d2a130dbbddb91d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/encodings.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/encodings.py",
+      "bytes": 7176,
+      "sha256": "f7afbc6935a182c991fcd83ba67ccfc1e414512e80145eb62284f5665272afc0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/init.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/init.py",
+      "bytes": 6004,
+      "sha256": "4eb712b61c5f960de6eb391c5d095417033c749175f4b301256f8269a84645a8"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/inner_diagnostic.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/inner_diagnostic.py",
+      "bytes": 1961,
+      "sha256": "050912d46c69a73911e751b684e50d3168bc38de78e7bc3a91ae5f63d9172506"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/iteration.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/iteration.py",
+      "bytes": 2628,
+      "sha256": "fd4221ea0b82319045fb3d86d8d2593705a4ceb00c788d319fe267255a10a6f9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/losses.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/losses.py",
+      "bytes": 6400,
+      "sha256": "59012f615616e0e7943a3fc6a25293374ea9730d62e5065703b8a6120ba1db6e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/patch_packing.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/patch_packing.py",
+      "bytes": 944,
+      "sha256": "c317633f65b3e4934594089764d010d008ccba2034b2a9a74130a6cf4a7ae16d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/solver.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/solver.py",
+      "bytes": 16176,
+      "sha256": "e31b0345c553ebebaf1ff7cb3d3c78f4a09c6820fb666b36c884a59a8ea90762"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/solver_utils.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/solver_utils.py",
+      "bytes": 3196,
+      "sha256": "1705a5cd6351445ce4b4df6e5a8912c2568fc905d0bc180303b3a72960f1d731"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/types.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/energy/types.py",
+      "bytes": 3169,
+      "sha256": "6b3613c82c66a6b9bc366d077a1f2bcf42e9cfccee7c8c42f19af54e50049c13"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/inference/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/inference/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/inference/predictor.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/inference/predictor.py",
+      "bytes": 12232,
+      "sha256": "fc1837a918a6e9d2d3b44436191343414c739086ae536abdc194bc62e07fc823"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/integration/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/integration/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/integration/starvla.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/integration/starvla.py",
+      "bytes": 5937,
+      "sha256": "071847df7c83e6aba1edc8132c631024b36d56ac5d7c8a92505f4f58918f6cd7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/models/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/models/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/models/energy_core.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/models/energy_core.py",
+      "bytes": 22631,
+      "sha256": "6a0b919331613ffd0ac73f613c9033868543bf20248f8c1ab7ac06c888656b65"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/models/energy_wam.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/models/energy_wam.py",
+      "bytes": 34375,
+      "sha256": "8f6840353823b6a99ebde377fdc5ed0e80993c492c68f502cdec7da3f2d1f17e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/__init__.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/best_checkpoint.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/best_checkpoint.py",
+      "bytes": 6605,
+      "sha256": "a185b9ead95c90e81ad6ae22af9f8a872a0fe5b869e6bcc876456cf49fda48c0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/candidate_seeds.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/candidate_seeds.py",
+      "bytes": 336,
+      "sha256": "30d20d12806dd350464fe93e02057035679da41781dacb0537fe4dba303c6928"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/checkpoint.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/checkpoint.py",
+      "bytes": 22354,
+      "sha256": "788073929e2c2d78154ce6e34569796dec4ffccb9ff4cd45b6427b2bb03e7fff"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/gpu_policy.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/gpu_policy.py",
+      "bytes": 1648,
+      "sha256": "5ee8fa993568c243f4712d66e368e1ff09d3dea6530670602087fbbca31201af"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/master_weights.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/master_weights.py",
+      "bytes": 3384,
+      "sha256": "c049a5e09f128e706092a0cac1ad5f443139da207f3c19c002cdc319fa86e5b0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/offload.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/offload.py",
+      "bytes": 6538,
+      "sha256": "741b204eef4f142b4dc74d37789c5bb02b0ae658418a928bfe523ac293640a63"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/parallel.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/parallel.py",
+      "bytes": 1129,
+      "sha256": "85c831aff8b2582d1761af0204b70ec007f7d9990d777cbf7e9c69e758f68c45"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/replicated.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/replicated.py",
+      "bytes": 9095,
+      "sha256": "1b33195cb5ce94dbcd0e8e3daa66881374d372be1ffeca41c1a905f4195f97c1"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/replicated_batch_benchmark.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/replicated_batch_benchmark.py",
+      "bytes": 8076,
+      "sha256": "a84ab899a92370635c2459b4196ed868afe21ed469e3f38b2dc7c65b508049f5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/resource_monitor.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/resource_monitor.py",
+      "bytes": 6692,
+      "sha256": "25dc46cec91bfe1371f4577005614da33aeeaa91dba0928687990d3b71cf19a0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/resume_lr.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/resume_lr.py",
+      "bytes": 1206,
+      "sha256": "f2368c71930653108c3cc5c72ba8542e2425c3af7038620efaa8a9efd3f45ec0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/run_state.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/run_state.py",
+      "bytes": 9412,
+      "sha256": "9ec93c57deb81570c6f1b04f4aee085d84ff70206883748c3527bdeb62905633"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/shared_microbatch.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/shared_microbatch.py",
+      "bytes": 6523,
+      "sha256": "09d7fd9362d9f7a66657c379d3f5d8bc0a6d0146f0c42727e28a247a5a91249a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/stages.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/stages.py",
+      "bytes": 19418,
+      "sha256": "f67df4a6586654bebb3d82e4e11a31838305204cf96cdb771c4f5882ee219429"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/energywam/training/trainer.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/energywam/training/trainer.py",
+      "bytes": 21469,
+      "sha256": "6b242b3903c3fb14aef525a08d0b99685f5c5543511d909a837d9420d5b29eee"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/scripts/k_training_probe.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/scripts/k_training_probe.py",
+      "bytes": 11160,
+      "sha256": "4faf77989dbfdc00c9945b83d71c0fe5719399cfddc6f4a3a9ce484a556dce1b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/scripts/run_head_lr_refinement.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/scripts/run_head_lr_refinement.py",
+      "bytes": 5161,
+      "sha256": "6c587dc40f5188cd0f2b09b68fbad220de2599d1a47536406696bddd70ec4709"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/scripts/run_iteration_search.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/scripts/run_iteration_search.py",
+      "bytes": 14246,
+      "sha256": "615501bf83dfa4731e9b570a0a67162130dc2ffe72aa48031620c7c0da2d4350"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/scripts/run_single_episode_head_lr_study.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/scripts/run_single_episode_head_lr_study.py",
+      "bytes": 9366,
+      "sha256": "0a1696ad00c326dd3866d8e9e674f2e9592397bdc1da4ab0de0eea0d1572093a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/scripts/train.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/scripts/train.py",
+      "bytes": 7743,
+      "sha256": "588151c4cc710228c5fcd5943941f362434463e3647c44ab68ccb1cbdf381a28"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/scripts/train_shared_sharded.py",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/scripts/train_shared_sharded.py",
+      "bytes": 14080,
+      "sha256": "a86febea209d54ffcfec26bf88994b7c48317c8cdc0e530e7cd857acc8df8495"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_refine_20261109T122513Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "archive_path": "frozen_sources/head_refine_20261109T122513Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "bytes": 361906,
+      "sha256": "1c0ed7545b34bc6a67fc24b5b9b62a3f8496fcad2b57d692ee87991fcb13be9c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/SOURCE_MANIFEST.json",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/SOURCE_MANIFEST.json",
+      "bytes": 9068,
+      "sha256": "f865b6c795d85ca287cd181a8e9376a7f254fc20cc52984dafc0f49dacaa92b6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/configs/execution_gpu_policy.json",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/configs/execution_gpu_policy.json",
+      "bytes": 183,
+      "sha256": "044fce9e9f1f4194c8e2657d1c26aa18678ae42cad66be430f554126b174e238"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/__init__.py",
+      "bytes": 408,
+      "sha256": "c8f63181c0b48b0ee0c312c6a94eb18a5075756752dbfafd792f3518a930d8e6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/dino_v3.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/dino_v3.py",
+      "bytes": 11175,
+      "sha256": "1eed0337e5792bb7cf5537f875c38bb12d56eeffdb8ff3f04b49509f46f73f0a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "bytes": 24274,
+      "sha256": "ddc9c319b9a26d47e71201b20a213fadafeddb25d38de559725845f6d30819e2"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/tiny_adapter.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/tiny_adapter.py",
+      "bytes": 2834,
+      "sha256": "8f7a1ff9947b4c7e0192fae33c7d9641ff7e53ca85deda1505052e31cfe0d85c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/tiny_transformer.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/backbones/tiny_transformer.py",
+      "bytes": 4883,
+      "sha256": "e48c56e4fabc3c35bedf1f94e916c43653569cf32723cae8a610b7d854f1ae14"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/config.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/config.py",
+      "bytes": 25199,
+      "sha256": "b7b063b564f67cf0d18afeb7eaed2c42b158f3b1b3b27e63d2a6a58ef94b261b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/cache.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/cache.py",
+      "bytes": 3288,
+      "sha256": "c3c7790ddeac29f93255419afce1a79aa67510c4cb36592d18d76f9507804354"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/energy_dataset.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/energy_dataset.py",
+      "bytes": 29715,
+      "sha256": "37af5bcdb1ab392044027255352f72ab8f1976dfee87b2e367669a0ce9d4559c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/episode_dataset.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/episode_dataset.py",
+      "bytes": 16004,
+      "sha256": "208c53935cedf2520d0a77273f151549cb1c3eb961b57561715fad9015e38329"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/future_offsets.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/future_offsets.py",
+      "bytes": 4219,
+      "sha256": "10ce9b2c5a5c3e8be703f67dc233d5b1a5cbe0aca42795c90f20576e6cb66b61"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/normalization.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/normalization.py",
+      "bytes": 7488,
+      "sha256": "4dcc24d544cf737a7369d48ac378889a6b805386dda7c8a09b4afdb7b94a12c7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/standardization.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/standardization.py",
+      "bytes": 29798,
+      "sha256": "5158dbb90a175a67594f113e604da8afadf249e0ae9d2bd1c8da505aea608c22"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/stats_fit.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/stats_fit.py",
+      "bytes": 16048,
+      "sha256": "25b0e70af8fef7b94c404c70bd9a38c18ed2a2373dddcb3a6d21636735171aea"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/tiny_data.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/data/tiny_data.py",
+      "bytes": 10072,
+      "sha256": "407914e11dcb59e5429bab6aad9d9b26703d9128151db63fe0591d4335be448f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/diagnostics.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/diagnostics.py",
+      "bytes": 15033,
+      "sha256": "8ebf85afa446a6c889cad00a77855b5e3a728bcae3fd217a6d2a130dbbddb91d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/encodings.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/encodings.py",
+      "bytes": 7176,
+      "sha256": "f7afbc6935a182c991fcd83ba67ccfc1e414512e80145eb62284f5665272afc0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/init.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/init.py",
+      "bytes": 6004,
+      "sha256": "4eb712b61c5f960de6eb391c5d095417033c749175f4b301256f8269a84645a8"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/inner_diagnostic.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/inner_diagnostic.py",
+      "bytes": 1961,
+      "sha256": "050912d46c69a73911e751b684e50d3168bc38de78e7bc3a91ae5f63d9172506"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/iteration.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/iteration.py",
+      "bytes": 2628,
+      "sha256": "fd4221ea0b82319045fb3d86d8d2593705a4ceb00c788d319fe267255a10a6f9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/losses.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/losses.py",
+      "bytes": 6400,
+      "sha256": "59012f615616e0e7943a3fc6a25293374ea9730d62e5065703b8a6120ba1db6e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/patch_packing.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/patch_packing.py",
+      "bytes": 944,
+      "sha256": "c317633f65b3e4934594089764d010d008ccba2034b2a9a74130a6cf4a7ae16d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/solver.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/solver.py",
+      "bytes": 16176,
+      "sha256": "e31b0345c553ebebaf1ff7cb3d3c78f4a09c6820fb666b36c884a59a8ea90762"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/solver_utils.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/solver_utils.py",
+      "bytes": 3196,
+      "sha256": "1705a5cd6351445ce4b4df6e5a8912c2568fc905d0bc180303b3a72960f1d731"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/types.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/energy/types.py",
+      "bytes": 3169,
+      "sha256": "6b3613c82c66a6b9bc366d077a1f2bcf42e9cfccee7c8c42f19af54e50049c13"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/inference/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/inference/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/inference/predictor.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/inference/predictor.py",
+      "bytes": 12232,
+      "sha256": "fc1837a918a6e9d2d3b44436191343414c739086ae536abdc194bc62e07fc823"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/integration/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/integration/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/integration/starvla.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/integration/starvla.py",
+      "bytes": 5937,
+      "sha256": "071847df7c83e6aba1edc8132c631024b36d56ac5d7c8a92505f4f58918f6cd7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/models/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/models/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/models/energy_core.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/models/energy_core.py",
+      "bytes": 22631,
+      "sha256": "6a0b919331613ffd0ac73f613c9033868543bf20248f8c1ab7ac06c888656b65"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/models/energy_wam.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/models/energy_wam.py",
+      "bytes": 34375,
+      "sha256": "8f6840353823b6a99ebde377fdc5ed0e80993c492c68f502cdec7da3f2d1f17e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/__init__.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/best_checkpoint.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/best_checkpoint.py",
+      "bytes": 6605,
+      "sha256": "a185b9ead95c90e81ad6ae22af9f8a872a0fe5b869e6bcc876456cf49fda48c0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/candidate_seeds.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/candidate_seeds.py",
+      "bytes": 336,
+      "sha256": "30d20d12806dd350464fe93e02057035679da41781dacb0537fe4dba303c6928"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/checkpoint.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/checkpoint.py",
+      "bytes": 22489,
+      "sha256": "0ac3bb139088f046befd5297f7bf6a194b9c77ec82927d30571ab1bfbb7a383b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/checkpoint_metadata.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/checkpoint_metadata.py",
+      "bytes": 1450,
+      "sha256": "2c521a7090ceb504dfaeba12b322561b46b56a3e692ef6ee7912e32b8386ac8f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/gpu_policy.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/gpu_policy.py",
+      "bytes": 1648,
+      "sha256": "5ee8fa993568c243f4712d66e368e1ff09d3dea6530670602087fbbca31201af"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/master_weights.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/master_weights.py",
+      "bytes": 3384,
+      "sha256": "c049a5e09f128e706092a0cac1ad5f443139da207f3c19c002cdc319fa86e5b0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/offload.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/offload.py",
+      "bytes": 6538,
+      "sha256": "741b204eef4f142b4dc74d37789c5bb02b0ae658418a928bfe523ac293640a63"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/parallel.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/parallel.py",
+      "bytes": 1129,
+      "sha256": "85c831aff8b2582d1761af0204b70ec007f7d9990d777cbf7e9c69e758f68c45"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/replicated.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/replicated.py",
+      "bytes": 9095,
+      "sha256": "1b33195cb5ce94dbcd0e8e3daa66881374d372be1ffeca41c1a905f4195f97c1"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/replicated_batch_benchmark.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/replicated_batch_benchmark.py",
+      "bytes": 8076,
+      "sha256": "a84ab899a92370635c2459b4196ed868afe21ed469e3f38b2dc7c65b508049f5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/resource_monitor.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/resource_monitor.py",
+      "bytes": 6692,
+      "sha256": "25dc46cec91bfe1371f4577005614da33aeeaa91dba0928687990d3b71cf19a0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/resume_lr.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/resume_lr.py",
+      "bytes": 1206,
+      "sha256": "f2368c71930653108c3cc5c72ba8542e2425c3af7038620efaa8a9efd3f45ec0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/run_state.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/run_state.py",
+      "bytes": 9514,
+      "sha256": "302eb97c6083b00f9407ae61123dfc62a5f8c108f8cf78b30b668d0bbe4e1eb5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/shared_microbatch.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/shared_microbatch.py",
+      "bytes": 6523,
+      "sha256": "09d7fd9362d9f7a66657c379d3f5d8bc0a6d0146f0c42727e28a247a5a91249a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/stages.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/stages.py",
+      "bytes": 19418,
+      "sha256": "f67df4a6586654bebb3d82e4e11a31838305204cf96cdb771c4f5882ee219429"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/trainer.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/energywam/training/trainer.py",
+      "bytes": 21469,
+      "sha256": "6b242b3903c3fb14aef525a08d0b99685f5c5543511d909a837d9420d5b29eee"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/check_checkpoint_metadata_storage.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/check_checkpoint_metadata_storage.py",
+      "bytes": 2706,
+      "sha256": "d94c9fc2c97efd6be4da6d914646a2357f95e787d08a01737d3d5472c5e8e784"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/k_training_probe.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/k_training_probe.py",
+      "bytes": 11160,
+      "sha256": "4faf77989dbfdc00c9945b83d71c0fe5719399cfddc6f4a3a9ce484a556dce1b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/run_head_lr_refinement.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/run_head_lr_refinement.py",
+      "bytes": 5367,
+      "sha256": "a913c980cb7679ca55a8ed38f566e0f80c657a10859fae2430f918d5373449c6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/run_iteration_search.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/run_iteration_search.py",
+      "bytes": 14246,
+      "sha256": "615501bf83dfa4731e9b570a0a67162130dc2ffe72aa48031620c7c0da2d4350"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/run_single_episode_head_lr_study.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/run_single_episode_head_lr_study.py",
+      "bytes": 9366,
+      "sha256": "0a1696ad00c326dd3866d8e9e674f2e9592397bdc1da4ab0de0eea0d1572093a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/train.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/train.py",
+      "bytes": 7743,
+      "sha256": "588151c4cc710228c5fcd5943941f362434463e3647c44ab68ccb1cbdf381a28"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/train_shared_sharded.py",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/scripts/train_shared_sharded.py",
+      "bytes": 14080,
+      "sha256": "a86febea209d54ffcfec26bf88994b7c48317c8cdc0e530e7cd857acc8df8495"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/head_repeat_storagefix_20261110T031718Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "archive_path": "frozen_sources/head_repeat_storagefix_20261110T031718Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "bytes": 361906,
+      "sha256": "1c0ed7545b34bc6a67fc24b5b9b62a3f8496fcad2b57d692ee87991fcb13be9c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/SOURCE_MANIFEST.json",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/SOURCE_MANIFEST.json",
+      "bytes": 9068,
+      "sha256": "f865b6c795d85ca287cd181a8e9376a7f254fc20cc52984dafc0f49dacaa92b6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/configs/execution_gpu_policy.json",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/configs/execution_gpu_policy.json",
+      "bytes": 183,
+      "sha256": "044fce9e9f1f4194c8e2657d1c26aa18678ae42cad66be430f554126b174e238"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/__init__.py",
+      "bytes": 408,
+      "sha256": "c8f63181c0b48b0ee0c312c6a94eb18a5075756752dbfafd792f3518a930d8e6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/dino_v3.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/dino_v3.py",
+      "bytes": 11175,
+      "sha256": "1eed0337e5792bb7cf5537f875c38bb12d56eeffdb8ff3f04b49509f46f73f0a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "bytes": 24274,
+      "sha256": "ddc9c319b9a26d47e71201b20a213fadafeddb25d38de559725845f6d30819e2"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/tiny_adapter.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/tiny_adapter.py",
+      "bytes": 2834,
+      "sha256": "8f7a1ff9947b4c7e0192fae33c7d9641ff7e53ca85deda1505052e31cfe0d85c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/tiny_transformer.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/backbones/tiny_transformer.py",
+      "bytes": 4883,
+      "sha256": "e48c56e4fabc3c35bedf1f94e916c43653569cf32723cae8a610b7d854f1ae14"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/config.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/config.py",
+      "bytes": 25199,
+      "sha256": "b7b063b564f67cf0d18afeb7eaed2c42b158f3b1b3b27e63d2a6a58ef94b261b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/cache.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/cache.py",
+      "bytes": 3288,
+      "sha256": "c3c7790ddeac29f93255419afce1a79aa67510c4cb36592d18d76f9507804354"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/energy_dataset.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/energy_dataset.py",
+      "bytes": 29715,
+      "sha256": "37af5bcdb1ab392044027255352f72ab8f1976dfee87b2e367669a0ce9d4559c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/episode_dataset.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/episode_dataset.py",
+      "bytes": 16004,
+      "sha256": "208c53935cedf2520d0a77273f151549cb1c3eb961b57561715fad9015e38329"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/future_offsets.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/future_offsets.py",
+      "bytes": 4219,
+      "sha256": "10ce9b2c5a5c3e8be703f67dc233d5b1a5cbe0aca42795c90f20576e6cb66b61"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/normalization.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/normalization.py",
+      "bytes": 7488,
+      "sha256": "4dcc24d544cf737a7369d48ac378889a6b805386dda7c8a09b4afdb7b94a12c7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/standardization.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/standardization.py",
+      "bytes": 29798,
+      "sha256": "5158dbb90a175a67594f113e604da8afadf249e0ae9d2bd1c8da505aea608c22"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/stats_fit.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/stats_fit.py",
+      "bytes": 16048,
+      "sha256": "25b0e70af8fef7b94c404c70bd9a38c18ed2a2373dddcb3a6d21636735171aea"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/tiny_data.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/data/tiny_data.py",
+      "bytes": 10072,
+      "sha256": "407914e11dcb59e5429bab6aad9d9b26703d9128151db63fe0591d4335be448f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/diagnostics.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/diagnostics.py",
+      "bytes": 15033,
+      "sha256": "8ebf85afa446a6c889cad00a77855b5e3a728bcae3fd217a6d2a130dbbddb91d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/encodings.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/encodings.py",
+      "bytes": 7176,
+      "sha256": "f7afbc6935a182c991fcd83ba67ccfc1e414512e80145eb62284f5665272afc0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/init.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/init.py",
+      "bytes": 6004,
+      "sha256": "4eb712b61c5f960de6eb391c5d095417033c749175f4b301256f8269a84645a8"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/inner_diagnostic.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/inner_diagnostic.py",
+      "bytes": 1961,
+      "sha256": "050912d46c69a73911e751b684e50d3168bc38de78e7bc3a91ae5f63d9172506"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/iteration.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/iteration.py",
+      "bytes": 2628,
+      "sha256": "fd4221ea0b82319045fb3d86d8d2593705a4ceb00c788d319fe267255a10a6f9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/losses.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/losses.py",
+      "bytes": 6400,
+      "sha256": "59012f615616e0e7943a3fc6a25293374ea9730d62e5065703b8a6120ba1db6e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/patch_packing.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/patch_packing.py",
+      "bytes": 944,
+      "sha256": "c317633f65b3e4934594089764d010d008ccba2034b2a9a74130a6cf4a7ae16d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/solver.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/solver.py",
+      "bytes": 16176,
+      "sha256": "e31b0345c553ebebaf1ff7cb3d3c78f4a09c6820fb666b36c884a59a8ea90762"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/solver_utils.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/solver_utils.py",
+      "bytes": 3196,
+      "sha256": "1705a5cd6351445ce4b4df6e5a8912c2568fc905d0bc180303b3a72960f1d731"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/types.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/energy/types.py",
+      "bytes": 3169,
+      "sha256": "6b3613c82c66a6b9bc366d077a1f2bcf42e9cfccee7c8c42f19af54e50049c13"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/inference/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/inference/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/inference/predictor.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/inference/predictor.py",
+      "bytes": 12232,
+      "sha256": "fc1837a918a6e9d2d3b44436191343414c739086ae536abdc194bc62e07fc823"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/integration/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/integration/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/integration/starvla.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/integration/starvla.py",
+      "bytes": 5937,
+      "sha256": "071847df7c83e6aba1edc8132c631024b36d56ac5d7c8a92505f4f58918f6cd7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/models/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/models/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/models/energy_core.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/models/energy_core.py",
+      "bytes": 22631,
+      "sha256": "6a0b919331613ffd0ac73f613c9033868543bf20248f8c1ab7ac06c888656b65"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/models/energy_wam.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/models/energy_wam.py",
+      "bytes": 34375,
+      "sha256": "8f6840353823b6a99ebde377fdc5ed0e80993c492c68f502cdec7da3f2d1f17e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/__init__.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/best_checkpoint.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/best_checkpoint.py",
+      "bytes": 6605,
+      "sha256": "a185b9ead95c90e81ad6ae22af9f8a872a0fe5b869e6bcc876456cf49fda48c0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/candidate_seeds.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/candidate_seeds.py",
+      "bytes": 336,
+      "sha256": "30d20d12806dd350464fe93e02057035679da41781dacb0537fe4dba303c6928"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/checkpoint.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/checkpoint.py",
+      "bytes": 22489,
+      "sha256": "0ac3bb139088f046befd5297f7bf6a194b9c77ec82927d30571ab1bfbb7a383b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/checkpoint_metadata.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/checkpoint_metadata.py",
+      "bytes": 1450,
+      "sha256": "2c521a7090ceb504dfaeba12b322561b46b56a3e692ef6ee7912e32b8386ac8f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/gpu_policy.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/gpu_policy.py",
+      "bytes": 1648,
+      "sha256": "5ee8fa993568c243f4712d66e368e1ff09d3dea6530670602087fbbca31201af"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/master_weights.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/master_weights.py",
+      "bytes": 3384,
+      "sha256": "c049a5e09f128e706092a0cac1ad5f443139da207f3c19c002cdc319fa86e5b0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/offload.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/offload.py",
+      "bytes": 6538,
+      "sha256": "741b204eef4f142b4dc74d37789c5bb02b0ae658418a928bfe523ac293640a63"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/parallel.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/parallel.py",
+      "bytes": 1129,
+      "sha256": "85c831aff8b2582d1761af0204b70ec007f7d9990d777cbf7e9c69e758f68c45"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/replicated.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/replicated.py",
+      "bytes": 9095,
+      "sha256": "1b33195cb5ce94dbcd0e8e3daa66881374d372be1ffeca41c1a905f4195f97c1"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/replicated_batch_benchmark.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/replicated_batch_benchmark.py",
+      "bytes": 8076,
+      "sha256": "a84ab899a92370635c2459b4196ed868afe21ed469e3f38b2dc7c65b508049f5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/resource_monitor.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/resource_monitor.py",
+      "bytes": 6692,
+      "sha256": "25dc46cec91bfe1371f4577005614da33aeeaa91dba0928687990d3b71cf19a0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/resume_lr.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/resume_lr.py",
+      "bytes": 1206,
+      "sha256": "f2368c71930653108c3cc5c72ba8542e2425c3af7038620efaa8a9efd3f45ec0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/run_state.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/run_state.py",
+      "bytes": 9514,
+      "sha256": "302eb97c6083b00f9407ae61123dfc62a5f8c108f8cf78b30b668d0bbe4e1eb5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/shared_microbatch.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/shared_microbatch.py",
+      "bytes": 6523,
+      "sha256": "09d7fd9362d9f7a66657c379d3f5d8bc0a6d0146f0c42727e28a247a5a91249a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/stages.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/stages.py",
+      "bytes": 19418,
+      "sha256": "f67df4a6586654bebb3d82e4e11a31838305204cf96cdb771c4f5882ee219429"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/trainer.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/energywam/training/trainer.py",
+      "bytes": 21469,
+      "sha256": "6b242b3903c3fb14aef525a08d0b99685f5c5543511d909a837d9420d5b29eee"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/audit_one_update_resume.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/audit_one_update_resume.py",
+      "bytes": 10586,
+      "sha256": "20f4186732b039eaf9ee1cce51f13a35e417772b023a669b34fab5ec8f418165"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/check_checkpoint_metadata_storage.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/check_checkpoint_metadata_storage.py",
+      "bytes": 2706,
+      "sha256": "d94c9fc2c97efd6be4da6d914646a2357f95e787d08a01737d3d5472c5e8e784"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/diagnostic_replay_observer.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/diagnostic_replay_observer.py",
+      "bytes": 8723,
+      "sha256": "9626f165fcd3115cfa59c87441a9d6cdb253d690960d642766d348118fc1a9a7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/k_training_probe.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/k_training_probe.py",
+      "bytes": 11160,
+      "sha256": "4faf77989dbfdc00c9945b83d71c0fe5719399cfddc6f4a3a9ce484a556dce1b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_head_lr_refinement.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_head_lr_refinement.py",
+      "bytes": 5367,
+      "sha256": "a913c980cb7679ca55a8ed38f566e0f80c657a10859fae2430f918d5373449c6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_iteration_search.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_iteration_search.py",
+      "bytes": 14246,
+      "sha256": "615501bf83dfa4731e9b570a0a67162130dc2ffe72aa48031620c7c0da2d4350"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_seed43_diagnostic_replay.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_seed43_diagnostic_replay.py",
+      "bytes": 6544,
+      "sha256": "0d908d91a34b7ab1018fcba768aaac3d6c02f460bad069de20d99aab97cd270e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_single_episode_head_lr_study.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/run_single_episode_head_lr_study.py",
+      "bytes": 9366,
+      "sha256": "0a1696ad00c326dd3866d8e9e674f2e9592397bdc1da4ab0de0eea0d1572093a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/train.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/train.py",
+      "bytes": 7743,
+      "sha256": "588151c4cc710228c5fcd5943941f362434463e3647c44ab68ccb1cbdf381a28"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/train_shared_sharded.py",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/scripts/train_shared_sharded.py",
+      "bytes": 14080,
+      "sha256": "a86febea209d54ffcfec26bf88994b7c48317c8cdc0e530e7cd857acc8df8495"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_diagnostics_20261110T130428Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "archive_path": "frozen_sources/seed43_diagnostics_20261110T130428Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "bytes": 361906,
+      "sha256": "1c0ed7545b34bc6a67fc24b5b9b62a3f8496fcad2b57d692ee87991fcb13be9c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/SOURCE_MANIFEST.json",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/SOURCE_MANIFEST.json",
+      "bytes": 9068,
+      "sha256": "f865b6c795d85ca287cd181a8e9376a7f254fc20cc52984dafc0f49dacaa92b6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/configs/execution_gpu_policy.json",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/configs/execution_gpu_policy.json",
+      "bytes": 183,
+      "sha256": "044fce9e9f1f4194c8e2657d1c26aa18678ae42cad66be430f554126b174e238"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/__init__.py",
+      "bytes": 408,
+      "sha256": "c8f63181c0b48b0ee0c312c6a94eb18a5075756752dbfafd792f3518a930d8e6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/dino_v3.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/dino_v3.py",
+      "bytes": 11175,
+      "sha256": "1eed0337e5792bb7cf5537f875c38bb12d56eeffdb8ff3f04b49509f46f73f0a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/qwen3vl_adapter.py",
+      "bytes": 24274,
+      "sha256": "ddc9c319b9a26d47e71201b20a213fadafeddb25d38de559725845f6d30819e2"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/tiny_adapter.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/tiny_adapter.py",
+      "bytes": 2834,
+      "sha256": "8f7a1ff9947b4c7e0192fae33c7d9641ff7e53ca85deda1505052e31cfe0d85c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/tiny_transformer.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/backbones/tiny_transformer.py",
+      "bytes": 4883,
+      "sha256": "e48c56e4fabc3c35bedf1f94e916c43653569cf32723cae8a610b7d854f1ae14"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/config.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/config.py",
+      "bytes": 25199,
+      "sha256": "b7b063b564f67cf0d18afeb7eaed2c42b158f3b1b3b27e63d2a6a58ef94b261b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/cache.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/cache.py",
+      "bytes": 3288,
+      "sha256": "c3c7790ddeac29f93255419afce1a79aa67510c4cb36592d18d76f9507804354"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/energy_dataset.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/energy_dataset.py",
+      "bytes": 29715,
+      "sha256": "37af5bcdb1ab392044027255352f72ab8f1976dfee87b2e367669a0ce9d4559c"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/episode_dataset.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/episode_dataset.py",
+      "bytes": 16004,
+      "sha256": "208c53935cedf2520d0a77273f151549cb1c3eb961b57561715fad9015e38329"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/future_offsets.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/future_offsets.py",
+      "bytes": 4219,
+      "sha256": "10ce9b2c5a5c3e8be703f67dc233d5b1a5cbe0aca42795c90f20576e6cb66b61"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/normalization.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/normalization.py",
+      "bytes": 7488,
+      "sha256": "4dcc24d544cf737a7369d48ac378889a6b805386dda7c8a09b4afdb7b94a12c7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/standardization.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/standardization.py",
+      "bytes": 29798,
+      "sha256": "5158dbb90a175a67594f113e604da8afadf249e0ae9d2bd1c8da505aea608c22"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/stats_fit.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/stats_fit.py",
+      "bytes": 16048,
+      "sha256": "25b0e70af8fef7b94c404c70bd9a38c18ed2a2373dddcb3a6d21636735171aea"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/tiny_data.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/data/tiny_data.py",
+      "bytes": 10072,
+      "sha256": "407914e11dcb59e5429bab6aad9d9b26703d9128151db63fe0591d4335be448f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/diagnostics.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/diagnostics.py",
+      "bytes": 15033,
+      "sha256": "8ebf85afa446a6c889cad00a77855b5e3a728bcae3fd217a6d2a130dbbddb91d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/encodings.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/encodings.py",
+      "bytes": 7176,
+      "sha256": "f7afbc6935a182c991fcd83ba67ccfc1e414512e80145eb62284f5665272afc0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/init.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/init.py",
+      "bytes": 6004,
+      "sha256": "4eb712b61c5f960de6eb391c5d095417033c749175f4b301256f8269a84645a8"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/inner_diagnostic.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/inner_diagnostic.py",
+      "bytes": 1961,
+      "sha256": "050912d46c69a73911e751b684e50d3168bc38de78e7bc3a91ae5f63d9172506"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/iteration.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/iteration.py",
+      "bytes": 2628,
+      "sha256": "fd4221ea0b82319045fb3d86d8d2593705a4ceb00c788d319fe267255a10a6f9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/losses.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/losses.py",
+      "bytes": 6400,
+      "sha256": "59012f615616e0e7943a3fc6a25293374ea9730d62e5065703b8a6120ba1db6e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/patch_packing.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/patch_packing.py",
+      "bytes": 944,
+      "sha256": "c317633f65b3e4934594089764d010d008ccba2034b2a9a74130a6cf4a7ae16d"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/solver.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/solver.py",
+      "bytes": 16176,
+      "sha256": "e31b0345c553ebebaf1ff7cb3d3c78f4a09c6820fb666b36c884a59a8ea90762"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/solver_utils.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/solver_utils.py",
+      "bytes": 3196,
+      "sha256": "1705a5cd6351445ce4b4df6e5a8912c2568fc905d0bc180303b3a72960f1d731"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/types.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/energy/types.py",
+      "bytes": 3169,
+      "sha256": "6b3613c82c66a6b9bc366d077a1f2bcf42e9cfccee7c8c42f19af54e50049c13"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/inference/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/inference/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/inference/predictor.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/inference/predictor.py",
+      "bytes": 12232,
+      "sha256": "fc1837a918a6e9d2d3b44436191343414c739086ae536abdc194bc62e07fc823"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/integration/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/integration/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/integration/starvla.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/integration/starvla.py",
+      "bytes": 5937,
+      "sha256": "071847df7c83e6aba1edc8132c631024b36d56ac5d7c8a92505f4f58918f6cd7"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/models/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/models/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/models/energy_core.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/models/energy_core.py",
+      "bytes": 22631,
+      "sha256": "6a0b919331613ffd0ac73f613c9033868543bf20248f8c1ab7ac06c888656b65"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/models/energy_wam.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/models/energy_wam.py",
+      "bytes": 34375,
+      "sha256": "8f6840353823b6a99ebde377fdc5ed0e80993c492c68f502cdec7da3f2d1f17e"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/__init__.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/__init__.py",
+      "bytes": 28,
+      "sha256": "a3312db07cbad3879fa0fbfaba4b56aa1ac11460ab1ca44d57b1b1cc265578c9"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/best_checkpoint.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/best_checkpoint.py",
+      "bytes": 6605,
+      "sha256": "a185b9ead95c90e81ad6ae22af9f8a872a0fe5b869e6bcc876456cf49fda48c0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/candidate_seeds.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/candidate_seeds.py",
+      "bytes": 336,
+      "sha256": "30d20d12806dd350464fe93e02057035679da41781dacb0537fe4dba303c6928"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/checkpoint.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/checkpoint.py",
+      "bytes": 22489,
+      "sha256": "0ac3bb139088f046befd5297f7bf6a194b9c77ec82927d30571ab1bfbb7a383b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/checkpoint_metadata.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/checkpoint_metadata.py",
+      "bytes": 1450,
+      "sha256": "2c521a7090ceb504dfaeba12b322561b46b56a3e692ef6ee7912e32b8386ac8f"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/gpu_policy.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/gpu_policy.py",
+      "bytes": 1648,
+      "sha256": "5ee8fa993568c243f4712d66e368e1ff09d3dea6530670602087fbbca31201af"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/master_weights.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/master_weights.py",
+      "bytes": 3384,
+      "sha256": "c049a5e09f128e706092a0cac1ad5f443139da207f3c19c002cdc319fa86e5b0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/offload.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/offload.py",
+      "bytes": 6538,
+      "sha256": "741b204eef4f142b4dc74d37789c5bb02b0ae658418a928bfe523ac293640a63"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/parallel.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/parallel.py",
+      "bytes": 1129,
+      "sha256": "85c831aff8b2582d1761af0204b70ec007f7d9990d777cbf7e9c69e758f68c45"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/replicated.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/replicated.py",
+      "bytes": 9095,
+      "sha256": "1b33195cb5ce94dbcd0e8e3daa66881374d372be1ffeca41c1a905f4195f97c1"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/replicated_batch_benchmark.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/replicated_batch_benchmark.py",
+      "bytes": 8076,
+      "sha256": "a84ab899a92370635c2459b4196ed868afe21ed469e3f38b2dc7c65b508049f5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/resource_monitor.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/resource_monitor.py",
+      "bytes": 6692,
+      "sha256": "25dc46cec91bfe1371f4577005614da33aeeaa91dba0928687990d3b71cf19a0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/resume_lr.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/resume_lr.py",
+      "bytes": 1206,
+      "sha256": "f2368c71930653108c3cc5c72ba8542e2425c3af7038620efaa8a9efd3f45ec0"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/run_state.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/run_state.py",
+      "bytes": 9514,
+      "sha256": "302eb97c6083b00f9407ae61123dfc62a5f8c108f8cf78b30b668d0bbe4e1eb5"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/shared_microbatch.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/shared_microbatch.py",
+      "bytes": 6523,
+      "sha256": "09d7fd9362d9f7a66657c379d3f5d8bc0a6d0146f0c42727e28a247a5a91249a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/stages.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/stages.py",
+      "bytes": 19418,
+      "sha256": "f67df4a6586654bebb3d82e4e11a31838305204cf96cdb771c4f5882ee219429"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/trainer.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/energywam/training/trainer.py",
+      "bytes": 21469,
+      "sha256": "6b242b3903c3fb14aef525a08d0b99685f5c5543511d909a837d9420d5b29eee"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/check_checkpoint_metadata_storage.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/check_checkpoint_metadata_storage.py",
+      "bytes": 2706,
+      "sha256": "d94c9fc2c97efd6be4da6d914646a2357f95e787d08a01737d3d5472c5e8e784"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/k_training_probe.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/k_training_probe.py",
+      "bytes": 11160,
+      "sha256": "4faf77989dbfdc00c9945b83d71c0fe5719399cfddc6f4a3a9ce484a556dce1b"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/run_head_lr_refinement.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/run_head_lr_refinement.py",
+      "bytes": 5367,
+      "sha256": "a913c980cb7679ca55a8ed38f566e0f80c657a10859fae2430f918d5373449c6"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/run_iteration_search.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/run_iteration_search.py",
+      "bytes": 15326,
+      "sha256": "75a766fc2cd1d608d89b5a276e4ff42acf9e20615e6e94c25d9c086573c777c2"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/run_single_episode_head_lr_study.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/run_single_episode_head_lr_study.py",
+      "bytes": 9366,
+      "sha256": "0a1696ad00c326dd3866d8e9e674f2e9592397bdc1da4ab0de0eea0d1572093a"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/train.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/train.py",
+      "bytes": 7743,
+      "sha256": "588151c4cc710228c5fcd5943941f362434463e3647c44ab68ccb1cbdf381a28"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/scripts/train_shared_sharded.py",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/scripts/train_shared_sharded.py",
+      "bytes": 14080,
+      "sha256": "a86febea209d54ffcfec26bf88994b7c48317c8cdc0e530e7cd857acc8df8495"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/frozen_sources/seed43_warn_20261110T102649Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "archive_path": "frozen_sources/seed43_warn_20261110T102649Z/code/stats/trainmix_150k_paper_standardized_v1.json",
+      "bytes": 361906,
+      "sha256": "1c0ed7545b34bc6a67fc24b5b9b62a3f8496fcad2b57d692ee87991fcb13be9c"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/batch16_micro4_fp32_seed42/source_initial.zip",
+      "archive_path": "bundles/627e4b9c33778396df4b044571730795d47310ada0a712a457dc2b330fedf8ad.zip",
+      "bytes": 161441,
+      "sha256": "627e4b9c33778396df4b044571730795d47310ada0a712a457dc2b330fedf8ad"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/batch32_micro4_fp32_seed42/source_initial.zip",
+      "archive_path": "bundles/09736f484faaa0f5cddb5c7ca1546f39de3b3e0c7819345934d605f13d38808c.zip",
+      "bytes": 161443,
+      "sha256": "09736f484faaa0f5cddb5c7ca1546f39de3b3e0c7819345934d605f13d38808c"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/batch64_micro4_fp32_seed42/source_initial.zip",
+      "archive_path": "bundles/61f25cc5c721f69b6496762694bdd941d9193ba6ea5fcfd80978539b69887a5f.zip",
+      "bytes": 161443,
+      "sha256": "61f25cc5c721f69b6496762694bdd941d9193ba6ea5fcfd80978539b69887a5f"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/batch8_micro4_fp32_lrx03_seed42/source_initial.zip",
+      "archive_path": "bundles/1e0c61e3d1c8b8554b637aafcd94fae263ccaa01b86b677092950c68b44f9095.zip",
+      "bytes": 163003,
+      "sha256": "1e0c61e3d1c8b8554b637aafcd94fae263ccaa01b86b677092950c68b44f9095"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/batch8_micro4_fp32_seed42/source_initial.zip",
+      "archive_path": "bundles/adde82fab9c67c04538cd785179da9f63573d1a9552151b1e4147a82b6d00709.zip",
+      "bytes": 161443,
+      "sha256": "adde82fab9c67c04538cd785179da9f63573d1a9552151b1e4147a82b6d00709"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/fp32_full_resume_retention_smoke/source_initial.zip",
+      "archive_path": "bundles/c38b476d8d6ae880f1b9cbeff6b3b77807d324fbf9faf3704a15208198e0b9d0.zip",
+      "bytes": 153156,
+      "sha256": "c38b476d8d6ae880f1b9cbeff6b3b77807d324fbf9faf3704a15208198e0b9d0"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/fp32_longest_instruction_capacity/source_initial.zip",
+      "archive_path": "bundles/1e2ab6d002a1677f27150c7210a481e40dbe8e51ac56fe68311c955bbd0414ff.zip",
+      "bytes": 153369,
+      "sha256": "1e2ab6d002a1677f27150c7210a481e40dbe8e51ac56fe68311c955bbd0414ff"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/fp32_micro4_dedup_asymmetric_profile/source_initial.zip",
+      "archive_path": "bundles/9ed5383e6557898ad7187dd1cf52cde7bffc486f9f6e4b046bea1b9b46e6469d.zip",
+      "bytes": 161102,
+      "sha256": "9ed5383e6557898ad7187dd1cf52cde7bffc486f9f6e4b046bea1b9b46e6469d"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/fp32_micro4_fullopt_saved10_profile/source_initial.zip",
+      "archive_path": "bundles/a1f2fd81bf7b01493684e8d04a1656f855261ffb45359c2e2b01f69b948fbfcb.zip",
+      "bytes": 159068,
+      "sha256": "a1f2fd81bf7b01493684e8d04a1656f855261ffb45359c2e2b01f69b948fbfcb"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/fp32_micro4_fullopt_saved6_profile/source_initial.zip",
+      "archive_path": "bundles/745c1ea23a82e8e3635d32125e235047ff26c8831407d184eda4a9706e3cdc58.zip",
+      "bytes": 159068,
+      "sha256": "745c1ea23a82e8e3635d32125e235047ff26c8831407d184eda4a9706e3cdc58"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/guarded_batch32_resume_audit/source_initial.zip",
+      "archive_path": "bundles/09736f484faaa0f5cddb5c7ca1546f39de3b3e0c7819345934d605f13d38808c.zip",
+      "bytes": 161443,
+      "sha256": "09736f484faaa0f5cddb5c7ca1546f39de3b3e0c7819345934d605f13d38808c"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/guarded_batch32_resume_audit/source_resume_audit.zip",
+      "archive_path": "bundles/c0fb30006f89e440bcb74d6f064fe63c56129684b11b42c99842ae2729fcdcd2.zip",
+      "bytes": 151777,
+      "sha256": "c0fb30006f89e440bcb74d6f064fe63c56129684b11b42c99842ae2729fcdcd2"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/hardware_control_B16_micro4_pair01/source_initial.zip",
+      "archive_path": "bundles/ea6a02b510fcc7d37b3528c9abccd7762d288c31dea00921a4688245a9428669.zip",
+      "bytes": 162999,
+      "sha256": "ea6a02b510fcc7d37b3528c9abccd7762d288c31dea00921a4688245a9428669"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/batch_grid_micro4_20261105/hardware_control_B16_micro4_pair23/source_initial.zip",
+      "archive_path": "bundles/8da6503429d0c72ca8ee397cea175ad52abf44b841f43b932c88dbd827267382.zip",
+      "bytes": 162999,
+      "sha256": "8da6503429d0c72ca8ee397cea175ad52abf44b841f43b932c88dbd827267382"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/head_lr_tiny16_20261106/head_lr0001_tiny16_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/e949b1c3ba0b36bea913a3fe2fc326f6630156e4d9673cd9b4915f9f7d6d8515.zip",
+      "bytes": 155048,
+      "sha256": "e949b1c3ba0b36bea913a3fe2fc326f6630156e4d9673cd9b4915f9f7d6d8515"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/head_lr_tiny16_20261106/head_lr0003_tiny16_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/b219359dd350a37674cf6ad9318e8b699b140f488b4d8883f61197fb079f716b.zip",
+      "bytes": 155051,
+      "sha256": "b219359dd350a37674cf6ad9318e8b699b140f488b4d8883f61197fb079f716b"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/head_lr_tiny16_20261106/head_lr003_tiny16_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/c2808695b4b4fb294681a348e63e83d732408d03caa5efa6fc8a0adde1539de4.zip",
+      "bytes": 155050,
+      "sha256": "c2808695b4b4fb294681a348e63e83d732408d03caa5efa6fc8a0adde1539de4"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior0_currentinit0_seed42/source_initial.zip",
+      "archive_path": "bundles/f40f1e4ba12942db9884d43b834ff002888f90e1fb14eb0c66dbc14bf5f120ba.zip",
+      "bytes": 145986,
+      "sha256": "f40f1e4ba12942db9884d43b834ff002888f90e1fb14eb0c66dbc14bf5f120ba"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior0_currentinit1_seed42/source_initial.zip",
+      "archive_path": "bundles/a3b5811c83a4b0f7e107fef9ebc5be2799cd275e3e7b2ab33c0e5de3c1b89990.zip",
+      "bytes": 145991,
+      "sha256": "a3b5811c83a4b0f7e107fef9ebc5be2799cd275e3e7b2ab33c0e5de3c1b89990"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit0_seed42/source_initial.zip",
+      "archive_path": "bundles/e15143740783fca7abe79df15cc71cf7fbcdfbba9c6e249e2d68ba9c78705114.zip",
+      "bytes": 145985,
+      "sha256": "e15143740783fca7abe79df15cc71cf7fbcdfbba9c6e249e2d68ba9c78705114"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/ablation_prior1_currentinit1_seed42/source_initial.zip",
+      "archive_path": "bundles/84594ddd19b28ff03dd2ada45b9837169c8a9a324ef595aa4c321e2d99d13496.zip",
+      "bytes": 145992,
+      "sha256": "84594ddd19b28ff03dd2ada45b9837169c8a9a324ef595aa4c321e2d99d13496"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch2_tiny16_headlr0003_samples320_seed42/source_initial.zip",
+      "archive_path": "bundles/cfe483a04df6770ad2fd9e3ca01767a9d93528007c09df880b991667084e5138.zip",
+      "bytes": 149146,
+      "sha256": "cfe483a04df6770ad2fd9e3ca01767a9d93528007c09df880b991667084e5138"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch2_tiny16_samples1600_seed42/source_initial.zip",
+      "archive_path": "bundles/58034c786772a01e8d2a303f43f1a3dbb4137d26f31066112ed7b2aebd9dfda3.zip",
+      "bytes": 148477,
+      "sha256": "58034c786772a01e8d2a303f43f1a3dbb4137d26f31066112ed7b2aebd9dfda3"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch4_tiny16_samples1600_seed42/source_initial.zip",
+      "archive_path": "bundles/370343cc5677822642693db447a8255faca3abba8cafb2e2470d448994de1c75.zip",
+      "bytes": 149129,
+      "sha256": "370343cc5677822642693db447a8255faca3abba8cafb2e2470d448994de1c75"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch8_tiny16_headlr0003_samples320_seed42/source_initial.zip",
+      "archive_path": "bundles/319f8db59a3002b4e2169bb586eb66ae32e4ab77ec8fae5c1c4cc2d202b78a83.zip",
+      "bytes": 148585,
+      "sha256": "319f8db59a3002b4e2169bb586eb66ae32e4ab77ec8fae5c1c4cc2d202b78a83"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/batch8_tiny16_samples1600_seed42/source_initial.zip",
+      "archive_path": "bundles/9ac43754e54327c75472ea00963331194da169a9c166fa0f88b52c174aa8c42a.zip",
+      "bytes": 148477,
+      "sha256": "9ac43754e54327c75472ea00963331194da169a9c166fa0f88b52c174aa8c42a"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed42/source_initial.zip",
+      "archive_path": "bundles/6d2652500e587095305321e334ab9c8a328553cbce1e0ee988b792b1bfc5ee99.zip",
+      "bytes": 144586,
+      "sha256": "6d2652500e587095305321e334ab9c8a328553cbce1e0ee988b792b1bfc5ee99"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/episode10_prior_tokenscale_seed43/source_initial.zip",
+      "archive_path": "bundles/a80315406d722f9f376153fd185d6a210bf3c9239bcabcf51a3a2cc52faa969f.zip",
+      "bytes": 144640,
+      "sha256": "a80315406d722f9f376153fd185d6a210bf3c9239bcabcf51a3a2cc52faa969f"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/future_only_currentinit_learned_seed42/source_initial.zip",
+      "archive_path": "bundles/2826370a692a8afb64148c476d0f8702e35c37f8ade2b403e6673e62dc423354.zip",
+      "bytes": 146062,
+      "sha256": "2826370a692a8afb64148c476d0f8702e35c37f8ade2b403e6673e62dc423354"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_fixed_headlr0001_diag_seed42/source_initial.zip",
+      "archive_path": "bundles/983e18b04a25ece45a2e02fe3a56244569ae1d3951d3577e8f9c47bab599f267.zip",
+      "bytes": 146076,
+      "sha256": "983e18b04a25ece45a2e02fe3a56244569ae1d3951d3577e8f9c47bab599f267"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_fixed_seed42/source_initial.zip",
+      "archive_path": "bundles/93faf1e521d63f8e8062b8f25433d439e19fafda708457f3db5c9f6d3ddea935.zip",
+      "bytes": 146045,
+      "sha256": "93faf1e521d63f8e8062b8f25433d439e19fafda708457f3db5c9f6d3ddea935"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/no_prior_currentinit_learned_headlr0001_diag_seed42/source_initial.zip",
+      "archive_path": "bundles/2cee379d31c6d19186485a8c16fa597770ce030f274c40bc486bc132866be4ce.zip",
+      "bytes": 146073,
+      "sha256": "2cee379d31c6d19186485a8c16fa597770ce030f274c40bc486bc132866be4ce"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/profile_pack2_nocheckpoint_8steps/source_initial.zip",
+      "archive_path": "bundles/332cdd866eb0bc8a45d1d8cfb8fe2119c48d2a0d8683ca813e5474dc429811fd.zip",
+      "bytes": 145955,
+      "sha256": "332cdd866eb0bc8a45d1d8cfb8fe2119c48d2a0d8683ca813e5474dc429811fd"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/profile_pack2_nooffload_8steps/source_initial.zip",
+      "archive_path": "bundles/fdffed9b7e4c750de4f89dd4a2903086e013b1dab1eb9bb63f70ba1f661e8150.zip",
+      "bytes": 145956,
+      "sha256": "fdffed9b7e4c750de4f89dd4a2903086e013b1dab1eb9bb63f70ba1f661e8150"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/profile_pack2_offload_nocheckpoint_8steps/source_initial.zip",
+      "archive_path": "bundles/8685a30038eebebcd10295e87897832572b6f078360734eb834342d7ae6ccb5b.zip",
+      "bytes": 145959,
+      "sha256": "8685a30038eebebcd10295e87897832572b6f078360734eb834342d7ae6ccb5b"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/profile_prior_pack1_8steps/source_initial.zip",
+      "archive_path": "bundles/ff29598c61d541d23e66e2d8cbf3965b4ded232bb4e6e1e30a57fd6adcd722ac.zip",
+      "bytes": 146005,
+      "sha256": "ff29598c61d541d23e66e2d8cbf3965b4ded232bb4e6e1e30a57fd6adcd722ac"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/profile_prior_pack2_8steps/source_initial.zip",
+      "archive_path": "bundles/5a6ec784ccfb7904c28290a645fe5b2fd83a828a1978b4aee10d737f530f0a43.zip",
+      "bytes": 146005,
+      "sha256": "5a6ec784ccfb7904c28290a645fe5b2fd83a828a1978b4aee10d737f530f0a43"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_pack2_r2/source_initial.zip",
+      "archive_path": "bundles/6862c8d4d942eb3c70bd19f22ccd4a83ed2a47078cf82db43736bd7f6c3c5581.zip",
+      "bytes": 146212,
+      "sha256": "6862c8d4d942eb3c70bd19f22ccd4a83ed2a47078cf82db43736bd7f6c3c5581"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_residual_r2/source_initial.zip",
+      "archive_path": "bundles/59bfa8538c7110afa1d296e635ba379b87159e2e4d15dd2b54cc510f5c29a40e.zip",
+      "bytes": 142441,
+      "sha256": "59bfa8538c7110afa1d296e635ba379b87159e2e4d15dd2b54cc510f5c29a40e"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr0003_r2/source_initial.zip",
+      "archive_path": "bundles/18a15bb9f5a3e8ef8d64997621f1412cb68eb54384e83a7fa8d202af92dc1f0c.zip",
+      "bytes": 143046,
+      "sha256": "18a15bb9f5a3e8ef8d64997621f1412cb68eb54384e83a7fa8d202af92dc1f0c"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_headlr_r2/source_initial.zip",
+      "archive_path": "bundles/754762444e7da1b7d11372e0d42ee3f1658f7f21e4e6649c30472a46cb0e563a.zip",
+      "bytes": 142920,
+      "sha256": "754762444e7da1b7d11372e0d42ee3f1658f7f21e4e6649c30472a46cb0e563a"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_prior_tokenscale_r2/source_initial.zip",
+      "archive_path": "bundles/d11f8a58ea005debbf70db7ff993ac03c3482fce5e2847a208e353f60e0991a6.zip",
+      "bytes": 142914,
+      "sha256": "d11f8a58ea005debbf70db7ff993ac03c3482fce5e2847a208e353f60e0991a6"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms025_r2/source_initial.zip",
+      "archive_path": "bundles/5ed885cd01fedd5b2aa13b7511cab4e694b51ad8485ee6fb7022a2630a670fce.zip",
+      "bytes": 141105,
+      "sha256": "5ed885cd01fedd5b2aa13b7511cab4e694b51ad8485ee6fb7022a2630a670fce"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_r2/source_initial.zip",
+      "archive_path": "bundles/4ab701038b815c426a14ad6268731ef162438e9e60097815b4093830fba02063.zip",
+      "bytes": 141103,
+      "sha256": "4ab701038b815c426a14ad6268731ef162438e9e60097815b4093830fba02063"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_rms05_tokenscale_r2/source_initial.zip",
+      "archive_path": "bundles/636f26bd4aad7ce29fa8e248fafed1096063e72353cdfa7108438553ac0fa3f1.zip",
+      "bytes": 141396,
+      "sha256": "636f26bd4aad7ce29fa8e248fafed1096063e72353cdfa7108438553ac0fa3f1"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_f2000_r2/source_initial.zip",
+      "archive_path": "bundles/bfe1c85181ed2e156fdcb28db282ef39d86d1f6e357976dec22dcaeb1dc9c85c.zip",
+      "bytes": 140933,
+      "sha256": "bfe1c85181ed2e156fdcb28db282ef39d86d1f6e357976dec22dcaeb1dc9c85c"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/tinyfit_master_tasklr_r2/source_initial.zip",
+      "archive_path": "bundles/0710cb9d01e4ae8b8b9e16d748118b0a8846d1a3d0990980df49cd1dbf37b98d.zip",
+      "bytes": 140124,
+      "sha256": "0710cb9d01e4ae8b8b9e16d748118b0a8846d1a3d0990980df49cd1dbf37b98d"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/lr256_comparison_20261107/resume256_lr01/continuation2048_source.zip",
+      "archive_path": "bundles/fee62f55dde48d06c0a1cb0453b721e6e8fef9a2e54fbe20ad57ba5807a6f407.zip",
+      "bytes": 153188,
+      "sha256": "fee62f55dde48d06c0a1cb0453b721e6e8fef9a2e54fbe20ad57ba5807a6f407"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/lr256_comparison_20261107/resume256_lr01/source_branch.zip",
+      "archive_path": "bundles/fd1c9b6e6a1c6941e08e32825093997dd7da70e1c1cdee0e16c2f56fbeac5191.zip",
+      "bytes": 158886,
+      "sha256": "fd1c9b6e6a1c6941e08e32825093997dd7da70e1c1cdee0e16c2f56fbeac5191"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/lr256_comparison_20261107/resume256_lr03/continuation2048_source.zip",
+      "archive_path": "bundles/23a1fdf1449257d968eb3249a496759ff63c3e7c271aae85d183addda2f7c4d5.zip",
+      "bytes": 153183,
+      "sha256": "23a1fdf1449257d968eb3249a496759ff63c3e7c271aae85d183addda2f7c4d5"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/lr256_comparison_20261107/resume256_lr03/source_branch.zip",
+      "archive_path": "bundles/716e4e459805232f2821ff7373747f374dde8d182e8d51375833cb4e7d9b198d.zip",
+      "bytes": 158880,
+      "sha256": "716e4e459805232f2821ff7373747f374dde8d182e8d51375833cb4e7d9b198d"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro16_effective16_isolated_seed42/source_initial.zip",
+      "archive_path": "bundles/21e812eccbdd3b4456d56df26de2b5c69340a98ce31ba0b9f79f59a6e9162f01.zip",
+      "bytes": 149191,
+      "sha256": "21e812eccbdd3b4456d56df26de2b5c69340a98ce31ba0b9f79f59a6e9162f01"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro16_effective16_seed42/source_initial.zip",
+      "archive_path": "bundles/35c4233ee4d6716f39171cb79182d8b71e3674fe1c612dd297862400c44e3c20.zip",
+      "bytes": 149149,
+      "sha256": "35c4233ee4d6716f39171cb79182d8b71e3674fe1c612dd297862400c44e3c20"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro1_effective4_seed42/source_initial.zip",
+      "archive_path": "bundles/9db541e8878160d6523f3155fb50a06ab8861c6e93ee3efeb745b871911686a5.zip",
+      "bytes": 149147,
+      "sha256": "9db541e8878160d6523f3155fb50a06ab8861c6e93ee3efeb745b871911686a5"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro2_effective4_seed42/source_initial.zip",
+      "archive_path": "bundles/5e31e98301ca973e4d8acab0c9ce9a1c6e356e0191ef2d091267130af6be496e.zip",
+      "bytes": 149146,
+      "sha256": "5e31e98301ca973e4d8acab0c9ce9a1c6e356e0191ef2d091267130af6be496e"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro4_effective16_seed42/source_initial.zip",
+      "archive_path": "bundles/9eacb84274e667d55d7c47b0c8180e78a611b456678f8a884604da49cf247b4f.zip",
+      "bytes": 149143,
+      "sha256": "9eacb84274e667d55d7c47b0c8180e78a611b456678f8a884604da49cf247b4f"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro4_effective4_seed42/source_initial.zip",
+      "archive_path": "bundles/28666c4d41e40b6334ffc20d22da6620e6100f55396fd30e9f18e007d40b4e42.zip",
+      "bytes": 149145,
+      "sha256": "28666c4d41e40b6334ffc20d22da6620e6100f55396fd30e9f18e007d40b4e42"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/native_capacity_20261105/native_capacity_micro8_effective16_seed42/source_initial.zip",
+      "archive_path": "bundles/73b6f70280d0445591999b227b0cf04d41d9a265a87f7a45f6f6622bbd19db20.zip",
+      "bytes": 149150,
+      "sha256": "73b6f70280d0445591999b227b0cf04d41d9a265a87f7a45f6f6622bbd19db20"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/seed43_diagnostic_replay_20261110T130428Z/seed43_replay61to65_window_module_trace/diagnostic_source.zip",
+      "archive_path": "bundles/acfcfdc1da3f0d094d35969a03bca412b5baad1d6f4a23dd31118e9d8e1a9a20.zip",
+      "bytes": 179968,
+      "sha256": "acfcfdc1da3f0d094d35969a03bca412b5baad1d6f4a23dd31118e9d8e1a9a20"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_20261109/episode3346_headscale0p5_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/84d39e99f14f61e44356555e9144353f6a26c3d60538aeb4c7987a298279b25a.zip",
+      "bytes": 156685,
+      "sha256": "84d39e99f14f61e44356555e9144353f6a26c3d60538aeb4c7987a298279b25a"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_20261109/episode3346_headscale0p5_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/ce7aa9fbcaa0f8c6e12a14e626a6684290f1ffc1c2129735371673d5c9ea8358.zip",
+      "bytes": 161091,
+      "sha256": "ce7aa9fbcaa0f8c6e12a14e626a6684290f1ffc1c2129735371673d5c9ea8358"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_20261109/episode3346_headscale2_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/be126c3172b102aa0567a80054804112002871ade344e9dd92850541131d1c4c.zip",
+      "bytes": 157590,
+      "sha256": "be126c3172b102aa0567a80054804112002871ade344e9dd92850541131d1c4c"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_20261109/episode3346_headscale2_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/dcac414dd412da46f5695e79eee595f059b29c1535c3092a2df3882dec446c41.zip",
+      "bytes": 161089,
+      "sha256": "dcac414dd412da46f5695e79eee595f059b29c1535c3092a2df3882dec446c41"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/af78fa39f4fe2a7c250e79885cd1ffc3bdd29b32acaf08af8e5d513d824f435d.zip",
+      "bytes": 157797,
+      "sha256": "af78fa39f4fe2a7c250e79885cd1ffc3bdd29b32acaf08af8e5d513d824f435d"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale0p75_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/c4468811dbf9343c9d747e00ce46b349ccea838644b3645866483ab3b576caa3.zip",
+      "bytes": 167728,
+      "sha256": "c4468811dbf9343c9d747e00ce46b349ccea838644b3645866483ab3b576caa3"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale1_repeat_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/71635f60db8391e7b984f8cb1439a7b7bc2f578ca62a18b66b5a8ac029a93ef7.zip",
+      "bytes": 157793,
+      "sha256": "71635f60db8391e7b984f8cb1439a7b7bc2f578ca62a18b66b5a8ac029a93ef7"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale1_repeat_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/0719e775e7b3711b04a12913a0ef0719e230dd492f6e276fbffc3b1a4b8d0163.zip",
+      "bytes": 167724,
+      "sha256": "0719e775e7b3711b04a12913a0ef0719e230dd492f6e276fbffc3b1a4b8d0163"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale1p25_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/6448092b06e8e94e464295c081b3a2bc607d7433e2d933679f23cd1e65239275.zip",
+      "bytes": 157796,
+      "sha256": "6448092b06e8e94e464295c081b3a2bc607d7433e2d933679f23cd1e65239275"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_refine_20261109T122513Z/episode3346_headscale1p25_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/bfe77c987a362965058cb24a51654afa0ea3494b3e678d2dbb75900a2323a8fc.zip",
+      "bytes": 167727,
+      "sha256": "bfe77c987a362965058cb24a51654afa0ea3494b3e678d2dbb75900a2323a8fc"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed43_20261110T064618Z/episode3346_headscale1_b16_micro4_seed43/source_initial.zip",
+      "archive_path": "bundles/5fc005a10eadadaf3af2693b258d5af7750005c61ef2c23219fd7e803ced9005.zip",
+      "bytes": 158641,
+      "sha256": "5fc005a10eadadaf3af2693b258d5af7750005c61ef2c23219fd7e803ced9005"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed44_20261110T132500Z/episode3346_headscale1_b16_micro4_seed44/source_initial.zip",
+      "archive_path": "bundles/7a52210c2130aba018f79258dfea97345ee1dcb3d94742321173e47fca555eb1.zip",
+      "bytes": 158641,
+      "sha256": "7a52210c2130aba018f79258dfea97345ee1dcb3d94742321173e47fca555eb1"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_seed45_20261111T034652Z/episode3346_headscale1_b16_micro4_seed45/source_initial.zip",
+      "archive_path": "bundles/d4db0902d21a0bcab746690035d5281ecd264897e4d82e51c16cf5d4997aaed0.zip",
+      "bytes": 158640,
+      "sha256": "d4db0902d21a0bcab746690035d5281ecd264897e4d82e51c16cf5d4997aaed0"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_head_lr_storagefix_20261110T031718Z/episode3346_headscale1_repeat_storagefix_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/6701803d0309e16e27c6a54fff9a4ccabbc4e7492673b59a8aea08cb697780d4.zip",
+      "bytes": 158668,
+      "sha256": "6701803d0309e16e27c6a54fff9a4ccabbc4e7492673b59a8aea08cb697780d4"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale0p3_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/419a2675ab61052771f20b9709c3ec2f2f0d5546c39b3d8c7870e7fffbd58e01.zip",
+      "bytes": 156752,
+      "sha256": "419a2675ab61052771f20b9709c3ec2f2f0d5546c39b3d8c7870e7fffbd58e01"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale0p3_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/5ca0b5b44f95b715c41acf97f6045da08daedbb4b31032eb4b3d1099594ea04e.zip",
+      "bytes": 163243,
+      "sha256": "5ca0b5b44f95b715c41acf97f6045da08daedbb4b31032eb4b3d1099594ea04e"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale0p6_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/20c7ae9c32a6425b643c4108e55cb22901089577d9f03f54327c2361459d0c8a.zip",
+      "bytes": 156757,
+      "sha256": "20c7ae9c32a6425b643c4108e55cb22901089577d9f03f54327c2361459d0c8a"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale0p6_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/6f06a16742ba57ddcd6a246827ed184baf9aa0737e4d1f50679d715393e13c8b.zip",
+      "bytes": 163796,
+      "sha256": "6f06a16742ba57ddcd6a246827ed184baf9aa0737e4d1f50679d715393e13c8b"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/4f1e81578b5853abf598ff74ac4860b7f2215e422090de93b3e8a927a004b977.zip",
+      "bytes": 156663,
+      "sha256": "4f1e81578b5853abf598ff74ac4860b7f2215e422090de93b3e8a927a004b977"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale1_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/bc8b011f52f2439ec41f7af3f0b48d58aa0b6862fbbddf55ab98529a27ec36f8.zip",
+      "bytes": 163243,
+      "sha256": "bc8b011f52f2439ec41f7af3f0b48d58aa0b6862fbbddf55ab98529a27ec36f8"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale2_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/5b4ad6bd485fcf97af1844c2ffe9605d3af10034a9822aa726c85eb2f5d48da3.zip",
+      "bytes": 156753,
+      "sha256": "5b4ad6bd485fcf97af1844c2ffe9605d3af10034a9822aa726c85eb2f5d48da3"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_lr_20261108/episode3346_lrscale2_b16_micro4_seed42/study_source.zip",
+      "archive_path": "bundles/b71d25f23a1c7d5709e3527950d3fd9087ed0941e0bdb059050692e3a79a4a5a.zip",
+      "bytes": 163792,
+      "sha256": "b71d25f23a1c7d5709e3527950d3fd9087ed0941e0bdb059050692e3a79a4a5a"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/single_episode_seed43_warn_continue_20261110T102649Z/episode3346_headscale1_seed43_warn_resume61/source_resume.zip",
+      "archive_path": "bundles/62c0143f91c7150af89f1c5ddfa1c601f7109d7a3c7eb9d017f53f854b2a524f.zip",
+      "bytes": 170757,
+      "sha256": "62c0143f91c7150af89f1c5ddfa1c601f7109d7a3c7eb9d017f53f854b2a524f"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/replay680_baseline/source_branch.zip",
+      "archive_path": "bundles/dc9fe4f46bddf0aee284dbb3640cdcb0e71c23da1f631d4be29ac45794a7da7f.zip",
+      "bytes": 154321,
+      "sha256": "dc9fe4f46bddf0aee284dbb3640cdcb0e71c23da1f631d4be29ac45794a7da7f"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/replay680_candidate_clip/source_branch.zip",
+      "archive_path": "bundles/d5a2957bc91ce176670dc785b6c07be67eec33200912e1653b902abee679964e.zip",
+      "bytes": 154325,
+      "sha256": "d5a2957bc91ce176670dc785b6c07be67eec33200912e1653b902abee679964e"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/resume680_audit/source_initial.zip",
+      "archive_path": "bundles/12bced855a7ee0bc132ea5eb12ded1feb3c0c3ccc5a4a53e9f42028f8249dc00.zip",
+      "bytes": 470899,
+      "sha256": "12bced855a7ee0bc132ea5eb12ded1feb3c0c3ccc5a4a53e9f42028f8249dc00"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/resume680_audit/source_resume_audit.zip",
+      "archive_path": "bundles/6e29a079952de26fd77385b1b0b51415bc2757beb7735b0aa2452479af4a9021.zip",
+      "bytes": 151862,
+      "sha256": "6e29a079952de26fd77385b1b0b51415bc2757beb7735b0aa2452479af4a9021"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/12bced855a7ee0bc132ea5eb12ded1feb3c0c3ccc5a4a53e9f42028f8249dc00.zip",
+      "bytes": 470899,
+      "sha256": "12bced855a7ee0bc132ea5eb12ded1feb3c0c3ccc5a4a53e9f42028f8249dc00"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/three_task_full_20261106/three_task_b16_micro4_seed43/source_initial.zip",
+      "archive_path": "bundles/f705d72d56d8c37c7ebf471ee21472a957ad68ea4c44308e7cd0b67e99b83de0.zip",
+      "bytes": 470899,
+      "sha256": "f705d72d56d8c37c7ebf471ee21472a957ad68ea4c44308e7cd0b67e99b83de0"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/tiny_future_weight_20261106/orchestration_source.zip",
+      "archive_path": "bundles/dde50585a7cb1692d5faeba81d34f15b152fd9c25a666860806d4fdb17b1a1d3.zip",
+      "bytes": 8975,
+      "sha256": "dde50585a7cb1692d5faeba81d34f15b152fd9c25a666860806d4fdb17b1a1d3"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/tiny_future_weight_20261106/tiny16_futureweight1_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/3a45764599e6a6ece0a897f9ca637b72b914d8f8ab46d6b00b1dc91d5d0a73f6.zip",
+      "bytes": 155087,
+      "sha256": "3a45764599e6a6ece0a897f9ca637b72b914d8f8ab46d6b00b1dc91d5d0a73f6"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/tiny_future_weight_20261106/tiny16_futureweight9_b16_micro4_seed42/source_initial.zip",
+      "archive_path": "bundles/3f83917899a0c946aa8d1a3ff642070ee19104545c5bd935d7fdc46daf87cd69.zip",
+      "bytes": 155089,
+      "sha256": "3f83917899a0c946aa8d1a3ff642070ee19104545c5bd935d7fdc46daf87cd69"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/lab_remote_setup/lab_probe.py",
+      "archive_path": "local_auxiliary/lab_remote_setup/lab_probe.py",
+      "bytes": 2051,
+      "sha256": "38e4477b679cdc9b1f1b3281e613ec7adac98a965dce02dd0eb7c149036e3156"
+    },
+    {
+      "original_path": "/root/zzc/energyWAM/logs/lab_remote_setup/results/20261109T073143Z/runner_source.py",
+      "archive_path": "local_auxiliary/lab_remote_setup/results/20261109T073143Z/runner_source.py",
+      "bytes": 5356,
+      "sha256": "10a3dba8e6c16f05dbf38c7564c3f84a8bcac5db128607009f4d6aa629adfd4d"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/iteration_aware_v1_20261104/preserve_bounded_batch8_reference.py",
+      "archive_path": "experiment_auxiliary/iteration_aware_v1_20261104/preserve_bounded_batch8_reference.py",
+      "bytes": 1608,
+      "sha256": "04a8b6553c8c9a5e32a2f73d21fd7ce5150161007c997470c0ff69ec43a7b054"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/seed43_diagnostic_replay_20261110T130428Z/seed43_replay61to65_window_module_trace/report_provenance/report_seed43_diagnostic_replay.py",
+      "archive_path": "experiment_auxiliary/seed43_diagnostic_replay_20261110T130428Z/seed43_replay61to65_window_module_trace/report_provenance/report_seed43_diagnostic_replay.py",
+      "bytes": 7287,
+      "sha256": "1f63d22db70f050d46c68eed1fbcc87e38479044a5310e114f08b2b0dc450990"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/audit_three_task_instability.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/audit_three_task_instability.py",
+      "bytes": 15614,
+      "sha256": "66657035fc6f2b8b0a3e760fe69c85ee93ef53f670ad5c7d2b3c298e9c9d791d"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/energy/solver.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/energy/solver.py",
+      "bytes": 16176,
+      "sha256": "e31b0345c553ebebaf1ff7cb3d3c78f4a09c6820fb666b36c884a59a8ea90762"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/models/energy_core.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/models/energy_core.py",
+      "bytes": 22631,
+      "sha256": "6a0b919331613ffd0ac73f613c9033868543bf20248f8c1ab7ac06c888656b65"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/training/shared_microbatch.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/training/shared_microbatch.py",
+      "bytes": 6523,
+      "sha256": "09d7fd9362d9f7a66657c379d3f5d8bc0a6d0146f0c42727e28a247a5a91249a"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/training/stages.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/training/stages.py",
+      "bytes": 19418,
+      "sha256": "f67df4a6586654bebb3d82e4e11a31838305204cf96cdb771c4f5882ee219429"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/training/trainer.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/energywam/training/trainer.py",
+      "bytes": 21469,
+      "sha256": "6b242b3903c3fb14aef525a08d0b99685f5c5543511d909a837d9420d5b29eee"
+    },
+    {
+      "original_path": "/cloud/zzc/energyWAM/experiments/stability_diagnosis_20261107/forensic_review_20261108/source_review/scripts/train_shared_sharded.py",
+      "archive_path": "experiment_auxiliary/stability_diagnosis_20261107/forensic_review_20261108/source_review/scripts/train_shared_sharded.py",
+      "bytes": 12263,
+      "sha256": "cb60075b7c1389e4ff4b556df475787b26b7e9423dbeb3547348fb54e86b2347"
+    }
+  ]
+}

@@ -71,7 +71,8 @@ class EnergyWAMTrainer:
         if cfg.trainer.language_model_devices:
             from .parallel import shard_language_model
 
-            shard_language_model(model, cfg.trainer.language_model_devices, self.device)
+            shard_language_model(model, cfg.trainer.language_model_devices, self.device,
+                                 layer_counts=cfg.trainer.language_model_layer_counts)
         params = [p for p in model.parameters() if p.requires_grad]
         step_module = getattr(getattr(model, "core", None), "step_sizes", None)
         step_params = list(step_module.parameters()) if step_module is not None else []
@@ -127,6 +128,12 @@ class EnergyWAMTrainer:
         if cfg.trainer.fp32_master_weights:
             from .master_weights import FP32MasterOptimizer
             self.optimizer = FP32MasterOptimizer(self.optimizer)
+        self.optimizer_state_offloader = None
+        if cfg.trainer.optimizer_state_cpu_offload:
+            if str(cfg.trainer.optimizer).lower() not in ("adamw8bit", "adamw_8bit") or not cfg.trainer.preallocate_optimizer_state:
+                raise ValueError("CPU state offload requires preallocated AdamW8bit state")
+            from .optimizer_offload import OptimizerStateOffloader
+            self.optimizer_state_offloader = OptimizerStateOffloader(self.optimizer)
         self._preallocate_optimizer_state()
         self.scheduler = scheduler if scheduler is not None else build_default_scheduler(cfg, self.optimizer)
         self.global_step = 0
@@ -149,6 +156,9 @@ class EnergyWAMTrainer:
             for pi, parameter in enumerate(group["params"]):
                 if not opt.state.get(parameter):
                     opt.init_state(group, parameter, gi, pi)
+        offloader = getattr(self, "optimizer_state_offloader", None)
+        if offloader is not None:
+            offloader.offload()
 
     # ------------------------------------------------------------------
     def train_step(self, batch: Dict[str, Any]) -> Dict[str, float]:
@@ -273,7 +283,14 @@ class EnergyWAMTrainer:
         used_lrs = {"optimizer_lr/"+group.get("group_name", "main"):float(group["lr"])
                     for group in self.optimizer.param_groups}
         t2 = time.time()
-        self.optimizer.step()
+        offloader = getattr(self, "optimizer_state_offloader", None)
+        if offloader is not None:
+            extra_diagnostics["offload/optimizer_state_restore_bytes"] = offloader.restore()
+        try:
+            self.optimizer.step()
+        finally:
+            if offloader is not None:
+                extra_diagnostics["offload/optimizer_state_cpu_bytes"] = offloader.offload()
         if self.scheduler is not None and hasattr(self.scheduler, "step"):
             self.scheduler.step()
         t_opt = time.time() - t2

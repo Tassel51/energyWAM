@@ -2,6 +2,14 @@
 
 Read `MEMORY.md` at the start of future work in this repository; it records explicit persistent user preferences.
 
+## Experiment logging policy (explicit user instruction, 2026-11-08)
+
+- Keep detailed, durable logs for every experiment, including failed, interrupted, and rejected trials. Chat summaries and W&B alone are insufficient; retain local raw records in the experiment directory.
+- Record the purpose, comparison protocol, full resolved hyperparameters, code identity/source snapshot, seeds, data/split/window manifests, initialization/resume source, actual GPU placement, commands, and start/end times with timezone.
+- Preserve per-update Action/Future metrics separately, actual optimizer learning rates, completed update counts, sample visits, timings and available resource/gradient diagnostics. Keep step-0 baselines and fixed TRAIN/VAL evaluations distinct from changing training batches; record evaluation cadence and seeds. Mark missing data explicitly; never fabricate, interpolate as measured, or label planned work completed.
+- Record latest/best checkpoint steps, selection criterion, resume capability and verification evidence; preserve failures, exit reasons, pauses/resumes, adaptive choices, comparisons and any authorized deletion manifests. Detailed logging does not authorize extra training, evaluation, process restarts, or changes to the agreed protocol.
+- Maintain the existing experiment records and canonical handoff rather than creating competing latest reports. Continuous assistant monitoring/chat updates are not required: the user explicitly asked to let the existing automatic queue run and check progress when asked.
+
 User instruction, 2026-11-05: retain the latest checkpoint and the best checkpoint; delete superseded versions.
 
 - For each retained training run, preserve `ckpt_latest.pt` and `ckpt_best.pt`, with metadata. Both should support full resume unless the user explicitly agrees to model-only retention. If best and latest are the same step, aliases/hard links can share one physical snapshot.

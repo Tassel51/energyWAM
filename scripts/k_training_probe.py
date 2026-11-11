@@ -43,25 +43,35 @@ def fixed_dataset(cfg, model, manifest, split):
     return ds,windows
 
 
-def iteration_trace(energy, initial, target, alpha, budgets, gradient_normalization="none", gradient_rms_epsilon=1e-6):
+def iteration_trace(energy, initial, target, alpha, budgets, gradient_normalization="none", gradient_rms_epsilon=1e-6,
+                    clip_grad=None, candidate_clamp=(None,None), iteration_aware=True):
     """Each K has its own progress schedule, not a prefix of the longest K."""
     import torch
     import time
-    from energywam.energy.solver_utils import precondition_candidate_grad
+    from energywam.energy.solver_utils import precondition_candidate_grad,clip_candidate_grad,apply_candidate_constraints
     x0, target = initial.detach().float(), target.detach().float()
     rows = [dict(k=0, prediction_mse=float((x0-target).square().mean()))]
     for budget in budgets:
         x = x0.clone()
+        steps = []
         start = time.monotonic()
         for k in range(budget):
             with torch.enable_grad():
                 x = x.detach().requires_grad_(True)
-                e = energy(x, iteration_progress=k/budget)
+                e = energy(x, iteration_progress=k/budget if iteration_aware else None)
                 g = torch.autograd.grad(e.sum(), x)[0]
                 if not torch.isfinite(e).all() or not torch.isfinite(g).all():
                     raise FloatingPointError("nonfinite iteration-aware diagnostic")
+                before_mse = float((x.detach()-target).square().mean())
+                raw_rms = float(g.square().mean().sqrt())
+                clipped_fraction = float((g.abs()>clip_grad).float().mean()) if clip_grad is not None else 0.
+                g = clip_candidate_grad(g,clip_grad)
                 delta = alpha * precondition_candidate_grad(g, mode=gradient_normalization, epsilon=gradient_rms_epsilon)
-                x = (x-delta).detach()
+                x = apply_candidate_constraints(x-delta,None,candidate_clamp).detach()
+                steps.append(dict(iteration=k,progress=k/budget if iteration_aware else None,
+                    energy_before=float(e.detach().mean()),mse_before=before_mse,
+                    mse_after=float((x-target).square().mean()),raw_gradient_rms=raw_rms,
+                    clipped_fraction=clipped_fraction,proposed_update_rms=float(delta.detach().square().mean().sqrt())))
         if not torch.isfinite(x).all():
             raise FloatingPointError("nonfinite final candidate")
         rows.append(dict(k=budget, prediction_mse=float((x-target).square().mean()),
@@ -69,6 +79,7 @@ def iteration_trace(energy, initial, target, alpha, budgets, gradient_normalizat
                          gradient_rms=float(g.square().mean().sqrt()),
                          applied_update_rms=float(delta.detach().square().mean().sqrt()),
                          total_displacement_rms=float((x-x0).square().mean().sqrt()),
+                         inner_steps=steps,
                          refinement_seconds=time.monotonic()-start))
     return rows
 
@@ -101,6 +112,16 @@ def dataset_baselines(cfg, model, manifest_path, output):
     return result
 
 
+def evaluation_budgets(max_k, evaluation_k=2, explicit=None):
+    """Preserve legacy budgets while ensuring the declared selection K exists."""
+    if max_k < 2 or evaluation_k < 1 or evaluation_k > max_k:
+        raise ValueError('evaluation K must fit the configured probe maximum')
+    budgets = [int(v) for v in explicit.split(',')] if explicit else [k for k in sorted({2,4,8,evaluation_k}) if k <= max_k]
+    if not budgets or any(k < 1 or k > max_k for k in budgets) or evaluation_k not in budgets:
+        raise ValueError('Explicit probe budgets must include the declared evaluation K')
+    return sorted(set(budgets))
+
+
 def evaluate(trainer, manifest_path, output, rank, evaluation_seed=2026):
     import torch
     import os
@@ -113,6 +134,7 @@ def evaluate(trainer, manifest_path, output, rank, evaluation_seed=2026):
     direction='action' if rank==0 else 'future'
     manifest=json.loads(Path(manifest_path).read_text())
     max_k=int(os.environ.get('ENERGYWAM_PROBE_MAX_K','8'))
+    budgets=evaluation_budgets(max_k, trainer.cfg.solver.eval_inner_steps, os.environ.get('ENERGYWAM_PROBE_KS'))
     splits=os.environ.get('ENERGYWAM_PROBE_SPLITS','train,val').split(',')
     if max_k<2 or any(x not in ['train','val'] for x in splits):raise ValueError('invalid probe protocol')
     rows=[];start=time.monotonic()
@@ -138,15 +160,19 @@ def evaluate(trainer, manifest_path, output, rank, evaluation_seed=2026):
                     return model.core.energy(cond,z,a,future_mask=prepared['future_mask'],action_mask=prepared['action_mask'],offsets=prepared['future_offsets'],iteration_progress=iteration_progress)
                 alpha = model.core.effective_step_sizes()[rank]
                 alpha = float(torch.as_tensor(alpha).detach())
-                if trainer.cfg.framework.iteration_conditioning or trainer.cfg.solver.candidate_gradient_normalization != "none":
+                solver=trainer.cfg.solver
+                clip=solver.clip_action_grad if rank==0 else solver.clip_future_grad
+                clamp=(solver.action_clamp_min,solver.action_clamp_max) if rank==0 else (solver.future_clamp_min,solver.future_clamp_max)
+                if trainer.cfg.framework.iteration_conditioning or solver.candidate_gradient_normalization != "none" or clip is not None or any(v is not None for v in clamp):
                     trace = iteration_trace(energy, a0 if rank==0 else z0,
-                        astar if rank==0 else zstar, alpha, [k for k in [2,4,8] if k<=max_k],
+                        astar if rank==0 else zstar, alpha, budgets,
                         gradient_normalization=trainer.cfg.solver.candidate_gradient_normalization,
-                        gradient_rms_epsilon=trainer.cfg.solver.gradient_rms_epsilon)
+                        gradient_rms_epsilon=trainer.cfg.solver.gradient_rms_epsilon,
+                        clip_grad=clip,candidate_clamp=clamp,iteration_aware=trainer.cfg.framework.iteration_conditioning)
                 else:
                     trace,_=trace_candidate(energy,a0 if rank==0 else z0,astar if rank==0 else zstar,alpha,max_k)
                 rows.extend(dict(r,**w,direction=direction,update=trainer.global_step,train_k=trainer.cfg.solver.train_inner_steps)
-                            for r in trace if r['k'] in [0,2,4,8])
+                            for r in trace if r['k'] in [0,*budgets])
                 del batch,prepared,cond,a0,z0,astar,zstar,trace
         path=Path(output)/f'eval_{trainer.global_step:04d}_{direction}.json'
         temporary=path.with_suffix('.tmp')

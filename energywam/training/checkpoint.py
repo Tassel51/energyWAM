@@ -220,8 +220,13 @@ def save_checkpoint(
     if hasattr(model, "distributed_rng_states"):
         payload["distributed_rng_states"] = model.distributed_rng_states
     torch.save(payload, path)
-    (path.parent / (path.name + ".meta.json")).write_text(
-        json.dumps({"meta": asdict(meta), "config": to_plain_dict(cfg)}, indent=2, default=str)
+    import os
+    from .checkpoint_metadata import write_checkpoint_metadata
+    with path.open('rb') as stream:
+        os.fsync(stream.fileno())
+    write_checkpoint_metadata(
+        path.parent / (path.name + ".meta.json"),
+        {"meta": asdict(meta), "config": to_plain_dict(cfg)},
     )
     return path
 
