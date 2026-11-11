@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-11-11T10:32:03.030213+00:00",
+  "repository": "https://github.com/Tassel51/energyWAM",
+  "branch": "main",
+  "local_commit": "ce56582a1fccf9593908db2fe2279a995868d740",
+  "remote_commit": "ce56582a1fccf9593908db2fe2279a995868d740",
+  "matches": true,
+  "new_changed_files": 484,
+  "historical_source_references": 347,
+  "historical_source_unique_files": 345,
+  "experiment_text_files": 4733,
+  "experiment_record_archives": 14,
+  "modelscope_uploaded": false,
+  "large_weights_or_datasets_in_git": false,
+  "transport": "project deploy key over direct ssh.github.com:443"
+}

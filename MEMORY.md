@@ -730,3 +730,6 @@ repair/helper+原bridge共29项无网络测试通过。restore_wandb_after_repai
 新export_historical_sources.py/export_experiment_records.py可重建归档，Git中保留恢复说明。近期17个CPU测试模块88 passed；完整suite尝试190 passed/10 failed/1 skipped因maxfail停止，8旧DINO路径、1缺外部starVLA、1旧cfg=None fixture，详见docs/reproducibility/github_backup_validation_20261111.json；未为备份修改训练数学或启动真实GPU实验。
 
 大文件本次仅盘点，未上传ModelScope、未删除任何权重。现存29独立权重437.15GiB，其中本机checkpoint_archive208.34GiB、cloud228.81GiB；部分cloud链接实际指向本机。优先seed42 latest210/best60、seed43 latest61/best0、旧400步model-only共99.23GiB；数据原始树57.27GiB，trainmix视图与之重叠，学校只有3任务1.016GiB而非全50任务。完整位置/元数据/学校副本核验及优先级见server_retirement_artifacts_20261111.md/.json。推送是否完成以之后的远端SHA核验记录为准，不能将此准备记录称作大文件已备份。
+
+
+2026-11-11 GitHub备份实际完成核验：完整代码/历史源码/4733份文本实验记录已推送Tassel51/energyWAM的main；远端refs/heads/main与本地备份提交ce56582a1fccf9593908db2fe2279a995868d740完全一致。收据docs/reproducibility/github_backup_receipt_20261111.json。大权重和原始数据尚未上传ModelScope，本机checkpoint_archive208.34GiB等风险仍须按迁移清单处理；不能把GitHub备份成功解释为全部模型数据已异地保存。

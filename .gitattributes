@@ -1,0 +1,5 @@
+# Preserve archived source and dataset metadata byte-for-byte on checkout.
+docs/reproducibility/source_archives/** -text whitespace=-blank-at-eol
+docs/reproducibility/experiment_records/*.tar.gz -text
+docs/reproducibility/trainmix_meta_backup/** -text
+docs/reproducibility/historical_experiment_inventory_20261109.csv -text whitespace=cr-at-eol
